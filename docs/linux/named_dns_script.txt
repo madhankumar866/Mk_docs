@@ -1,0 +1,56 @@
+    
+step 1----> cd /var/named/chroot/var/named
+step 2 ----> ll
+step 3 -----> sudo  sh dhs.sh  <Dommain name> <A record>  <ns1>  <ns2>  <Domain name>
+EXAMPLE: sudo sh dns.sh outfitcar.com 74.208.148.41   74.208.148.41  74.208.148.63 outfitcar.com 
+
+
+step $ -----> sudo vi <Domain name>
+              ADD IP'S AS A <A RECORD> THAT YOU WANT FOR RDNS         
+step 4 -----> cd /var/named/chroot/etc
+step 5 -----> ll
+step 6 -----> sudo vi named.conf
+                ADD NS1 AND NS2 IP'S AFTER THE LOCALHOST IP
+step $ -----> Go to statsplayer Bulk Domain,  put domain name and disply it.  
+                    form ther you will get Domain provoider name, login into domain provoider panel 
+                    Find your domain and change ns1,and ns2 ip's that you mentioned in step 3.
+step 7 ----> finally restart the dns.
+                   
+
+
+     IFCONFIG                                             
+     NS1 -----> LAST BEFORE IP
+     NS2 -----> LAST IP                                       
+sudo  sh dhs.sh  superchronicles.com  199.38.182.83  199.38.182.83  199.38.182.99 superchronicles.com  
+echo '*******************************************'
+echo 'Now creating Zone File in "'$1'" ...'
+echo '*******************************************'
+echo > /var/named/chroot/var/named/$1
+echo '$TTL 1D' >>/var/named/chroot/var/named/$1
+echo '@              IN      SOA    ns1.'$5'.   hostmaster.'$5'. ('>>/var/named/chroot/var/named/$1
+echo "                        `date +%Y%m%d01` ; serial">>/var/named/chroot/var/named/$1
+echo '                        3600 ; refresh'>>/var/named/chroot/var/named/$1
+echo '                        900 ; retry'>>/var/named/chroot/var/named/$1
+echo '                        1209600 ; expire'>>/var/named/chroot/var/named/$1
+echo '                        43200 ; default_ttl'>>/var/named/chroot/var/named/$1
+echo '                        )'>>/var/named/chroot/var/named/$1
+echo '@              IN      MX      10      '$1.  >>/var/named/chroot/var/named/$1
+echo '@              IN      NS      ns1.'$5. >>/var/named/chroot/var/named/$1
+echo '@              IN      NS      ns2.'$5. >>/var/named/chroot/var/named/$1
+echo '@              IN      A      '$2 >>/var/named/chroot/var/named/$1
+echo 'www            IN      CNAME  '$1. >>/var/named/chroot/var/named/$1
+echo '@              IN      TXT   "v=spf1 ip4:'$2' a mx mx:'$1' -all"' >>/var/named/chroot/var/named/$1
+echo 'ns1            IN      A      '$3   >>/var/named/chroot/var/named/$1
+echo 'ns2            IN      A      '$4   >>/var/named/chroot/var/named/$1
+echo '*******************************************'
+echo 'Successfully created Zone File in '$1
+echo '*******************************************'
+echo 'Now adding in Named.conf '$1
+
+echo ''                      >> /var/named/chroot/etc/named.conf
+echo 'zone "'$1'"{'            >> /var/named/chroot/etc/named.conf
+echo '        type master;'  >> /var/named/chroot/etc/named.conf
+echo '        file "'$1'";'    >> /var/named/chroot/etc/named.conf
+echo '};'                    >> /var/named/chroot/etc/named.conf
+
+echo '*******************************************'

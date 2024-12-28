@@ -1,0 +1,1 @@
+rsync -avzh /home/sites/recipecreek.com/wp-content/uploads/2019 mk@18.215.135.107:/home/mk/sites_backup/sites/recipecreek.com/wp-content/uploads/

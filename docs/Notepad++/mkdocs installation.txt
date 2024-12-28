@@ -1,4 +1,5 @@
 
+
         Installation For Mkdocs
     https://www.mkdocs.org/user-guide/installation/
 
@@ -27,5 +28,7 @@
 
      `https://hub.docker.com/r/squidfunk/mkdocs-material`
 
-     docker run -d --rm -it -p 8001:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
+     docker run --rm -it -p 8005:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
           
+
+34.197.1.63

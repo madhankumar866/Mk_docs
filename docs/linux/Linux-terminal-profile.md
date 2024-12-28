@@ -1,0 +1,2 @@
+
+[https://medium.com/@mdomer19967/how-to-make-your-boring-macos-terminal-look-so-much-better-dd7f80ffeedc](https://medium.com/@mdomer19967/how-to-make-your-boring-macos-terminal-look-so-much-better-dd7f80ffeedc)

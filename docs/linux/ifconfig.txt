@@ -1,0 +1,1 @@
+ifconfig | grep 'inet addr' | cut -f2 -d':' | gawk '{print $1 "|fitnessgoals.me|"}' > /var/www/cgi-bin/set1.txt

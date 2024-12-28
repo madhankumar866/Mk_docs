@@ -1,0 +1,1832 @@
+
+PLAY [all] *************************************************************************************************************************
+
+TASK [moving backuped files using linux command php.*] *****************************************************************************
+fatal: [ROB-16]: FAILED! => {"changed": true, "cmd": "cp /var/www/Maildynamix/V2/user_defined.php /var/www/Maildynamix/backup/user_defined_20200214.php", "delta": "0:00:00.024174", "end": "2020-02-14 02:32:35.149479", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:32:35.125305", "stderr": "cp: cannot create regular file `/var/www/Maildynamix/backup/user_defined_20200214.php': Permission denied", "stderr_lines": ["cp: cannot create regular file `/var/www/Maildynamix/backup/user_defined_20200214.php': Permission denied"], "stdout": "", "stdout_lines": []}
+changed: [HZ-1]
+changed: [CO-1]
+changed: [FH-2]
+fatal: [ROB-102]: FAILED! => {"changed": true, "cmd": "cp /var/www/Maildynamix/V2/user_defined.php /var/www/Maildynamix/backup/user_defined_20200214.php", "delta": "0:00:00.005414", "end": "2020-02-14 02:32:36.558747", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:32:36.553333", "stderr": "cp: cannot create regular file `/var/www/Maildynamix/backup/user_defined_20200214.php': Permission denied", "stderr_lines": ["cp: cannot create regular file `/var/www/Maildynamix/backup/user_defined_20200214.php': Permission denied"], "stdout": "", "stdout_lines": []}
+fatal: [ROB-128]: FAILED! => {"changed": true, "cmd": "cp /var/www/Maildynamix/V2/user_defined.php /var/www/Maildynamix/backup/user_defined_20200214.php", "delta": "0:00:00.025463", "end": "2020-02-14 02:32:36.764037", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:32:36.738574", "stderr": "cp: cannot create regular file `/var/www/Maildynamix/backup/user_defined_20200214.php': Permission denied", "stderr_lines": ["cp: cannot create regular file `/var/www/Maildynamix/backup/user_defined_20200214.php': Permission denied"], "stdout": "", "stdout_lines": []}
+changed: [ROB-84]
+changed: [1and1-1]
+changed: [ROB-124]
+changed: [ROB-253]
+changed: [SF-15]
+changed: [ROB-368]
+changed: [ROB-317]
+changed: [SAY-3]
+changed: [ROB-392]
+changed: [SAY-5]
+changed: [ROB-289]
+changed: [ROB-330]
+changed: [ROB-416]
+changed: [ROB-376]
+changed: [ROB-477]
+changed: [ROB-469]
+changed: [ROB-473]
+changed: [ROB-475]
+changed: [ROB-430]
+changed: [ROB-488]
+changed: [ROB-460]
+changed: [ROB-471]
+changed: [ROB-481]
+changed: [ROB-523]
+changed: [ROB-527]
+changed: [ROB-497]
+changed: [ROB-517]
+changed: [ROB-547]
+changed: [ROB-502]
+changed: [ROB-524]
+changed: [ROB-562]
+changed: [ROB-588]
+changed: [ROB-574]
+changed: [ROB-444]
+changed: [ROB-589]
+changed: [ROB-597]
+changed: [ROB-612]
+changed: [ROB-613]
+changed: [ROB-601]
+changed: [ROB-621]
+changed: [ROB-618]
+changed: [ROB-608]
+changed: [ROB-602]
+changed: [ROB-622]
+changed: [ROB-648]
+fatal: [ROB-623]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host ROB-623 port 9566: Connection timed out", "unreachable": true}
+changed: [ROB-663]
+changed: [ROB-624]
+changed: [ROB-644]
+changed: [ROB-655]
+changed: [ROB-674]
+changed: [ROB-675]
+changed: [ROB-672]
+changed: [ROB-658]
+changed: [ROB-681]
+changed: [ROB-688]
+changed: [ROB-678]
+changed: [ROB-683]
+changed: [ROB-701]
+changed: [ROB-703]
+changed: [ROB-693]
+changed: [ROB-705]
+changed: [ROB-691]
+changed: [ROB-716]
+changed: [ROB-715]
+changed: [ROB-709]
+fatal: [ROB-717]: FAILED! => {"changed": true, "cmd": "cp /var/www/Maildynamix/V2/user_defined.php /var/www/Maildynamix/backup/user_defined_20200214.php", "delta": "0:00:00.023605", "end": "2020-02-14 02:33:40.053646", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:33:40.030041", "stderr": "cp: cannot create regular file ‘/var/www/Maildynamix/backup/user_defined_20200214.php’: Permission denied", "stderr_lines": ["cp: cannot create regular file ‘/var/www/Maildynamix/backup/user_defined_20200214.php’: Permission denied"], "stdout": "", "stdout_lines": []}
+changed: [ROB-731]
+changed: [ROB-714]
+changed: [ROB-719]
+changed: [ROB-706]
+changed: [ROB-725]
+changed: [ROB-735]
+changed: [ROB-737]
+changed: [ROB-740]
+changed: [ROB-744]
+changed: [ROB-749]
+changed: [ROB-747]
+changed: [ROB-736]
+changed: [ROB-751]
+fatal: [ROB-748]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host ROB-748 port 9566: Connection timed out", "unreachable": true}
+changed: [ROB-753]
+changed: [ROB-758]
+changed: [ROB-752]
+changed: [ROB-756]
+changed: [ROB-766]
+changed: [ROB-763]
+changed: [ROB-765]
+changed: [ROB-759]
+changed: [ROB-772]
+changed: [ROB-770]
+changed: [ROB-769]
+changed: [ROB-773]
+changed: [ROB-784]
+changed: [ROB-779]
+changed: [ROB-782]
+changed: [ROB-786]
+changed: [MOB-45]
+changed: [MOB-46]
+changed: [MOB-48]
+changed: [ROB-783]
+changed: [ROB-787]
+changed: [ROB-785]
+changed: [ROB-792]
+changed: [ROB-790]
+changed: [ROB-800]
+changed: [ROB-799]
+changed: [ROB-795]
+changed: [ROB-808]
+changed: [ROB-805]
+changed: [ROB-807]
+changed: [ROB-803]
+changed: [ROB-812]
+changed: [ROB-802]
+changed: [ROB-813]
+changed: [ROB-814]
+changed: [ROB-815]
+changed: [ROB-810]
+changed: [ROB-811]
+changed: [MOB-49]
+changed: [ROB-817]
+changed: [ROB-821]
+changed: [ROB-816]
+changed: [ROB-819]
+changed: [ROB-818]
+changed: [ROB-823]
+changed: [ROB-820]
+changed: [ROB-822]
+changed: [MOB-50]
+changed: [ROB-824]
+changed: [ROB-826]
+changed: [ROB-825]
+changed: [ROB-830]
+changed: [ROB-829]
+changed: [ROB-833]
+changed: [ROB-828]
+changed: [ROB-827]
+changed: [MOB-51]
+changed: [ROB-834]
+changed: [ROB-831]
+changed: [ROB-836]
+changed: [ROB-832]
+changed: [TSK-1]
+changed: [TSK-2]
+changed: [TSK-4]
+changed: [TSK-5]
+changed: [TSK-7]
+changed: [TSK-8]
+changed: [TSK-9]
+changed: [TSK-10]
+changed: [TSK-11]
+changed: [TSK-6]
+changed: [WOG-9]
+changed: [WOG-10]
+changed: [WOG-11]
+changed: [TSK-13]
+fatal: [WOG-15]: FAILED! => {"changed": true, "cmd": "cp /var/www/Maildynamix/V2/user_defined.php /var/www/Maildynamix/backup/user_defined_20200214.php", "delta": "0:00:00.015468", "end": "2020-02-14 02:35:06.122853", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:35:06.107385", "stderr": "cp: cannot create regular file `/var/www/Maildynamix/backup/user_defined_20200214.php': Permission denied", "stderr_lines": ["cp: cannot create regular file `/var/www/Maildynamix/backup/user_defined_20200214.php': Permission denied"], "stdout": "", "stdout_lines": []}
+fatal: [WOG-14]: FAILED! => {"changed": true, "cmd": "cp /var/www/Maildynamix/V2/user_defined.php /var/www/Maildynamix/backup/user_defined_20200214.php", "delta": "0:00:00.041238", "end": "2020-02-14 02:35:06.359227", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:35:06.317989", "stderr": "cp: cannot create regular file `/var/www/Maildynamix/backup/user_defined_20200214.php': Permission denied", "stderr_lines": ["cp: cannot create regular file `/var/www/Maildynamix/backup/user_defined_20200214.php': Permission denied"], "stdout": "", "stdout_lines": []}
+fatal: [WOG-17]: FAILED! => {"changed": true, "cmd": "cp /var/www/Maildynamix/V2/user_defined.php /var/www/Maildynamix/backup/user_defined_20200214.php", "delta": "0:00:00.018531", "end": "2020-02-14 02:35:06.894205", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:35:06.875674", "stderr": "cp: cannot create regular file `/var/www/Maildynamix/backup/user_defined_20200214.php': Permission denied", "stderr_lines": ["cp: cannot create regular file `/var/www/Maildynamix/backup/user_defined_20200214.php': Permission denied"], "stdout": "", "stdout_lines": []}
+changed: [MAC-15]
+fatal: [MAC-6]: FAILED! => {"changed": true, "cmd": "cp /var/www/Maildynamix/V2/user_defined.php /var/www/Maildynamix/backup/user_defined_20200214.php", "delta": "0:00:00.024678", "end": "2020-02-14 02:33:14.392324", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:33:14.367646", "stderr": "cp: cannot create regular file `/var/www/Maildynamix/backup/user_defined_20200214.php': Permission denied", "stderr_lines": ["cp: cannot create regular file `/var/www/Maildynamix/backup/user_defined_20200214.php': Permission denied"], "stdout": "", "stdout_lines": []}
+changed: [WOG-22]
+changed: [WOG-30]
+fatal: [WOG-31]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host WOG-31 port 9566: Connection timed out", "unreachable": true}
+changed: [WOG-40]
+changed: [WOG-41]
+changed: [MST-2]
+changed: [WOG-44]
+changed: [WOG-45]
+changed: [WOG-46]
+fatal: [TVS-2]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host TVS-2 port 9566: Connection timed out", "unreachable": true}
+fatal: [TSK-12]: FAILED! => {"changed": true, "cmd": "cp /var/www/Maildynamix/V2/user_defined.php /var/www/Maildynamix/backup/user_defined_20200214.php", "delta": "0:00:00.007696", "end": "2020-02-14 02:35:20.100149", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:35:20.092453", "stderr": "cp: cannot stat ‘/var/www/Maildynamix/V2/user_defined.php’: No such file or directory", "stderr_lines": ["cp: cannot stat ‘/var/www/Maildynamix/V2/user_defined.php’: No such file or directory"], "stdout": "", "stdout_lines": []}
+
+TASK [moving backuped files using linux command php.*] *****************************************************************************
+changed: [ROB-253]
+changed: [FH-2]
+changed: [HZ-1]
+changed: [CO-1]
+changed: [ROB-84]
+changed: [1and1-1]
+changed: [ROB-124]
+changed: [SAY-5]
+changed: [SAY-3]
+fatal: [ROB-444]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh_exchange_identification: Connection closed by remote host", "unreachable": true}
+changed: [SF-15]
+changed: [ROB-317]
+changed: [ROB-368]
+changed: [ROB-392]
+changed: [ROB-416]
+changed: [ROB-330]
+changed: [ROB-289]
+changed: [ROB-477]
+changed: [ROB-469]
+changed: [ROB-376]
+changed: [ROB-473]
+changed: [ROB-475]
+changed: [ROB-430]
+changed: [ROB-460]
+changed: [ROB-488]
+changed: [ROB-471]
+changed: [ROB-481]
+changed: [ROB-523]
+changed: [ROB-527]
+changed: [ROB-502]
+changed: [ROB-497]
+changed: [ROB-547]
+changed: [ROB-517]
+changed: [ROB-562]
+changed: [ROB-588]
+changed: [ROB-524]
+changed: [ROB-574]
+changed: [ROB-589]
+changed: [ROB-612]
+changed: [ROB-613]
+changed: [ROB-618]
+changed: [ROB-621]
+changed: [ROB-597]
+changed: [ROB-601]
+changed: [ROB-602]
+changed: [ROB-608]
+changed: [ROB-648]
+changed: [ROB-622]
+changed: [ROB-624]
+changed: [ROB-663]
+changed: [ROB-675]
+changed: [ROB-644]
+changed: [ROB-655]
+changed: [ROB-672]
+changed: [ROB-674]
+changed: [ROB-658]
+changed: [ROB-681]
+changed: [ROB-688]
+changed: [ROB-683]
+changed: [ROB-678]
+changed: [ROB-701]
+changed: [ROB-703]
+changed: [ROB-693]
+changed: [ROB-705]
+changed: [ROB-691]
+changed: [ROB-716]
+changed: [ROB-715]
+changed: [ROB-731]
+changed: [ROB-709]
+changed: [ROB-719]
+changed: [ROB-714]
+changed: [ROB-706]
+changed: [ROB-735]
+changed: [ROB-737]
+changed: [ROB-725]
+changed: [ROB-740]
+changed: [ROB-736]
+changed: [ROB-744]
+changed: [ROB-749]
+changed: [ROB-747]
+changed: [ROB-753]
+changed: [ROB-758]
+changed: [ROB-751]
+changed: [ROB-756]
+changed: [ROB-766]
+changed: [ROB-752]
+changed: [ROB-770]
+changed: [ROB-763]
+changed: [ROB-773]
+changed: [ROB-769]
+changed: [ROB-772]
+changed: [ROB-765]
+changed: [ROB-759]
+changed: [MOB-45]
+changed: [ROB-779]
+changed: [ROB-785]
+changed: [ROB-782]
+changed: [MOB-46]
+changed: [MOB-48]
+changed: [ROB-784]
+changed: [ROB-783]
+changed: [ROB-786]
+changed: [ROB-787]
+changed: [ROB-790]
+changed: [ROB-792]
+changed: [ROB-800]
+changed: [ROB-799]
+changed: [ROB-802]
+changed: [ROB-795]
+changed: [ROB-808]
+changed: [ROB-803]
+changed: [ROB-805]
+changed: [ROB-812]
+changed: [ROB-807]
+changed: [ROB-814]
+changed: [ROB-813]
+changed: [ROB-810]
+changed: [ROB-815]
+changed: [ROB-811]
+changed: [ROB-817]
+changed: [MOB-49]
+changed: [ROB-816]
+changed: [ROB-821]
+changed: [ROB-819]
+changed: [ROB-818]
+changed: [ROB-822]
+changed: [ROB-823]
+changed: [MOB-50]
+changed: [ROB-820]
+changed: [ROB-824]
+changed: [ROB-826]
+changed: [ROB-825]
+changed: [ROB-830]
+changed: [ROB-827]
+changed: [ROB-833]
+changed: [ROB-828]
+changed: [ROB-829]
+changed: [ROB-831]
+changed: [ROB-834]
+changed: [MOB-51]
+changed: [ROB-836]
+changed: [ROB-832]
+changed: [TSK-1]
+changed: [TSK-2]
+changed: [TSK-4]
+changed: [TSK-5]
+changed: [TSK-6]
+changed: [TSK-7]
+changed: [TSK-8]
+changed: [TSK-10]
+changed: [TSK-9]
+changed: [WOG-10]
+changed: [WOG-9]
+changed: [TSK-13]
+changed: [TSK-11]
+changed: [WOG-11]
+changed: [MAC-15]
+changed: [WOG-30]
+changed: [WOG-40]
+changed: [WOG-22]
+changed: [WOG-41]
+changed: [MST-2]
+changed: [WOG-44]
+changed: [WOG-46]
+changed: [WOG-45]
+
+TASK [removing files] **************************************************************************************************************
+changed: [CO-1]
+changed: [HZ-1]
+changed: [ROB-253]
+changed: [FH-2]
+changed: [ROB-84]
+changed: [1and1-1]
+changed: [ROB-124]
+changed: [SAY-3]
+changed: [SAY-5]
+changed: [ROB-368]
+changed: [ROB-317]
+changed: [ROB-392]
+changed: [ROB-416]
+changed: [ROB-289]
+changed: [ROB-330]
+changed: [ROB-376]
+changed: [ROB-477]
+changed: [ROB-469]
+changed: [SF-15]
+changed: [ROB-460]
+changed: [ROB-473]
+changed: [ROB-475]
+changed: [ROB-430]
+changed: [ROB-471]
+changed: [ROB-481]
+changed: [ROB-523]
+changed: [ROB-562]
+changed: [ROB-527]
+changed: [ROB-547]
+changed: [ROB-497]
+changed: [ROB-502]
+changed: [ROB-517]
+changed: [ROB-588]
+changed: [ROB-524]
+changed: [ROB-488]
+changed: [ROB-574]
+changed: [ROB-612]
+changed: [ROB-589]
+changed: [ROB-597]
+changed: [ROB-613]
+changed: [ROB-618]
+changed: [ROB-608]
+changed: [ROB-601]
+changed: [ROB-621]
+changed: [ROB-602]
+changed: [ROB-648]
+changed: [ROB-622]
+changed: [ROB-675]
+changed: [ROB-663]
+changed: [ROB-655]
+changed: [ROB-644]
+changed: [ROB-672]
+changed: [ROB-674]
+changed: [ROB-658]
+changed: [ROB-681]
+changed: [ROB-688]
+changed: [ROB-678]
+changed: [ROB-683]
+changed: [ROB-703]
+changed: [ROB-624]
+changed: [ROB-693]
+changed: [ROB-705]
+changed: [ROB-691]
+changed: [ROB-716]
+changed: [ROB-715]
+changed: [ROB-701]
+changed: [ROB-731]
+changed: [ROB-709]
+changed: [ROB-719]
+changed: [ROB-725]
+changed: [ROB-714]
+changed: [ROB-706]
+changed: [ROB-735]
+changed: [ROB-737]
+changed: [ROB-740]
+changed: [ROB-749]
+changed: [ROB-744]
+changed: [ROB-753]
+changed: [ROB-747]
+changed: [ROB-736]
+changed: [ROB-751]
+changed: [ROB-752]
+changed: [ROB-756]
+changed: [ROB-758]
+changed: [ROB-766]
+changed: [ROB-772]
+changed: [ROB-770]
+changed: [ROB-763]
+changed: [ROB-759]
+changed: [ROB-769]
+changed: [ROB-765]
+changed: [ROB-773]
+changed: [ROB-785]
+changed: [MOB-46]
+changed: [MOB-45]
+changed: [MOB-48]
+changed: [ROB-784]
+changed: [ROB-779]
+changed: [ROB-782]
+changed: [ROB-783]
+changed: [ROB-786]
+changed: [ROB-787]
+changed: [ROB-790]
+changed: [ROB-799]
+changed: [ROB-792]
+changed: [ROB-800]
+changed: [ROB-802]
+changed: [ROB-795]
+changed: [ROB-808]
+changed: [ROB-805]
+changed: [ROB-812]
+changed: [ROB-803]
+changed: [ROB-813]
+changed: [ROB-807]
+changed: [ROB-814]
+changed: [ROB-815]
+changed: [ROB-811]
+changed: [ROB-810]
+changed: [MOB-49]
+changed: [ROB-817]
+changed: [ROB-821]
+changed: [ROB-819]
+changed: [ROB-816]
+changed: [MOB-50]
+changed: [ROB-818]
+changed: [ROB-820]
+changed: [ROB-822]
+changed: [ROB-823]
+changed: [ROB-824]
+changed: [ROB-826]
+changed: [ROB-825]
+changed: [ROB-830]
+changed: [ROB-829]
+changed: [ROB-833]
+changed: [ROB-828]
+changed: [ROB-827]
+changed: [MOB-51]
+changed: [ROB-831]
+changed: [ROB-834]
+changed: [ROB-836]
+changed: [ROB-832]
+changed: [TSK-1]
+changed: [TSK-4]
+changed: [TSK-5]
+changed: [TSK-2]
+changed: [TSK-6]
+changed: [TSK-7]
+changed: [TSK-8]
+changed: [TSK-9]
+changed: [TSK-10]
+changed: [TSK-11]
+changed: [WOG-9]
+changed: [WOG-10]
+changed: [TSK-13]
+changed: [WOG-11]
+changed: [MAC-15]
+changed: [WOG-22]
+changed: [WOG-30]
+changed: [WOG-41]
+changed: [MST-2]
+changed: [WOG-40]
+changed: [WOG-44]
+changed: [WOG-46]
+changed: [WOG-45]
+
+TASK [removing files] **************************************************************************************************************
+changed: [CO-1]
+changed: [HZ-1]
+changed: [FH-2]
+changed: [ROB-253]
+changed: [ROB-84]
+changed: [1and1-1]
+changed: [SAY-5]
+changed: [SAY-3]
+changed: [ROB-124]
+changed: [SF-15]
+changed: [ROB-368]
+changed: [ROB-317]
+changed: [ROB-392]
+changed: [ROB-416]
+changed: [ROB-289]
+changed: [ROB-330]
+changed: [ROB-469]
+changed: [ROB-477]
+changed: [ROB-376]
+changed: [ROB-473]
+changed: [ROB-430]
+changed: [ROB-471]
+changed: [ROB-460]
+changed: [ROB-475]
+changed: [ROB-488]
+changed: [ROB-481]
+changed: [ROB-523]
+changed: [ROB-562]
+changed: [ROB-527]
+changed: [ROB-547]
+changed: [ROB-497]
+changed: [ROB-517]
+changed: [ROB-502]
+changed: [ROB-524]
+changed: [ROB-588]
+changed: [ROB-574]
+changed: [ROB-589]
+changed: [ROB-612]
+changed: [ROB-613]
+changed: [ROB-618]
+changed: [ROB-597]
+changed: [ROB-621]
+changed: [ROB-601]
+changed: [ROB-602]
+changed: [ROB-608]
+changed: [ROB-622]
+changed: [ROB-648]
+changed: [ROB-624]
+changed: [ROB-663]
+changed: [ROB-675]
+changed: [ROB-644]
+changed: [ROB-655]
+changed: [ROB-672]
+changed: [ROB-658]
+changed: [ROB-674]
+changed: [ROB-681]
+changed: [ROB-688]
+changed: [ROB-683]
+changed: [ROB-678]
+changed: [ROB-701]
+changed: [ROB-705]
+changed: [ROB-703]
+changed: [ROB-693]
+changed: [ROB-691]
+changed: [ROB-716]
+changed: [ROB-709]
+changed: [ROB-715]
+changed: [ROB-731]
+changed: [ROB-714]
+changed: [ROB-719]
+changed: [ROB-725]
+changed: [ROB-706]
+changed: [ROB-735]
+changed: [ROB-737]
+changed: [ROB-740]
+changed: [ROB-736]
+changed: [ROB-744]
+changed: [ROB-749]
+changed: [ROB-747]
+changed: [ROB-753]
+changed: [ROB-751]
+changed: [ROB-758]
+changed: [ROB-756]
+changed: [ROB-752]
+changed: [ROB-766]
+changed: [ROB-763]
+changed: [ROB-770]
+changed: [ROB-759]
+changed: [ROB-772]
+changed: [ROB-773]
+changed: [ROB-765]
+changed: [ROB-769]
+changed: [ROB-784]
+changed: [MOB-45]
+changed: [ROB-785]
+changed: [MOB-48]
+changed: [ROB-779]
+changed: [ROB-782]
+changed: [MOB-46]
+changed: [ROB-783]
+changed: [ROB-786]
+changed: [ROB-790]
+changed: [ROB-787]
+changed: [ROB-792]
+changed: [ROB-800]
+changed: [ROB-799]
+changed: [ROB-802]
+changed: [ROB-795]
+changed: [ROB-805]
+changed: [ROB-808]
+changed: [ROB-803]
+changed: [ROB-812]
+changed: [ROB-807]
+changed: [ROB-813]
+changed: [ROB-814]
+changed: [ROB-815]
+changed: [ROB-811]
+changed: [ROB-810]
+changed: [MOB-49]
+changed: [ROB-817]
+changed: [ROB-821]
+changed: [ROB-819]
+changed: [ROB-816]
+changed: [ROB-818]
+changed: [MOB-50]
+changed: [ROB-823]
+changed: [ROB-822]
+changed: [ROB-820]
+changed: [ROB-824]
+changed: [ROB-826]
+changed: [ROB-825]
+changed: [ROB-830]
+changed: [ROB-833]
+changed: [ROB-827]
+changed: [ROB-829]
+changed: [ROB-828]
+changed: [ROB-831]
+changed: [MOB-51]
+changed: [ROB-834]
+changed: [ROB-836]
+changed: [ROB-832]
+changed: [TSK-1]
+changed: [TSK-2]
+changed: [TSK-4]
+changed: [TSK-5]
+changed: [TSK-6]
+changed: [TSK-8]
+changed: [TSK-7]
+changed: [TSK-11]
+changed: [TSK-9]
+changed: [TSK-10]
+changed: [TSK-13]
+changed: [WOG-9]
+changed: [WOG-10]
+changed: [WOG-11]
+changed: [MAC-15]
+changed: [WOG-30]
+changed: [MST-2]
+changed: [WOG-41]
+changed: [WOG-40]
+changed: [WOG-22]
+changed: [WOG-44]
+changed: [WOG-45]
+changed: [WOG-46]
+
+TASK [removing files] **************************************************************************************************************
+changed: [HZ-1]
+changed: [ROB-253]
+changed: [CO-1]
+fatal: [ROB-84]: FAILED! => {"changed": true, "cmd": "rm -rf /var/www/Maildynamix/cron/cron_mailing.php", "delta": "0:00:00.042368", "end": "2020-02-14 03:02:00.410935", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 03:02:00.368567", "stderr": "rm: cannot remove `/var/www/Maildynamix/cron/cron_mailing.php': Permission denied", "stderr_lines": ["rm: cannot remove `/var/www/Maildynamix/cron/cron_mailing.php': Permission denied"], "stdout": "", "stdout_lines": []}
+changed: [SAY-3]
+changed: [1and1-1]
+changed: [SAY-5]
+changed: [ROB-124]
+fatal: [FH-2]: FAILED! => {"changed": true, "cmd": "rm -rf /var/www/Maildynamix/cron/cron_mailing.php", "delta": "0:00:01.004501", "end": "2020-02-14 02:42:52.514295", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:42:51.509794", "stderr": "rm: cannot remove `/var/www/Maildynamix/cron/cron_mailing.php': Permission denied", "stderr_lines": ["rm: cannot remove `/var/www/Maildynamix/cron/cron_mailing.php': Permission denied"], "stdout": "", "stdout_lines": []}
+fatal: [SF-15]: FAILED! => {"changed": true, "cmd": "rm -rf /var/www/Maildynamix/cron/cron_mailing.php", "delta": "0:00:00.017975", "end": "2020-02-14 02:42:52.611964", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:42:52.593989", "stderr": "rm: cannot remove `/var/www/Maildynamix/cron/cron_mailing.php': Permission denied", "stderr_lines": ["rm: cannot remove `/var/www/Maildynamix/cron/cron_mailing.php': Permission denied"], "stdout": "", "stdout_lines": []}
+changed: [ROB-317]
+changed: [ROB-368]
+changed: [ROB-289]
+changed: [ROB-416]
+changed: [ROB-392]
+changed: [ROB-330]
+changed: [ROB-469]
+changed: [ROB-477]
+changed: [ROB-376]
+changed: [ROB-430]
+changed: [ROB-460]
+changed: [ROB-473]
+changed: [ROB-475]
+changed: [ROB-471]
+changed: [ROB-488]
+changed: [ROB-481]
+changed: [ROB-523]
+changed: [ROB-562]
+changed: [ROB-527]
+changed: [ROB-502]
+changed: [ROB-547]
+changed: [ROB-497]
+changed: [ROB-517]
+changed: [ROB-588]
+changed: [ROB-524]
+changed: [ROB-574]
+changed: [ROB-612]
+changed: [ROB-589]
+changed: [ROB-613]
+changed: [ROB-618]
+changed: [ROB-597]
+changed: [ROB-621]
+changed: [ROB-602]
+changed: [ROB-608]
+changed: [ROB-601]
+changed: [ROB-648]
+changed: [ROB-622]
+changed: [ROB-624]
+changed: [ROB-655]
+changed: [ROB-675]
+changed: [ROB-663]
+changed: [ROB-644]
+changed: [ROB-672]
+changed: [ROB-674]
+changed: [ROB-658]
+changed: [ROB-681]
+changed: [ROB-678]
+changed: [ROB-688]
+changed: [ROB-683]
+changed: [ROB-703]
+changed: [ROB-705]
+changed: [ROB-693]
+changed: [ROB-691]
+changed: [ROB-701]
+changed: [ROB-716]
+changed: [ROB-709]
+changed: [ROB-715]
+changed: [ROB-714]
+changed: [ROB-731]
+changed: [ROB-719]
+changed: [ROB-725]
+changed: [ROB-706]
+changed: [ROB-737]
+changed: [ROB-735]
+changed: [ROB-740]
+changed: [ROB-744]
+changed: [ROB-749]
+changed: [ROB-753]
+changed: [ROB-736]
+changed: [ROB-747]
+changed: [ROB-751]
+changed: [ROB-758]
+changed: [ROB-756]
+changed: [ROB-752]
+changed: [ROB-766]
+changed: [ROB-770]
+changed: [ROB-763]
+changed: [ROB-772]
+changed: [ROB-759]
+changed: [ROB-773]
+changed: [ROB-765]
+changed: [ROB-769]
+changed: [ROB-779]
+changed: [MOB-46]
+changed: [ROB-785]
+changed: [MOB-45]
+changed: [ROB-784]
+changed: [ROB-782]
+changed: [MOB-48]
+changed: [ROB-783]
+changed: [ROB-787]
+changed: [ROB-786]
+changed: [ROB-790]
+changed: [ROB-792]
+changed: [ROB-799]
+changed: [ROB-800]
+changed: [ROB-802]
+changed: [ROB-795]
+changed: [ROB-808]
+changed: [ROB-805]
+changed: [ROB-803]
+changed: [ROB-812]
+changed: [ROB-813]
+changed: [ROB-807]
+changed: [ROB-814]
+changed: [ROB-810]
+changed: [ROB-815]
+changed: [ROB-811]
+changed: [MOB-49]
+changed: [ROB-817]
+changed: [ROB-816]
+changed: [ROB-819]
+changed: [ROB-821]
+changed: [MOB-50]
+changed: [ROB-818]
+changed: [ROB-822]
+changed: [ROB-820]
+changed: [ROB-823]
+changed: [ROB-824]
+changed: [ROB-826]
+changed: [ROB-825]
+changed: [ROB-830]
+changed: [ROB-827]
+changed: [ROB-828]
+changed: [ROB-833]
+changed: [ROB-829]
+changed: [ROB-831]
+changed: [MOB-51]
+changed: [ROB-836]
+changed: [ROB-834]
+changed: [ROB-832]
+changed: [TSK-1]
+changed: [TSK-2]
+changed: [TSK-4]
+changed: [TSK-5]
+changed: [TSK-6]
+changed: [TSK-8]
+changed: [TSK-7]
+changed: [TSK-9]
+changed: [TSK-10]
+changed: [TSK-11]
+changed: [WOG-9]
+changed: [WOG-10]
+changed: [WOG-11]
+changed: [TSK-13]
+changed: [MAC-15]
+changed: [WOG-30]
+changed: [MST-2]
+changed: [WOG-41]
+changed: [WOG-40]
+changed: [WOG-22]
+changed: [WOG-45]
+changed: [WOG-44]
+changed: [WOG-46]
+
+TASK [Updating from url] ***********************************************************************************************************
+changed: [CO-1] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [HZ-1] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-253] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-317] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+failed: [ROB-124] (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'}) => {"changed": false, "item": {"dest": "/var/www/cgi-bin/main_server_config.txt", "url": "http://hz-1.maildynamix.com/main_server_config.txt"}, "msg": "Destination /var/www/cgi-bin is not writable"}
+changed: [1and1-1] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [HZ-1] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [SAY-3] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [CO-1] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-253] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-330] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-289] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [SAY-5] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-317] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [HZ-1] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [CO-1] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-253] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-124] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [SAY-3] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [1and1-1] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-330] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-289] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-317] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [SAY-5] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-392] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+failed: [ROB-368] (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'}) => {"changed": false, "item": {"dest": "/var/www/cgi-bin/main_server_config.txt", "url": "http://hz-1.maildynamix.com/main_server_config.txt"}, "msg": "Destination /var/www/cgi-bin is not writable"}
+changed: [ROB-416] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-124] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-376] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-392] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [SAY-3] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-368] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-330] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [1and1-1] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-289] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [SAY-5] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-416] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-392] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-368] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-469] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-376] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-477] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-473] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-416] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-475] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-477] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-471] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-430] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-460] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-473] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-469] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-477] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-475] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-488] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-481] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-376] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-473] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-469] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-471] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-475] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-488] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-460] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-430] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-481] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-523] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-497] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-488] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-471] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-502] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-460] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-430] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-517] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-523] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-481] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-524] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-527] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-497] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-547] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-523] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-562] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-588] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-502] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-517] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-527] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-524] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-562] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-547] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-574] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-588] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-497] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-589] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-527] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-562] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-502] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-588] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-547] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-517] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-524] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-574] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-589] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-597] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-612] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-618] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-613] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-621] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-601] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-602] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-608] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-574] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-612] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-589] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-618] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-613] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-621] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-597] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-612] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-621] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-618] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-601] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-613] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-602] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-608] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-597] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-622] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-624] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-648] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-601] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-602] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-655] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-608] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-644] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-648] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-658] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-624] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-622] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-663] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-675] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-655] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-648] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-644] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-672] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-663] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-658] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-624] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-675] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-622] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-655] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-674] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-678] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-675] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-644] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-672] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-663] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-681] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-683] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-658] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-688] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-681] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-678] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-674] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-683] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-672] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-703] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-688] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+failed: [ROB-693] (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'}) => {"changed": false, "item": {"dest": "/var/www/cgi-bin/main_server_config.txt", "url": "http://hz-1.maildynamix.com/main_server_config.txt"}, "msg": "Destination /var/www/cgi-bin is not writable"}
+changed: [ROB-681] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-691] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-678] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-683] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-703] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-688] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-705] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-701] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-674] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-693] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-703] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-705] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-691] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-716] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+failed: [ROB-715] (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'}) => {"changed": false, "item": {"dest": "/var/www/cgi-bin/main_server_config.txt", "url": "http://hz-1.maildynamix.com/main_server_config.txt"}, "msg": "Destination /var/www/cgi-bin is not writable"}
+changed: [ROB-705] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-709] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-693] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-714] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-706] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-701] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-719] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-716] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-691] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-715] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-731] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-725] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-716] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-709] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-719] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-714] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-731] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-715] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-706] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-701] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-725] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-719] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-735] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-731] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-709] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-714] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-737] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-736] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-725] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-740] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-744] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-735] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-737] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-749] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-706] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-740] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-747] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-751] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-744] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-736] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-749] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-737] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-740] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-735] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-744] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-752] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-753] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-749] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-747] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-751] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-736] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-753] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-756] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-758] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-751] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-747] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-752] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-763] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-759] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-758] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-765] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-756] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-766] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-753] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-770] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-758] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-769] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-766] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-763] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-752] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-756] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-759] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-770] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-765] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-772] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-766] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-773] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-769] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-763] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-770] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-772] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-773] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-759] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-765] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-772] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [MOB-45] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [MOB-46] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-769] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [MOB-48] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-773] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-779] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-782] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-784] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-785] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-783] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [MOB-45] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [MOB-46] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [MOB-48] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-779] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-782] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-786] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-785] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-784] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-787] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-783] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-785] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-779] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [MOB-45] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-784] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-782] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [MOB-48] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [MOB-46] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-786] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-787] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-790] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-783] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-792] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-799] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-800] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-802] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-786] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-795] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-790] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-792] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-799] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-787] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-800] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-803] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-802] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-790] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-799] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-792] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-805] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-795] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-800] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-808] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-802] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-807] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-803] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-812] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-808] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-795] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-805] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-813] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-810] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-814] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-811] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-812] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-808] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-807] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-814] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-803] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-815] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-813] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-812] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-810] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-805] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-811] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-814] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-815] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [MOB-49] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-807] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-813] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-816] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-817] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-810] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [MOB-49] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-815] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-811] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-817] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [MOB-50] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-818] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [MOB-49] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-816] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-821] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-819] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-817] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-820] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-822] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-821] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-823] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-818] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-819] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [MOB-50] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-816] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-824] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-821] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-820] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-822] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-819] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-823] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-825] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-818] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [MOB-50] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-826] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-824] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-822] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-820] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-823] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-825] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-827] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-826] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-830] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-829] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-828] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-824] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-826] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-830] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-833] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-831] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-829] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-825] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-827] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-828] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-830] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-832] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [MOB-51] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-833] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-834] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-836] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-829] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-831] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [MOB-51] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-827] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-834] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-833] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-828] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-836] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [ROB-832] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [TSK-1] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [MOB-51] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-834] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-831] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [ROB-836] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [TSK-2] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [TSK-4] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [ROB-832] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [TSK-5] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [TSK-6] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [TSK-1] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [TSK-7] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [TSK-8] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [TSK-2] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [TSK-10] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [TSK-4] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [TSK-6] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [TSK-5] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [TSK-1] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [TSK-9] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [TSK-11] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [TSK-7] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [TSK-8] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [TSK-2] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [TSK-10] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [TSK-4] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [TSK-6] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [TSK-5] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [TSK-9] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [TSK-11] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [TSK-13] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [TSK-8] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [TSK-7] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [WOG-9] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [TSK-10] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [WOG-10] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [WOG-11] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [WOG-22] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [TSK-9] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [TSK-13] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [TSK-11] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [MAC-15] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [WOG-30] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [WOG-9] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [WOG-10] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [WOG-11] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [WOG-40] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [WOG-22] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [TSK-13] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [MAC-15] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [WOG-30] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [WOG-41] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [MST-2] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [WOG-9] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [WOG-10] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [WOG-11] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [WOG-40] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [MAC-15] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [WOG-30] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [MST-2] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [WOG-41] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [WOG-44] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [WOG-22] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [WOG-45] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [WOG-46] => (item={u'url': u'http://hz-1.maildynamix.com/main_server_config.txt', u'dest': u'/var/www/cgi-bin/main_server_config.txt'})
+changed: [WOG-40] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [MST-2] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [WOG-41] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [WOG-44] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [WOG-45] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [WOG-46] => (item={u'url': u'http://hz-1.maildynamix.com/user_defined.txt', u'dest': u'/var/www/Maildynamix/V2/user_defined.php'})
+changed: [WOG-44] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [WOG-45] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+changed: [WOG-46] => (item={u'url': u'http://hz-1.maildynamix.com/cron_mailing.txt', u'dest': u'/var/www/Maildynamix/cron/cron_mailing.php'})
+
+TASK [Updating dest:/var/www/Maildynamix/V2/ src:/var/www/missing_sent_update.php] *************************************************
+changed: [HZ-1]
+changed: [CO-1]
+changed: [ROB-253]
+changed: [ROB-317]
+changed: [ROB-376]
+changed: [ROB-289]
+changed: [ROB-330]
+changed: [SAY-3]
+changed: [SAY-5]
+changed: [1and1-1]
+changed: [ROB-392]
+changed: [ROB-416]
+ok: [ROB-477]
+changed: [ROB-475]
+changed: [ROB-430]
+changed: [ROB-473]
+changed: [ROB-469]
+changed: [ROB-488]
+changed: [ROB-460]
+changed: [ROB-471]
+changed: [ROB-481]
+changed: [ROB-497]
+changed: [ROB-523]
+changed: [ROB-527]
+changed: [ROB-502]
+changed: [ROB-562]
+changed: [ROB-547]
+changed: [ROB-588]
+changed: [ROB-517]
+changed: [ROB-524]
+changed: [ROB-574]
+changed: [ROB-589]
+changed: [ROB-612]
+changed: [ROB-613]
+changed: [ROB-597]
+ok: [ROB-621]
+changed: [ROB-618]
+changed: [ROB-601]
+changed: [ROB-608]
+changed: [ROB-602]
+changed: [ROB-648]
+ok: [ROB-622]
+changed: [ROB-675]
+changed: [ROB-663]
+changed: [ROB-644]
+changed: [ROB-655]
+changed: [ROB-624]
+changed: [ROB-672]
+changed: [ROB-658]
+changed: [ROB-674]
+changed: [ROB-681]
+changed: [ROB-688]
+changed: [ROB-678]
+changed: [ROB-683]
+changed: [ROB-701]
+changed: [ROB-705]
+changed: [ROB-703]
+changed: [ROB-691]
+changed: [ROB-716]
+changed: [ROB-719]
+changed: [ROB-731]
+changed: [ROB-709]
+changed: [ROB-714]
+changed: [ROB-725]
+changed: [ROB-706]
+changed: [ROB-737]
+changed: [ROB-735]
+changed: [ROB-736]
+changed: [ROB-740]
+changed: [ROB-744]
+changed: [ROB-749]
+changed: [ROB-747]
+changed: [ROB-751]
+changed: [ROB-753]
+changed: [ROB-758]
+changed: [ROB-752]
+changed: [ROB-756]
+changed: [ROB-766]
+changed: [ROB-763]
+changed: [ROB-770]
+changed: [ROB-772]
+changed: [ROB-759]
+changed: [ROB-769]
+changed: [ROB-773]
+changed: [ROB-765]
+changed: [MOB-48]
+changed: [ROB-784]
+changed: [MOB-45]
+changed: [ROB-779]
+changed: [ROB-785]
+changed: [MOB-46]
+changed: [ROB-782]
+changed: [ROB-783]
+changed: [ROB-786]
+changed: [ROB-787]
+changed: [ROB-790]
+changed: [ROB-800]
+changed: [ROB-799]
+changed: [ROB-792]
+changed: [ROB-802]
+changed: [ROB-795]
+changed: [ROB-808]
+changed: [ROB-803]
+changed: [ROB-805]
+changed: [ROB-812]
+changed: [ROB-813]
+changed: [ROB-807]
+changed: [ROB-814]
+changed: [ROB-815]
+changed: [ROB-810]
+changed: [MOB-49]
+changed: [ROB-811]
+changed: [ROB-817]
+changed: [ROB-819]
+changed: [ROB-821]
+changed: [ROB-816]
+changed: [MOB-50]
+changed: [ROB-818]
+changed: [ROB-820]
+changed: [ROB-822]
+changed: [ROB-823]
+changed: [ROB-824]
+changed: [ROB-826]
+changed: [ROB-830]
+changed: [ROB-825]
+changed: [ROB-829]
+changed: [ROB-827]
+changed: [ROB-828]
+changed: [ROB-833]
+changed: [MOB-51]
+changed: [ROB-834]
+changed: [ROB-831]
+changed: [ROB-836]
+changed: [ROB-832]
+changed: [TSK-1]
+changed: [TSK-2]
+changed: [TSK-4]
+changed: [TSK-5]
+changed: [TSK-6]
+changed: [TSK-8]
+changed: [TSK-7]
+changed: [TSK-9]
+changed: [TSK-10]
+changed: [TSK-11]
+changed: [WOG-9]
+changed: [TSK-13]
+changed: [WOG-10]
+changed: [WOG-11]
+changed: [MAC-15]
+changed: [WOG-30]
+changed: [WOG-22]
+changed: [WOG-40]
+changed: [WOG-41]
+changed: [MST-2]
+changed: [WOG-44]
+changed: [WOG-45]
+changed: [WOG-46]
+
+TASK [moving backuped files using linux command php.*] *****************************************************************************
+fatal: [HZ-1]: FAILED! => {"changed": true, "cmd": "mysql -u root -p'cubesphpmyadmin' maildynamix < /tmp/mysql_update_13_02_2020.sql", "delta": "0:00:00.008526", "end": "2020-02-14 02:56:42.166894", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:56:42.158368", "stderr": "ERROR 1050 (42S01) at line 2: Table 'md_sent' already exists", "stderr_lines": ["ERROR 1050 (42S01) at line 2: Table 'md_sent' already exists"], "stdout": "", "stdout_lines": []}
+changed: [ROB-253]
+changed: [CO-1]
+changed: [ROB-317]
+fatal: [1and1-1]: FAILED! => {"changed": true, "cmd": "mysql -u root -p'cubesphpmyadmin' maildynamix < /tmp/mysql_update_13_02_2020.sql", "delta": "0:00:00.030123", "end": "2020-02-14 02:56:45.519519", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:56:45.489396", "stderr": "mysql: [Warning] Using a password on the command line interface can be insecure.\nERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)", "stderr_lines": ["mysql: [Warning] Using a password on the command line interface can be insecure.", "ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)"], "stdout": "", "stdout_lines": []}
+changed: [SAY-5]
+changed: [ROB-376]
+changed: [SAY-3]
+changed: [ROB-330]
+changed: [ROB-392]
+changed: [ROB-289]
+changed: [ROB-416]
+fatal: [ROB-477]: FAILED! => {"changed": true, "cmd": "mysql -u root -p'cubesphpmyadmin' maildynamix < /tmp/mysql_update_13_02_2020.sql", "delta": "0:00:00.154758", "end": "2020-02-14 02:56:50.356751", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:56:50.201993", "stderr": "ERROR 1050 (42S01) at line 2: Table 'md_sent' already exists", "stderr_lines": ["ERROR 1050 (42S01) at line 2: Table 'md_sent' already exists"], "stdout": "", "stdout_lines": []}
+changed: [ROB-469]
+changed: [ROB-473]
+changed: [ROB-475]
+changed: [ROB-488]
+changed: [ROB-430]
+changed: [ROB-460]
+changed: [ROB-471]
+changed: [ROB-481]
+changed: [ROB-497]
+changed: [ROB-523]
+changed: [ROB-527]
+changed: [ROB-502]
+changed: [ROB-562]
+changed: [ROB-547]
+changed: [ROB-517]
+changed: [ROB-588]
+changed: [ROB-524]
+changed: [ROB-574]
+changed: [ROB-612]
+changed: [ROB-589]
+changed: [ROB-613]
+changed: [ROB-618]
+changed: [ROB-597]
+fatal: [ROB-621]: FAILED! => {"changed": true, "cmd": "mysql -u root -p'cubesphpmyadmin' maildynamix < /tmp/mysql_update_13_02_2020.sql", "delta": "0:00:00.008117", "end": "2020-02-14 02:57:10.238398", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:57:10.230281", "stderr": "ERROR 1050 (42S01) at line 2: Table 'md_sent' already exists", "stderr_lines": ["ERROR 1050 (42S01) at line 2: Table 'md_sent' already exists"], "stdout": "", "stdout_lines": []}
+changed: [ROB-608]
+changed: [ROB-601]
+changed: [ROB-602]
+changed: [ROB-648]
+changed: [ROB-663]
+fatal: [ROB-622]: FAILED! => {"changed": true, "cmd": "mysql -u root -p'cubesphpmyadmin' maildynamix < /tmp/mysql_update_13_02_2020.sql", "delta": "0:00:00.004693", "end": "2020-02-14 02:57:17.304611", "msg": "non-zero return code", "rc": 1, "start": "2020-02-14 02:57:17.299918", "stderr": "ERROR 1050 (42S01) at line 2: Table 'md_sent' already exists", "stderr_lines": ["ERROR 1050 (42S01) at line 2: Table 'md_sent' already exists"], "stdout": "", "stdout_lines": []}
+changed: [ROB-675]
+changed: [ROB-624]
+changed: [ROB-655]
+changed: [ROB-644]
+changed: [ROB-658]
+changed: [ROB-674]
+changed: [ROB-672]
+changed: [ROB-681]
+changed: [ROB-688]
+changed: [ROB-678]
+changed: [ROB-683]
+changed: [ROB-703]
+changed: [ROB-705]
+changed: [ROB-691]
+changed: [ROB-716]
+changed: [ROB-701]
+changed: [ROB-709]
+changed: [ROB-719]
+changed: [ROB-731]
+changed: [ROB-725]
+changed: [ROB-714]
+changed: [ROB-735]
+changed: [ROB-706]
+changed: [ROB-737]
+changed: [ROB-740]
+changed: [ROB-744]
+changed: [ROB-749]
+changed: [ROB-747]
+changed: [ROB-736]
+changed: [ROB-751]
+changed: [ROB-753]
+changed: [ROB-758]
+changed: [ROB-756]
+changed: [ROB-766]
+changed: [ROB-770]
+changed: [ROB-752]
+changed: [ROB-763]
+changed: [ROB-772]
+changed: [ROB-769]
+changed: [ROB-759]
+changed: [ROB-765]
+changed: [ROB-773]
+changed: [MOB-45]
+changed: [ROB-785]
+changed: [ROB-784]
+changed: [ROB-782]
+changed: [MOB-46]
+changed: [ROB-783]
+changed: [ROB-779]
+changed: [MOB-48]
+changed: [ROB-786]
+changed: [ROB-787]
+changed: [ROB-790]
+changed: [ROB-792]
+changed: [ROB-800]
+changed: [ROB-799]
+changed: [ROB-802]
+changed: [ROB-795]
+changed: [ROB-808]
+changed: [ROB-805]
+changed: [ROB-803]
+changed: [ROB-807]
+changed: [ROB-812]
+changed: [ROB-813]
+changed: [ROB-814]
+changed: [ROB-815]
+changed: [ROB-810]
+changed: [ROB-811]
+changed: [MOB-49]
+changed: [ROB-817]
+changed: [ROB-821]
+changed: [ROB-816]
+changed: [ROB-819]
+changed: [MOB-50]
+changed: [ROB-818]
+changed: [ROB-823]
+changed: [ROB-822]
+changed: [ROB-820]
+changed: [ROB-824]
+changed: [ROB-826]
+changed: [ROB-825]
+changed: [ROB-830]
+changed: [ROB-829]
+changed: [ROB-827]
+changed: [ROB-828]
+changed: [ROB-833]
+changed: [ROB-831]
+changed: [MOB-51]
+changed: [ROB-834]
+changed: [ROB-836]
+changed: [ROB-832]
+changed: [TSK-1]
+changed: [TSK-2]
+changed: [TSK-4]
+changed: [TSK-5]
+changed: [TSK-6]
+changed: [TSK-7]
+changed: [TSK-8]
+changed: [TSK-10]
+changed: [TSK-9]
+changed: [TSK-11]
+changed: [WOG-9]
+changed: [TSK-13]
+changed: [WOG-10]
+changed: [WOG-11]
+changed: [WOG-22]
+changed: [MAC-15]
+changed: [WOG-30]
+changed: [MST-2]
+changed: [WOG-40]
+changed: [WOG-41]
+changed: [WOG-44]
+changed: [WOG-46]
+changed: [WOG-45]
+	to retry, use: --limit @/etc/ansible/project/cpy/update_14_02_2020.retry
+
+PLAY RECAP *************************************************************************************************************************
+1and1-1                    : ok=7    changed=7    unreachable=0    failed=1   
+CO-1                       : ok=8    changed=8    unreachable=0    failed=0   
+FH-2                       : ok=4    changed=4    unreachable=0    failed=1   
+HZ-1                       : ok=7    changed=7    unreachable=0    failed=1   
+MAC-15                     : ok=8    changed=8    unreachable=0    failed=0   
+MAC-6                      : ok=0    changed=0    unreachable=0    failed=1   
+MOB-45                     : ok=8    changed=8    unreachable=0    failed=0   
+MOB-46                     : ok=8    changed=8    unreachable=0    failed=0   
+MOB-48                     : ok=8    changed=8    unreachable=0    failed=0   
+MOB-49                     : ok=8    changed=8    unreachable=0    failed=0   
+MOB-50                     : ok=8    changed=8    unreachable=0    failed=0   
+MOB-51                     : ok=8    changed=8    unreachable=0    failed=0   
+MST-2                      : ok=8    changed=8    unreachable=0    failed=0   
+ROB-102                    : ok=0    changed=0    unreachable=0    failed=1   
+ROB-124                    : ok=5    changed=5    unreachable=0    failed=1   
+ROB-128                    : ok=0    changed=0    unreachable=0    failed=1   
+ROB-16                     : ok=0    changed=0    unreachable=0    failed=1   
+ROB-253                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-289                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-317                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-330                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-368                    : ok=5    changed=5    unreachable=0    failed=1   
+ROB-376                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-392                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-416                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-430                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-444                    : ok=1    changed=1    unreachable=1    failed=0   
+ROB-460                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-469                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-471                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-473                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-475                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-477                    : ok=7    changed=6    unreachable=0    failed=1   
+ROB-481                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-488                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-497                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-502                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-517                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-523                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-524                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-527                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-547                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-562                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-574                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-588                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-589                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-597                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-601                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-602                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-608                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-612                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-613                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-618                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-621                    : ok=7    changed=6    unreachable=0    failed=1   
+ROB-622                    : ok=7    changed=6    unreachable=0    failed=1   
+ROB-623                    : ok=0    changed=0    unreachable=1    failed=0   
+ROB-624                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-644                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-648                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-655                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-658                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-663                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-672                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-674                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-675                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-678                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-681                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-683                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-688                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-691                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-693                    : ok=5    changed=5    unreachable=0    failed=1   
+ROB-701                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-703                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-705                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-706                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-709                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-714                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-715                    : ok=5    changed=5    unreachable=0    failed=1   
+ROB-716                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-717                    : ok=0    changed=0    unreachable=0    failed=1   
+ROB-719                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-725                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-731                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-735                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-736                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-737                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-740                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-744                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-747                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-748                    : ok=0    changed=0    unreachable=1    failed=0   
+ROB-749                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-751                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-752                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-753                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-756                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-758                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-759                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-763                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-765                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-766                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-769                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-770                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-772                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-773                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-779                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-782                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-783                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-784                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-785                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-786                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-787                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-790                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-792                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-795                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-799                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-800                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-802                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-803                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-805                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-807                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-808                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-810                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-811                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-812                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-813                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-814                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-815                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-816                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-817                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-818                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-819                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-820                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-821                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-822                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-823                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-824                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-825                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-826                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-827                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-828                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-829                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-830                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-831                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-832                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-833                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-834                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-836                    : ok=8    changed=8    unreachable=0    failed=0   
+ROB-84                     : ok=4    changed=4    unreachable=0    failed=1   
+SAY-3                      : ok=8    changed=8    unreachable=0    failed=0   
+SAY-5                      : ok=8    changed=8    unreachable=0    failed=0   
+SF-15                      : ok=4    changed=4    unreachable=0    failed=1   
+TSK-1                      : ok=8    changed=8    unreachable=0    failed=0   
+TSK-10                     : ok=8    changed=8    unreachable=0    failed=0   
+TSK-11                     : ok=8    changed=8    unreachable=0    failed=0   
+TSK-12                     : ok=0    changed=0    unreachable=0    failed=1   
+TSK-13                     : ok=8    changed=8    unreachable=0    failed=0   
+TSK-2                      : ok=8    changed=8    unreachable=0    failed=0   
+TSK-4                      : ok=8    changed=8    unreachable=0    failed=0   
+TSK-5                      : ok=8    changed=8    unreachable=0    failed=0   
+TSK-6                      : ok=8    changed=8    unreachable=0    failed=0   
+TSK-7                      : ok=8    changed=8    unreachable=0    failed=0   
+TSK-8                      : ok=8    changed=8    unreachable=0    failed=0   
+TSK-9                      : ok=8    changed=8    unreachable=0    failed=0   
+TVS-2                      : ok=0    changed=0    unreachable=1    failed=0   
+WOG-10                     : ok=8    changed=8    unreachable=0    failed=0   
+WOG-11                     : ok=8    changed=8    unreachable=0    failed=0   
+WOG-14                     : ok=0    changed=0    unreachable=0    failed=1   
+WOG-15                     : ok=0    changed=0    unreachable=0    failed=1   
+WOG-17                     : ok=0    changed=0    unreachable=0    failed=1   
+WOG-22                     : ok=8    changed=8    unreachable=0    failed=0   
+WOG-30                     : ok=8    changed=8    unreachable=0    failed=0   
+WOG-31                     : ok=0    changed=0    unreachable=1    failed=0   
+WOG-40                     : ok=8    changed=8    unreachable=0    failed=0   
+WOG-41                     : ok=8    changed=8    unreachable=0    failed=0   
+WOG-44                     : ok=8    changed=8    unreachable=0    failed=0   
+WOG-45                     : ok=8    changed=8    unreachable=0    failed=0   
+WOG-46                     : ok=8    changed=8    unreachable=0    failed=0   
+WOG-9                      : ok=8    changed=8    unreachable=0    failed=0   
+

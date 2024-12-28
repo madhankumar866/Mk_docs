@@ -1,0 +1,4 @@
+aws image 
+
+
+CentOS Linux 6 x86_64 HVM EBS 1602

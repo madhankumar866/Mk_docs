@@ -1,0 +1,16 @@
+<VirtualHost *:80>
+DocumentRoot /data/sites/test.gosschips.com
+ServerName test.gosschips.com
+ServerAlias test.gosschips.com
+ErrorLog /data/logs/test.gosschips.com_errorlog
+CustomLog /data/logs/test.gosschips.com_accesslog common
+<Directory /data/sites/test.gosschips.com>
+allow from all
+Options -Indexes
+AcceptPathInfo On
+AllowOverride All
+RewriteEngine On
+RewriteBase /
+</Directory>
+</VirtualHost>
+

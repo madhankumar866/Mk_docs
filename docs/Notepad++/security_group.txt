@@ -1,0 +1,100 @@
+import boto3
+from botocore.exceptions import ClientError
+
+def securitygroup(ec2_client):
+    sg_name = 'gxl'
+    sg_desc = 'Created For gxl'
+
+    response = ec2_client.describe_managed_prefix_lists(Filters=[{'Name': 'prefix-list-name', 'Values': ['gxl']}])
+    # assuming there is only one prefix list with name 'gxl', otherwise you can loop through response['PrefixLists']
+
+    prefix_list_id = response['PrefixLists'][0]['PrefixListId']
+    print(prefix_list_id)
+
+    try:
+        # create the security group
+        response = ec2_client.create_security_group(GroupName=sg_name, Description=sg_desc)
+        security_group_id = response['GroupId']
+        print('Security Group Created %s' % security_group_id)
+
+        # add inbound rules to the security group
+        data = ec2_client.authorize_security_group_ingress(
+            GroupId=security_group_id,
+            IpPermissions=[
+                {'IpProtocol': 'tcp',
+                 'FromPort': 80,
+                 'ToPort': 80,
+                 'IpRanges': [{'CidrIp': '0.0.0.0/0'}]},
+                {'IpProtocol': 'tcp',
+                 'FromPort': 995,
+                 'ToPort': 995,
+                 'IpRanges': [{'CidrIp': '0.0.0.0/0'}]},
+                {'IpProtocol': 'ICMP',
+                 'FromPort': -1,
+                 'ToPort': -1,
+                 'IpRanges': [{'CidrIp': '0.0.0.0/0'}]},
+                {'FromPort': 22,
+                 'IpProtocol': 'tcp',
+                 'ToPort': 22,
+                 'UserIdGroupPairs': [{'Description': 'HTTP access from other instances', 'GroupId': security_group_id}],
+                 'PrefixListIds': [{'PrefixListId': prefix_list_id, 'Description': 'gxl_ips'}]
+                },
+                {'FromPort': 8788,
+                 'IpProtocol': 'tcp',
+                 'ToPort': 8788,
+                 'UserIdGroupPairs': [{'Description': 'HTTP access from other instances', 'GroupId': security_group_id}],
+                 'PrefixListIds': [{'PrefixListId': prefix_list_id, 'Description': 'gxl_ips'}]
+                }
+            ]
+        )
+
+        print('Ingress Successfully Set %s' % data)
+
+    except ClientError as e:
+        if e.response['Error']['Code'] == 'InvalidGroup.Duplicate':
+            # if the error is caused by a duplicate group name, print an appropriate message and return the existing security group ID
+            print(f"A security group with the name '{sg_name}' already exists.")
+            existing_sgs = ec2_client.describe_security_groups(GroupNames=[sg_name])['SecurityGroups']
+            security_group_id = existing_sgs[0]['GroupId']
+
+        else:
+            # if the error is caused by another reason, print the error message
+            print(e)
+
+    print("Checking for updates to add to the security group...")
+
+    # list current inbound rules for the security group
+    ip_permissions = ec2_client.describe_security_groups(GroupNames=[sg_name])['SecurityGroups'][0]['IpPermissions']
+
+    # get the current cidr ranges
+    current_cidrs = []
+    for rule in ip_permissions:
+        if 'IpRanges' in rule:
+            for cidr in rule['IpRanges']:
+                current_cidrs.append(cidr['CidrIp'])
+
+    # get the new cidr ranges
+    new_cidrs = ['1.2.3.4/32', '5.6.7.8/24'] # replace with the actual list of new cidrs
+
+    # check if any new cidrs have been added
+    new_entries = set(new_cidrs) - set(current_cidrs)
+
+    if len(new_entries) == 0:
+        print("No new entries to add to the security group.")
+    else:
+        print(f"Adding {len(new_entries)} new entries to the security group...")
+
+        # add inbound rules for each new cidr range
+        for cidr in new_entries:
+            data = ec2_client.authorize_security_group_ingress(
+                GroupId=security_group_id,
+                IpPermissions=[
+                    {'IpProtocol': 'tcp',
+                     'FromPort': 80,
+                     'ToPort': 80,
+                     'IpRanges': [{'CidrIp': cidr}]}
+                ]
+            )
+            print(f"Ingress Successfully Set {data}")
+
+    return security_group_id

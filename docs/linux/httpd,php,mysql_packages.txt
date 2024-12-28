@@ -1,0 +1,188 @@
+
+
+
+
+    yum install -y wget
+    wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+    yum install -y epel-release-latest-6.noarch.rpm
+    yum clean all
+    yum repolist
+   
+    yum  install -y ca-certificates
+    yum install -y yum-priorities perl-DBD-MySQL
+    rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+    yum install -y  httpd httpd-devel
+    yum --enablerepo=remi install mysql mysql-server mysql-devel  -y
+    yum --enablerepo=remi install php php-mysql php-imap php-common php-gd php-mbstring php-mcrypt php-devel php-xml php-xmlrpc php-cli php-pdo php-pgsql  -y
+    service httpd status
+    service httpd start
+    chkconfig httpd on
+    service httpd status
+    service mysqld start
+    /usr/bin/mysql_secure_installation
+    service mysqld restart
+    
+     
+ 
+
+     yum --enablerepo=remi-php55 install php-common
+     yum --enablerepo=remi-php55,epel install phpmyadmin
+   
+   
+   
+To start mysqld at boot time you have to copy
+support-files/mysql.server to the right place for your system
+
+PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !
+To do so, start the server, then issue the following commands:
+
+/usr/bin/mysqladmin -u root password 'wpax9>XL'
+/usr/bin/mysqladmin -u root -h tshost1 password 'new-password'
+
+Alternatively you can run:
+/usr/bin/mysql_secure_installation
+
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+
+See the manual for more instructions.
+
+You can start the MySQL daemon with:
+cd /usr ; /usr/bin/mysqld_safe &
+
+You can test the MySQL daemon with mysql-test-run.pl
+cd /usr/mysql-test ; perl mysql-test-run.pl
+
+Please report any problems at http://bugs.mysql.com/
+
+[  OK  ]
+MySQL Daemon failed to start.
+Starting mysqld:  [FAILED]
+[root@tshost1 /]# vi /etc/my.cnf
+
+[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+
+# Settings user and group are ignored when systemd is used (fedora >= 15).
+# If you need to run mysqld under a different user or group,
+# customize your systemd unit file for mysqld according to the
+# instructions in http://fedoraproject.org/wiki/Systemd
+user=mysql
+
+# Semisynchronous Replication
+# http://dev.mysql.com/doc/refman/5.5/en/replication-semisync.html
+# uncomment next line on MASTER
+;plugin-load=rpl_semi_sync_master=semisync_master.so
+# uncomment next line on SLAVE
+;plugin-load=rpl_semi_sync_slave=semisync_slave.so
+
+# Others options for Semisynchronous Replication
+;rpl_semi_sync_master_enabled=1
+;rpl_semi_sync_master_timeout=10
+;rpl_semi_sync_slave_enabled=1
+
+# http://dev.mysql.com/doc/refman/5.5/en/performance-schema.html
+;performance_schema
+
+
+[mysqld_safe]
+log-error=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid
+
+
+#
+# include all files from the config directory
+#
+!includedir /etc/my.cnf.d
+~
+     
+   
+   
+   53  cd /etc/httpd/
+   54  ls
+   55  cd conf.d/
+   56  ls
+   57  vi phpMyAdmin.conf
+   58  vi phpMyAdmin.conf
+   59  vi phpMyAdmin.conf
+   60  service httpd restart
+   61  vi phpMyAdmin.conf
+   62  yum install nfs
+   63  yum install nfs-utils
+   64  cd /
+   65  mkdir data
+   66  df -Th
+   67  fdisk -l
+   68  mount /dev/xvdb1 /data/
+   69  mount hrlp
+   70  mount help
+   71  mount /dev/xvdb1 /data/
+   72  mkfs /dev/xvdb1
+   73  mount /dev/xvdb1 /data/
+   74  ls
+   75  cd data/
+   76  ls
+   77  df -Th
+   78  cd ..
+   79  umount /dev/xvdb1
+   80  mkfs.ext4 /dev/xvdb1
+   81  fdisk -d /dev/xvdb1
+   82  fdsik -l
+   83  fdisk -l
+   84  fdisk -l /dev/xvdb
+   85  fdisk /dev/xvdb
+   86  fdisk -l
+   87  fdisk /dev/xvdb
+   88  mkfs.etx4 /dev/xvdb1
+   89  mkfs.ext4 /dev/xvdb1
+   90  mount /dev/xvdb1 /data/
+   91  fdisk -l
+   92  df -Th
+   93  vi /etc/fstab
+   94  blkid
+   95  /dev/xvdb1: UUID="435ec838-ab00-4b0c-97ba-ff9c15c98e9b" TYPE="ext4"
+   96  vi /etc/fstab
+     chkconfig --level 35 nfs on
+     vi /etc/exports
+
+  101  df -Th
+
+  103  history
+  104  df -Th
+
+  110  service httpd status
+  
+  
+Allow from 14.98.54.90
+Allow from 202.83.25.120 
+Allow from 113.193.28.102 
+
+
+iptables -F
+service iptables stop
+service iptables save
+chkconfig iptables off
+
+sub_autoscaling_instance
+
+  
+  y<>HUgK@=4mB*+v$
+  
+  
+  ######################################################2nd##############################
+  
+  
+  
+yum  install -y ca-certificates
+yum install -y yum-priorities perl-DBD-MySQL
+rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+yum install -y  httpd httpd-devel
+yum --enablerepo=remi install mysql mysql-server mysql-devel  -y
+yum --enablerepo=remi install php php-mysql php-imap php-common php-gd php-mbstring php-mcrypt php-devel php-xml php-xmlrpc php-cli php-pdo php-pgsql  -
+

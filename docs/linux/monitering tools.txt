@@ -1,0 +1,7 @@
+monitering tools
+
+
+
+https://github.com/netdata/netdata
+https://www.tecmint.com/amplify-nginx-monitoring-tool/
+try any of these tool

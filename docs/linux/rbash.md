@@ -1,0 +1,1 @@
+[Restrict the Normal User to run only limited set of Commands](https://access.redhat.com/solutions/65822)

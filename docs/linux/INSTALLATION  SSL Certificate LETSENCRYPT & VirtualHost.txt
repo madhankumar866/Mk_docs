@@ -1,0 +1,69 @@
+INSTALLATION  SSL Certificate LETSENCRYPT & VirtualHost
+
+
+
+wget -q -O- "https://dl.eff.org/certbot-auto" >> /usr/bin/certbot-auto; 
+
+Step:2
+chmod a+x /usr/bin/certbot-auto
+
+Step:3
+ln -s /usr/bin/certbot-auto /usr/bin/certbot
+
+Step:4
+certbot certonly --standalone -d www.cashloanxpress.com 
+
+wget -O /etc/letsencrypt/live/www.cashloanxpress.com/chain.pem https://www.startssl.com/certs/sub.class1.server.ca.pem
+
+
+
+Chain Certificate for apache
+
+https://whatsmychaincert.com
+#========== Listening On 80 Port ============#
+
+<VirtualHost 139.59.0.246:80>
+ServerName triviadice.com
+ServerAlias www.triviadice.com
+Redirect permanent / https://www.triviadice.com/
+DocumentRoot /home/sites/triviadice.com
+ErrorLog /var/log/httpd/triviadice_80port_ErrorLog
+CustomLog /var/log/httpd/triviadice_80port_accesslog common
+</VirtualHost>
+
+
+#========== Listening On 443 Port ============#
+
+<VirtualHost 139.59.0.246:443>
+SSLEngine on
+SSLProtocol all -SSLv2 -SSLv3
+SSLCertificateFile  /etc/letsencrypt/live/www.triviadice.com/fullchain.pem
+SSLCertificateKeyFile  /etc/letsencrypt/live/www.triviadice.com/privkey.pem
+SSLCertificateChainFile   /etc/letsencrypt/live/www.triviadice.com/fullchain.pem
+ServerName triviadice.com
+ServerAlias www.triviadice.com
+DocumentRoot /home/sites/triviadice.com
+ErrorLog /var/log/httpd/triviadicessl_ErrorLog
+CustomLog /var/log/httpd/triviadicessl_accesslog common
+<Directory /home/sites/triviadice.com>
+DirectoryIndex index.php
+allow from all
+Options -Indexes
+AcceptPathInfo On
+AllowOverride All
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^triviadice.com$ [NC]
+RewriteRule ^(.*)$ https://www.triviadice.com/ [R=301,L]
+</Directory>
+</VirtualHost>
+Thilip • Sep 12, 11:53 AM
+
+
+
+
+
+CRON TAB COMMAND TO RENEW AUTO FOR AFTER 3 MONTHS
+
+0 0 1 */2 *  /usr/bin/certbot renew  --pre-hook "service httpd stop" --post-hook "service httpd start " --renew-hook "service  httpd restart" --quiet  >> /var/log/letsencrypt/letsencrypt.log
+

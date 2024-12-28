@@ -1,0 +1,211 @@
+site_name: MK Docs
+# site_url: https://example.com/4
+
+nav:
+    - Home                              : index.md
+    - About                             : about.md
+
+    - Selenium:
+        # - License                     : 'linux/test.md'
+        - Selenium                      : 'Selenium/Links.md'
+
+    - Kubernetes:
+        - Basics                      : 'Kubernetes/basics.md'
+
+    - linux:
+        # - License                     : 'linux/test.md'
+        - VNC Server                    : 'linux/VNC-server.md'
+        - MegaCLi                       : 'linux/Mega.cli.md'
+        - Python                        : 'linux/Python.md'
+        - screen                        : 'linux/screen.md'
+        - OpenVpn                       : 'linux/OpenVpn.md'
+        # - Commands                      : 'linux/cmds.md'
+        - Process                       : 'linux/process_moniter.md'
+        - Sftp                          : 'linux/sftp.md'
+        - AWS-Centos7                   : 'linux/aws.centos7.md'
+        - Code-Server                   : 'linux/code-server.md' 
+        - Firewalld                     : 'linux/firewalld.md'
+        - Mega-CLI                      : 'linux/Mega.cli.md'
+        - PHP-FPM                       : 'linux/php-fpm.md'
+        - Postfix                       : 'linux/posffix.md'
+        - rBash                         : 'linux/rbash.md'
+        - rsync                         : 'linux/rsync.md'
+        - Shell-Restrict                : 'linux/shell_restrict.md'
+        - SSH-Keygen                    : 'linux/ssh-keygen.md'
+        - sshd                          : 'linux/sshd.md'
+        - VNC-Server                    : 'linux/VNC-server.md'
+        
+    - Snowflake:
+        - SnowSql                       :  'Snowflake/snowsql.md'
+        - Snowqueries                   :  'Snowflake/snowqueries.md'
+        - ODBC                          :  'Snowflake/snowflake-odbc.md'
+
+    - Serverless:
+        - Installation                  : 'Serverless/Installation.md'
+        - Configure                     : 'Serverless/configure.md'
+        - Blackfire                     : 'Serverless/blackfire.md'
+        - Serverless-Patterns           : 'Serverless/Patterns.md'
+        - Lambda                        : 'Serverless/Lambda.md'
+        - Serverless-framework          : 'Serverless/Serverless-framework.md'
+        - ArchitechBlog                 : 'Serverless/ArchitechBlog.md'
+        - Patterns                      : 'Serverless/Patterns.md'
+
+    - AWS:
+        - waf-Links                     :  'AWS/waf.md'
+        - s3bucket-vpc                  :  'AWS/s3-bucket.md'
+        - DynamoDb                      :  'AWS/Dynamodb.md'
+        - Remote-EC2                    :  'AWS/remote-ec2.md'
+        - block-fake-crawler-bots.txt   :  'AWS/bot-fake-crawler-bots.md'
+        - Amazon Kinesis                :  'AWS/Amazon-Kinesis.md'
+        - mysqld                        :  'AWS/mysqld.md' 
+        - athena                        :  'AWS/Athena.md' 
+        - DMS-vpc                       :  'AWS/DMS.md' 
+        # - s3                          :  'AWS/s3.md' 
+        # - Shyaway                     :  'AWS/Shyaway.md' 
+        # - vpc                         :  'AWS/vpc.md' 
+        - Aws-well-Architech            :  'AWS/Aws-well-architech.md' 
+        - IAM                           :  'AWS/IAM.md'
+        - CICD                          :  'AWS/CI-CD.md'
+        - Amazon-Kinesis                :  'AWS/Amazon-Kinesis'
+        - Amazon-Linux                  :  'AWS/amazon-linux.md'
+        - Aws-Clean-Rooms               :  'AWS/aws_clean_rooms.md'
+        - Bot-Fake-Crawler-Bots         :  'AWS/bot-fake-crawler-bots.md'
+        - CodePipeline                  :  'AWS/codepipeline.md'
+        - Database                      :  'AWS/Databases.md'
+        - IAM                           :  'AWS/IAM.md' 
+        - Lambda                        :  'AWS/lambda.md'
+        - RDS                           :  'AWS/RDS.md'
+        - Soci                          :  'AWS/soci.md'
+        - SQS                           :  'AWS/Sqs.md'
+        - TLS-Migaration                :  'AWS/TLS-migration.md'
+        - WorkShops                     :  'AWS/workshops.md'
+        - Architectures                 :
+           - Reference-Links            :  'AWS/Architectures/Refernce_links.md'
+        - Exam-Prep                     :
+           - Readme                     :  'AWS/exam-prep/readme.md'  
+        - Topics                        :
+           - EBS                        :  'AWS/Topics/EBS.md' 
+     
+    - Docker                            : 
+        - PHP-FPM                       : 
+           - Kubectl                    :
+              - Service.yaml            :  'docker/php-fpm/kubectl/c'
+              - Deployment-Backup.yaml  :  'docker/php-fpm/kubectl/deployment-backup.yaml'
+        - Commands                      :  'docker/commands.md'
+
+    - EKS                               : 
+        - EC2-IAM_Access                :  'EKS/ec2-iam/EC2--IAM_access.md'    
+
+    - GIT                               :  
+        - Commands                      :  'git/git.md'
+    
+    - AWS-boto:
+        - Assume-role                   :  'AWS-boto/Assume-role-lambda.md'
+        - Reference                     :  'AWS-boto/references.md'
+
+    - Tools:
+        - Tools                         :  'Tools/Tools.md'
+
+    - Mkdocs:
+        - reference.md                  :   'Mkdocs/reference.md'
+
+    - Mysql                             :
+        - Mysql-cnf                     :  'Mysql/mysql.cnf.md'
+
+    - NAS                               :
+        - Tools                         : 'NAS/Tools.md'
+
+    - Percona                           :
+         - Commands                     : 'percona/commands.md'
+
+    - Project/Redirection               :
+        - Notes                         : 'Projects/Redirection/Notes.md'
+        - Reference                     : 'Projects/Redirection/Refrences.md'
+
+    - Python                            :
+        - Basics                        : 'Python/basics.md'
+        - Python                        : 'Python/python.md'
+
+    - shell-script:
+        - shell-script                     :  'shell-script/shell-script.md'
+        - Learn                            :  'shell-script/Tips.md'
+        - Loops                            :  'shell-script/loop_webiste.md'
+
+    - Questions:
+        - Kubernetes                     :  'Kubernetes/Kubernetes.md'
+
+
+
+
+
+theme:
+  name: material 
+  icon:
+    admonition:
+      note                            : octicons/tag-16
+      abstract                        : octicons/checklist-16
+      info                            : octicons/info-16
+      tip                             : octicons/squirrel-16
+      success                         : octicons/check-16
+      question                        : octicons/question-16
+      warning                         : octicons/alert-16
+      failure                         : octicons/x-circle-16
+      danger                          : octicons/zap-16
+      bug                             : octicons/bug-16
+      example                         : octicons/beaker-16
+      quote                           : octicons/quote-16
+
+
+
+  features:
+    - content.tabs.link
+    - content.code.copy
+    - content.tabs.link
+
+  plugins:
+    - glightbox
+
+
+
+
+markdown_extensions:
+  - admonition
+  - pymdownx.critic
+  - pymdownx.superfences
+  - footnotes
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+
+# theme:
+#   name: readthedocs
+  #   custom_dir: overrides
+
+# extra_css:
+#   - stylesheets/extra.css
+
+# extra_javascript:
+#   - javascripts/extra.js
+
+

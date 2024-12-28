@@ -1,0 +1,31 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "codecommit:*",
+            "Resource": [
+                "arn:aws:codecommit:us-east-1:123456789123:repo-name",
+                "arn:aws:codecommit:us-east-1:123456789123:repo-name",
+            ],
+            "Condition": {
+                "StringEqualsIfExists": {
+                    "codecommit:References": [
+                        "refs/heads/master",
+                        "refs/heads/main",
+                        "refs/heads/mani",
+                        "refs/heads/mack",
+                        "refs/heads/eswar"
+                    ]
+                },
+                "IpAddress": {
+                    "aws:SourceIp": [
+                        "192.168.0.100",
+                        "192.168.0.101"
+                    ]
+                }
+            }
+        }
+    ]
+}

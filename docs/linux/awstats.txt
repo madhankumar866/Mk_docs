@@ -1,0 +1,9 @@
+https://tecadmin.net/steps-to-configure-awstats-on-centos-and-rhel-system/
+
+
+https://www.howtoforge.com/how-to-install-secure-and-automate-awstats-centos-rhel
+
+
+
+https://www.howtoforge.com/monitoring-network-latency-with-smokeping-ubuntu-9.04-p2
+

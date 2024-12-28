@@ -1,0 +1,34 @@
+FROM centos:6
+#MAINTAINER The CentOS Project <cloud-ops@centos.org>
+
+RUN yum -y update
+RUN yum clean all
+RUN rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+RUN yum -y update
+RUN yum clean all
+RUN yum install -y  httpd httpd-devel
+RUN yum clean all
+RUN yum --enablerepo=remi-php56 install php php-mysql php-imap php-common php-gd php-mbstring php-mcrypt php-devel php-xml php-xmlrpc php-cli php-pdo php-pgsql php-tidy php-process php-bcmath php-recode php-phpseclib php-intl php-soap -y
+RUN service httpd start
+
+EXPOSE 80
+CMD ["/bin/bash"]
+
+
+
+
+To run docker in detachable mode without interaction
+docker run -t -d -i -p 80:80 f28ba066bcd2
+
+
+
+
+
+To Push to reg
+
+docker commit ,d6f7346010c6, thilipsekar/test-1:centos6
+                image id      repositery name   tag name
+				
+				
+docker image push thilipsekar/test-1:centos6

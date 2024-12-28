@@ -1,0 +1,25 @@
+======================================================
+How to check mails are going or not via cli:-
+
+step:-1
+yum -y install epel-release
+
+step:-2
+yum -y install swaks*
+
+step:-3
+ifconfig [Get the etime out error]
+
+step:-4
+swaks -4 --li 185.85.241.189[Paste etimeout ip] --to ldominque555@yahoo.com --from info@theaboutclub.us
+======================================================
+Sub-ject: Request unblock Port 
+
+Hello,
+
+We have an simple script to send email notification once backup process. however email not received from server. upon checking seems 25 port blocked.
+can you unlock 25 port.
+
+Regards,
+MK
+

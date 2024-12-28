@@ -1,0 +1,33 @@
+
+
+FROM centos:6
+#MAINTAINER The CentOS Project <cloud-ops@centos.org>
+
+RUN yum -y update
+RUN yum clean all
+RUN rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+RUN yum -y update
+RUN yum clean all
+RUN yum install -y  httpd httpd-devel
+RUN yum clean all
+RUN yum --enablerepo=remi-php56 install php php-mysql php-imap php-common php-gd php-mbstring php-mcrypt php-devel php-xml php-xmlrpc php-cli php-pdo php-pgsql php-tidy php-process php-bcmath php-recode php-phpseclib php-intl php-soap -y\
+RUN service httpd star
+
+
+RUN echo "Apache HTTPD" >> /var/www/html/index.html
+
+EXPOSE 80
+
+# Simple startup script to avoid some issues observed with container restart 
+ADD run-httpd.sh /run-httpd.sh
+RUN chmod -v +x /run-httpd.sh
+CMD ["/usr/sbin/init"]
+
+
+goaccess /var/log/nginx/completehealthnews_access.log -o /var/www/completehealthnews.com/report.html --log-format=COMBINED --real-time-html
+
+
+
+
+
