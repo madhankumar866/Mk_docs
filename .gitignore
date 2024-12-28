@@ -1,3 +1,8 @@
 site/
 docs/docker/php-fpm/script/
 # docs/Meeting
+pyvenv.cfg
+lib/
+include/
+bin/
+pip.conf
