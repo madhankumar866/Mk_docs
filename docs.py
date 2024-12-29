@@ -1,6 +1,15 @@
 import os
 import yaml
 
+# Custom loader to ignore unknown tags
+class SafeLoaderIgnoreUnknown(yaml.SafeLoader):
+    pass
+
+def ignore_unknown_tags(loader, tag_suffix, node):
+    return None  # Ignore and return None for unknown tags
+
+SafeLoaderIgnoreUnknown.add_multi_constructor("tag:yaml.org,2002:", ignore_unknown_tags)
+
 def generate_nav_from_docs(docs_dir):
     nav = []
     for root, _, files in os.walk(docs_dir):
@@ -12,7 +21,7 @@ def generate_nav_from_docs(docs_dir):
             if file.endswith(".md"):
                 path = os.path.join(rel_dir, file).replace("\\", "/")
                 title = os.path.splitext(file)[0].replace("-", " ").capitalize()
-                section.append({title: path})
+                section.append({title: f"{path}"})
         if section:
             if rel_dir:
                 nav.append({rel_dir.capitalize(): section})
@@ -22,7 +31,8 @@ def generate_nav_from_docs(docs_dir):
 
 def update_mkdocs_yaml(nav, yaml_file="mkdocs.yml"):
     with open(yaml_file, "r") as f:
-        config = yaml.safe_load(f)
+        # Use the custom loader to safely ignore unknown tags
+        config = yaml.load(f, Loader=SafeLoaderIgnoreUnknown)
 
     config["nav"] = nav
 
