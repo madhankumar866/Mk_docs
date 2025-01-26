@@ -136,6 +136,7 @@ nav:
   - Kubernetes: questions/kubernetes.md
   - Q1: questions/q1.md
   - Terraform: questions/terraform.md
+  - AWS: questions/aws.md
 - Questions/terraform:
   - Terraform_cheat_sheet: questions/Terraform/Terraform_cheat_sheet.md
 - Questions/python:
