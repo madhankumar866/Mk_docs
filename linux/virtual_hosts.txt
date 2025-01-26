@@ -1,0 +1,38 @@
+<VirtualHost 161.129.152.90:80>
+ServerName tamilmithran.com
+ServerAlias www.tamilmithran.com
+ServerAdmin thilip@genxlead.com
+
+Redirect permanent / https://www.tamilmithran.com/
+DocumentRoot /var/www/html/cp_tamil
+ErrorLog /var/log/httpd/tamilmithran.com_error_log
+CustomLog /var/log/httpd/tamilmithran.com_accesslog common
+</VirtualHost>
+
+
+
+
+
+<VirtualHost 161.129.152.90:443>
+SSLEngine on
+SSLProtocol all -SSLv2 -SSLv3
+SSLCertificateFile  /etc/letsencrypt/live/www.tamilmithran.com/fullchain.pem
+SSLCertificateKeyFile  /etc/letsencrypt/live/www.tamilmithran.com/privkey.pem
+SSLCertificateChainFile   /etc/letsencrypt/live/www.tamilmithran.com/fullchain.pem
+ServerAdmin thilip@genxlead.com
+DocumentRoot /var/www/html/cp_tamil
+ServerName tamilmithran.com
+ServerAlias www.tamilmithran.com
+ErrorLog /var/log/httpd/tamilmithran.com_error_log
+CustomLog /var/log/httpd/tamilmithran.com_accesslog common
+<Directory /var/www/html/cp_tamil>
+allow from all
+Options -Indexes
+AcceptPathInfo On
+AllowOverride All
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^tamilmithran.com$ [NC]
+RewriteRule ^(.*)$ https://www.tamilmithran.com/ [R=301,L]	
+</Directory>
+</VirtualHost>

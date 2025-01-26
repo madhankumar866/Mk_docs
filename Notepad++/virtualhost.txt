@@ -1,0 +1,38 @@
+<VirtualHost 45.79.191.205:80>
+ServerAdmin thilip@genxlead.com
+DocumentRoot /home/dynamic_web/thedesserthouses.in
+ServerName www.thedesserthouses.in
+ServerAlias thedesserthouses.in
+ErrorLog /var/log/httpd/thedesserthouses.in.errorlog
+CustomLog /var/log/httpd/thedesserthouses.in.accesslog common
+<Directory /home/dynamic_web/thedesserthouses.in>
+allow from all
+Options -Indexes
+AcceptPathInfo On
+AllowOverride All
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^thedesserthouses.in$ [NC]
+RewriteRule ^(.*)$ http://www.thedesserthouses.in/ [R=301,L]
+</Directory>
+</VirtualHost>
+
+<VirtualHost 45.79.191.205:80>
+ServerAdmin thilip@genxlead.com
+DocumentRoot /home/dynamic_web/themenssaloon.com
+ServerName www.themenssaloon.com
+ServerAlias themenssaloon.com
+ErrorLog /var/log/httpd/themenssaloon.com.errorlog
+CustomLog /var/log/httpd/themenssaloon.com.accesslog common
+<Directory /home/dynamic_web/themenssaloon.com>
+allow from all
+Options -Indexes
+AcceptPathInfo On
+AllowOverride All
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^themenssaloon.com$ [NC]
+RewriteRule ^(.*)$ http://www.themenssaloon.com/ [R=301,L]
+</Directory>
+</VirtualHost>
+

@@ -1,0 +1,42 @@
+cat /etc/sysconfig/iptables
+
+sudo iptables -S
+
+iptables -A INPUT -p tcp -m multiport --dports 22 -m set --match-set f2b-sshd src -j REJECT --reject-with icmp-port-unreachable
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A INPUT -i lo -m comment --comment "Allow loopback connections" -j ACCEPT
+iptables -A INPUT -p icmp -m comment --comment "Allow Ping " -j ACCEPT
+iptables -A INPUT -s 14.98.54.90/32 -p tcp -m comment --comment " TATA IP" -m tcp --dport 22 -j ACCEPT
+iptables -A INPUT -s 202.83.25.120/32 -p tcp -m comment --comment " ACT IP" -m tcp --dport 22 -j ACCEPT
+iptables -A INPUT -s 136.232.211.158/32 -p tcp -m comment --comment " JIO IP" -m tcp --dport 22 -j ACCEPT
+iptables -A INPUT -s 202.94.174.48/32 -p tcp -m comment --comment " Proxy IP" -m tcp --dport 22 -j ACCEPT
+iptables -A INPUT -s 127.0.0.1/32 -p tcp -m comment --comment " Temp IP" -m tcp --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp -m tcp --dport 22 -j DROP
+iptables -A INPUT -p tcp -m multiport --dports 80,443,143 -j ACCEPT
+iptables -A INPUT -j REJECT --reject-with icmp-port-unreachable
+
+=========================================================================================================
+
+
+wget -O '/var/www/cgi-bin/off_net_ips.txt' 'http://162.220.58.141/off_net_ips.txt';
+
+sed -i s'/14.98.54.90/45.251.34.109/'g /etc/pmta/pmconf 
+
+sed -i s'/14.98.54.90/45.251.34.109/'g  /etc/sysconfig/iptables
+
+
+vi /etc/sysconfig/iptables
+
+
+iptables -A INPUT -p tcp -m comment --comment " Jio IP" -s 115.247.84.106/32 -m tcp --dport 21 -m conntrack --ctstate NEW -j ACCEPT
+
+-A INPUT -s 115.247.84.106/32 -p tcp -m comment --comment " Jio IP" -m tcp --dport 21 -m conntrack --ctstate NEW -j ACCEPT
+-A INPUT -s 1.22.196.194/32 -p tcp -m comment --comment "Tikona" -m tcp --dport 21 -m conntrack --ctstate NEW -j ACCEPT
+-A INPUT -s 45.251.34.26/32 -p tcp -m comment --comment "Cherry1" -m tcp --dport 21 -m conntrack --ctstate NEW -j ACCEPT
+-A INPUT -s 45.251.34.109/32 -p tcp -m comment --comment "Cherry2" -m tcp --dport 21 -m conntrack --ctstate NEW -j ACCE
+
+service iptables restart
+
+-A INPUT -s 23.92.68.235/32 -p tcp -m tcp --dport 21 -m conntrack --ctstate NEW -j ACCEPT
+
+iptables -L

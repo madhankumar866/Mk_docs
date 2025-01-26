@@ -1,0 +1,4 @@
+https://www.tecmint.com/reset-mysql-or-mariadb-root-password/
+
+https://support.rackspace.com/how-to/mysql-resetting-a-lost-mysql-root-password/
+

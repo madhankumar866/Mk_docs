@@ -1,0 +1,14 @@
+https://wiki.lineageos.org/adb_fastboot_guide
+https://wiki.lineageos.org/devices/m8/install
+
+
+
+amazon aurora grover
+caspian hypervisier  cooperative oversubscription
+
+amazon time sync service
+
+elastic cache serverless
+
+quantum algoritham for integer fractorization
+2 qubit gates

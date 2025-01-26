@@ -1,0 +1,107 @@
+Madhan Kumar, 47 min
+###########################
+Snowflake odbc installation
+############################
+
+wget https://sfc-repo.snowflakecomputing.com/snowsql/bootstrap/1.2/linux_x86_64/snowflake-snowsql-1.2.23-1.x86_64.rpm
+
+
+echo "
+[snowflake-odbc]
+name=snowflake-odbc
+baseurl=https://sfc-repo.snowflakecomputing.com/odbc/linux/2.22.1/
+gpgkey=https://sfc-repo.snowflakecomputing.com/odbc/Snowkey-630D9F3CAB551AF3-gpg " >> /etc/yum.repos.d/snowflake-odbc.repo
+
+
+yum install libiodbc snowflake-odbc snowflake-snowsql-1.2.23-1.x86_64.rpm -y
+
+
+echo "
+[ODBC Drivers]
+SnowflakeDSIIDriver=Installed
+
+[SnowflakeDSIIDriver]
+APILevel=1
+ConnectFunctions=YYY
+Description=Snowflake DSII
+Driver=/<path>/lib/libSnowflake.so
+DriverODBCVer=03.52
+SQLLevel=1" >> /etc/odbcinst.ini
+
+
+echo "
+
+" >> /etc/odbc.ini
+https://community.snowflake.com/s/article/How-to-create-Snowflake-ODBC-DSN-On-Linux-CentOS
+
+Thilip Sekar, 7 min
+yum install libiodbc
+
+
+yum install  https://sfc-repo.snowflakecomputing.com/snowsql/bootstrap/1.2/linux_x86_64/snowflake-snowsql-1.2.23-1.x86_64.rpm -y
+
+
+yum install https://sfc-repo.snowflakecomputing.com/odbc/linux/2.22.1/snowflake-odbc-2.22.1.x86_64.rpm -y
+
+
+
+echo"#[snowflake]
+#Description=SnowflakeDB
+#Driver=SnowflakeDSIIDriver
+#Locale=en-US
+#SERVER=SF_ACCOUNT.snowflakecomputing.com
+#PORT=443
+#SSL=on
+#ACCOUNT=SF_ACCOUNT
+
+
+
+[snowflake]
+Description             = SnowflakeDB
+Driver          = SnowflakeDSIIDriver
+Driver          = /usr/lib64/snowflake/odbc/lib/libSnowflake.so
+Locale          = en-US
+SERVER          = gea40904.snowflakecomputing.com
+PORT            = 443
+SSL             = on
+ACCOUNT         = genxt20chnin
+
+[ODBC Data Sources]
+testodbc1 = SnowflakeDSIIDriver
+testodbc2 = SnowflakeDSIIDriver
+
+
+[testodbc1]
+Driver      = /usr/lib64/snowflake/odbc/lib/libSnowflake.so
+Description =
+server      = gea40904.snowflakecomputing.com
+role        = sysadmin
+
+[testodbc2]
+Driver      = /usr/lib64/snowflake/odbc/lib/libSnowflake.so
+Description =
+server      = gea40904.us-east-1.snowflakecomputing.com
+role        = eye
+database    = mycubes
+warehouse   = compute_wh " > /etc/odbc.ini 
+
+
+isql -v testodbc1 asthra T923@g85a2X3XJ2D
+
+isql -v testodbc1 –U asthra -P T923@g85a2X3XJ2D
+
+
+isql -v testodbc2 mary <password>
+
+testodbc1 = SnowflakeDSIIDriver
+testodbc2 = SnowflakeDSIIDriver
+
+
+
+
+echo "
+
+" >> /etc/odbc.ini
+https://community.snowflake.com/s/article/How-to-create-Snowflake-ODBC-DSN-On-Linux-CentOS
+
+

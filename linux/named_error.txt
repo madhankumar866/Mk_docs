@@ -1,0 +1,23 @@
+
+
+
+cd /var/named/chroot/
+chmod 755 /var/named/chroot/
+sudo chmod 755 /var/named/chroot/
+
+cd /var/named/chroot/var/
+sudo chmod 755 /var/named/chroot/var/
+sudo chmod 755 /var/named/chroot/var/named/
+cd /var/named/chroot/var/named/
+
+cp /var/named/* /var/named/chroot/var/named/
+sudo cp /var/named/* /var/named/chroot/var/named/
+sudo cp /etc/named.conf /var/named/chroot/etc/
+pwd
+sudo chown named:namedgroup *
+
+sudo chown named:namedgroup /var/named/chroot/etc/named.conf
+
+sudo vi /etc/named.conf 
+sudo service named restart
+sudo service named status

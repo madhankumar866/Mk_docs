@@ -1,0 +1,11 @@
+rpm -qi PowerMTA
+
+rpm -aq | grep PowerMTA
+
+rpmrebuild PowerMTA-4.0r10-201303051755.x86_64
+
+
+
+
+Referrer
+https://unix.stackexchange.com/questions/140778/how-to-build-an-rpm-package-from-the-installed-files

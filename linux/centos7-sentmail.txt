@@ -1,0 +1,11 @@
+centos 7 remove mail  loopback 127.0.0.1
+
+In path 
+sudo vi /etc/mail/sendmail.mc
+line no 118
+ DAEMON_OPTIONS(`Port=smtp, Name=MTA')dnl
+
+Remove Addr=127.0.0.1
+ 	
+sudo service sendmail restart
+3 times
