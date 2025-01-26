@@ -96,16 +96,14 @@ nav:
   - Soci: AWS/soci.md
   - Waf: AWS/waf.md
   - Workshops: AWS/workshops.md
-- Aws/exam-prep:
-  - Readme: AWS/exam-prep/readme.md
-- Aws/architectures:
-  - Refernce_links: AWS/Architectures/Refernce_links.md
+  - Exam-prep: AWS/exam-prep.md
+  - Refernce_links: AWS/Architectures.md
+  - Ebs: AWS/EBS.md
 - Aws/iam/policies:
   - Code.commit: AWS/iam/policies/code.commit.md
   - Lambda assume role: AWS/iam/policies/lambda-assume-role.md
   - Switch role: AWS/iam/policies/switch-role.md
-- Aws/topics:
-  - Ebs: AWS/Topics/EBS.md
+  
 - Mkdocs:
   - Reference: Mkdocs/reference.md
 - Kubernetes:

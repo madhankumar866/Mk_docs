@@ -163,6 +163,11 @@
   },
   "active": "80d86825c3523d2f",
   "lastOpenFiles": [
+    "docs/AWS/EBS.md",
+    "docs/AWS/exam-prep.md",
+    "docs/AWS/exam-prep/exam-prep.md",
+    "docs/AWS/Architectures.md",
+    "docs/AWS/Architectures/Architectures.md",
     "docs/questions/aws.md",
     "docs/EKS/Service_mesh.md",
     "docs/Helm_chart/Helm_chart.md",
@@ -186,11 +191,6 @@
     "docs/AWS/DMS.md",
     "docs/AWS/Databases.md",
     "docs/AWS/codepipeline.md",
-    "docs/AWS/CI-CD.md",
-    "docs/AWS/bot-fake-crawler-bots.md",
-    "docs/AWS/Aws-Athena.md",
-    "docs/AWS/Aws-well-architech.md",
-    "docs/AWS/aws_clean_rooms.md",
     "Untitled 2.canvas",
     "Untitled.canvas",
     "Untitled 1.canvas"
