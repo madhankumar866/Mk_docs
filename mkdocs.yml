@@ -11,6 +11,9 @@ nav:
 - Aws-boto:
   - Assume role lambda: AWS-boto/Assume-role-lambda.md
   - References: AWS-boto/references.md
+- Argo-workflow:
+  - Readme: argo-workflow/Readme.md
+  - Reference_links: argo-workflow/Reference_Links.md
 - Python:
   - Basics: Python/basics.md
   - Python: Python/python.md
@@ -135,6 +138,7 @@ nav:
   - Q1: questions/q1.md
   - Terraform: questions/terraform.md
   - AWS: questions/aws.md
+  - Interview-questions: questions/Interview-questions.md
 - Questions/terraform:
   - Terraform_cheat_sheet: questions/Terraform/Terraform_cheat_sheet.md
 - Questions/python:
