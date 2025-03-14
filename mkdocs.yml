@@ -106,7 +106,6 @@ nav:
   - Code.commit: AWS/iam/policies/code.commit.md
   - Lambda assume role: AWS/iam/policies/lambda-assume-role.md
   - Switch role: AWS/iam/policies/switch-role.md
-  
 - Mkdocs:
   - Reference: Mkdocs/reference.md
 - Kubernetes:
@@ -143,6 +142,8 @@ nav:
   - Terraform_cheat_sheet: questions/Terraform/Terraform_cheat_sheet.md
 - Questions/python:
   - Log_tail: questions/Python/log_tail.md
+- Terraform:
+  - Readme: Terraform/Readme.md
 theme:
   name: material
   icon:
