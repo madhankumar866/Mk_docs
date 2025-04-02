@@ -123,6 +123,9 @@ nav:
   - Readme: Kubernetes/selenium/Readme.md
 - Kubernetes/cluster_setup:
   - Local_cluster_setup: Kubernetes/Cluster_Setup/Local_Cluster_Setup.md
+- Kubernetes-errors:
+  - Kubernetes: Kubernetes/kube-errors/conf.refuse.md
+
 - Git:
   - Multiple_commit_to_one: git/Multiple_Commit_To_One.md
   - Git: git/git.md
