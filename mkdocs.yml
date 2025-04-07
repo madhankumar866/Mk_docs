@@ -14,6 +14,7 @@ nav:
 - Argo-workflow:
   - Readme: argo-workflow/Readme.md
   - Reference_links: argo-workflow/Reference_Links.md
+  - Int-questions: argo-workflow/int-prep.md
 - Python:
   - Basics: Python/basics.md
   - Python: Python/python.md
@@ -145,8 +146,6 @@ nav:
   - Terraform_cheat_sheet: questions/Terraform/Terraform_cheat_sheet.md
 - Questions/python:
   - Log_tail: questions/Python/log_tail.md
-- Questions/wk:
-  - init-prep: questions/wk/init-prep.md
 - Terraform:
   - Readme: Terraform/Readme.md
 theme:
