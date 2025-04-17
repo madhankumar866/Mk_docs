@@ -68,3 +68,88 @@ Post-mortem revealed a missing schema validation. I added helm lint and schema c
 ### Describe how you collaborated with developers or SREs to improve deployment workflows.
 
 ### Have you ever migrated a team from traditional CI/CD to GitOps? 
+
+key components of an ArgoCD Application resource?
+
+ApplicationSet in ArgoCD?
+health checks in ArgoCD?
+purpose of the argocd-cm ConfigMap?
+handle secrets in ArgoCD?
+
+
+
+
+
+In this you will be central to our efforts in moving Workday deployment to a git-ops driven Argo Workflow / Argo CD based tooling. You will be responsible for designing, implementing, and supporting our deployment tooling, using tools like ArgoCD, Argo Workflows, Grafana and many others. You will work closely with SRE, Operations, and service teams to ensure smooth and reliable deployments of our applications
+
+Responsibilities:
+
+Design, develop, and maintain GitOps driven deployment tooling using ArgoCD and Argo Workflows.
+
+Find opportunities to automate operations in Workdays public cloud (AWS/GCP) Kubernetes environments, including resource definitions and configurations.
+
+Automate the build, test, and deployment processes for our teams software artifacts.
+
+Collaborate with service teams to integrate their applications into the GitOps workflow.
+
+Triage and resolve deployment issues, ensuring high availability and reliability of our environments.
+
+Monitor and optimize the performance of our deployment tooling.
+
+Implement and maintain security methodologies within the deployment tooling.
+
+Improve the operational posture of our SRE and operations teams through use of enhanced observability available through CNCF tooling.
+
+Document and maintain our deployment processes and procedures.
+
+Stay up-to-date with the latest technologies and trends in GitOps and Kubernetes.
+
+Participate in code reviews and contribute to the improvement of our development practices.
+
+About You
+
+Required Skills and Experience:
+
+BSc, MSc or equivalent experience in Computer Science or related field and 4+ years industry experience
+
+Proven experience with GitOps or equivalent experience.
+
+Strong understanding of Kubernetes and its core concepts (Pods, Deployments, Services, etc.).
+
+Hands-on experience with ArgoCD and Argo Workflows.
+
+Proficiency in using Git and Git workflows.
+
+Experience with CI/CD tools and methodologies.
+
+Familiarity with containerization technologies (Docker).
+
+Experience with scripting languages (e.g., Ruby, Groovy, Python).
+
+Strong problem-solving skills.
+
+Excellent communication and collaboration skills.
+
+Preferred Skills and Experience:
+
+Knowledge of monitoring and logging tools (e.g., Prometheus, Grafana, ELK stack).
+
+Experience with cloud platforms (e.g., AWS, GCP, Azure).
+
+Understanding of security methodologies in a cloud-native environment.
+
+
+
+write a argocd yaml, app,manifest
+workflow yaml dag
+docker file
+python for loops,if else,
+kuberenetes basic, resources def and configuration
+linux
+grafana
+sanity checks
+aws & 
+
+
+Argo
+[ write an argocd ]
