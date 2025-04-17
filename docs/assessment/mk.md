@@ -29,15 +29,17 @@ Which frequency (
 
 # cloud platforms
 AWS
-# Containers
+# Container runtime
 Docker 
-K8s
+
 # CI CD Pipelines
 Argo/Argo-workflows
-# Monitering
+jenkins
+# Observability
 
 splunk
 Dynatrace
+
 zabbix
 grafana
 prometheus
@@ -51,3 +53,7 @@ CDK
 
 # Languages
 Python
+
+# scheduling & orchestration
+K8
+KEDA
