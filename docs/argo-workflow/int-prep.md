@@ -69,7 +69,7 @@ Post-mortem revealed a missing schema validation. I added helm lint and schema c
 
 ### Have you ever migrated a team from traditional CI/CD to GitOps? 
 
-key components of an ArgoCD Application resource?
+## key components of an ArgoCD Application resource?
 
 ApplicationSet in ArgoCD?
 health checks in ArgoCD?
@@ -79,7 +79,8 @@ handle secrets in ArgoCD?
 
 
 
-
+## Description
+```
 In this you will be central to our efforts in moving Workday deployment to a git-ops driven Argo Workflow / Argo CD based tooling. You will be responsible for designing, implementing, and supporting our deployment tooling, using tools like ArgoCD, Argo Workflows, Grafana and many others. You will work closely with SRE, Operations, and service teams to ensure smooth and reliable deployments of our applications
 
 Responsibilities:
@@ -137,8 +138,7 @@ Knowledge of monitoring and logging tools (e.g., Prometheus, Grafana, ELK stack)
 Experience with cloud platforms (e.g., AWS, GCP, Azure).
 
 Understanding of security methodologies in a cloud-native environment.
-
-
+```
 
 write a argocd yaml, app,manifest
 workflow yaml dag
