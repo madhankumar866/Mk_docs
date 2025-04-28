@@ -212,3 +212,29 @@ Argo
 [ write an argocd ]
 
 
+# Road Map
+Order git & git workflow --> Python --> Docker --> Kubernetes  --> build automations --> argo workflows --> argocd --> monitering
+# TO 
+## Proficiency in using Git and Git workflows.
+
+
+## Experience with scripting languages (e.g., Ruby, Groovy, Python).
+```
+python for loops,if else,
+
+```
+## Familiarity with containerization technologies (Docker).
+
+## Strong understanding of Kubernetes and its core concepts (Pods, Deployments, Services, etc.).
+
+## Automate the build, test, and deployment processes for our teams software artifacts.
+
+## Hands-on experience with ArgoCD and Argo Workflows.
+```
+write a argocd yaml, app,manifest
+workflow yaml dag
+```
+
+## sanity checks
+
+## Knowledge of monitoring and logging tools (e.g., Prometheus, Grafana, ELK stack).
