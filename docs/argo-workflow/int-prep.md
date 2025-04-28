@@ -140,7 +140,64 @@ Experience with cloud platforms (e.g., AWS, GCP, Azure).
 Understanding of security methodologies in a cloud-native environment.
 ```
 
-write a argocd yaml, app,manifest
+write a argocd yaml,
+```
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/your-org/your-repo.git
+    targetRevision: HEAD
+    path: path/to/your/app
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: your-app-namespace
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+
+## Key parts:
+repoURL: Git repo containing your Kubernetes manifests or Helm chart.
+
+path: The folder inside the repo where your app is defined.
+
+destination: Where to deploy the app.
+
+syncPolicy: Automates syncing and healing if something drifts..
+
+🧠 2. Use a mnemonic
+Try this simple flow:
+"Meta-Spec Source to Destination with Sync."
+Say it like a checklist during the interview.
+
+## SIMPLE VERSION
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo
+spec:
+  source:
+    repoURL: <git-url>
+    path: <path>
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: demo
+  syncPolicy:
+    automated: {}
+
+
+```
+
+ app,manifest
 workflow yaml dag
 docker file
 python for loops,if else,
@@ -153,3 +210,5 @@ aws &
 
 Argo
 [ write an argocd ]
+
+
