@@ -5,6 +5,9 @@ nav:
 - Terraform:
   - Interview questions: Terraform/Interview-Questions.md
   - Readme: Terraform/Readme.md
+- Career:
+  - Ai job guide 2026: Career/AI-Job-Guide-2026.md
+  - Job links: Career/Job-Links.md
 - Tools:
   - Tools: Tools/Tools.md
 - Helm_chart:
@@ -20,6 +23,12 @@ nav:
   - Setup: Python/setup.md
 - Python/learn:
   - Week_1_fundamentals: Python/Learn/Week_1_Fundamentals.md
+- Langchain:
+  - Deepagents update: Langchain/DeepAgents-Update.md
+  - Deepagents: Langchain/DeepAgents.md
+- Langchain/newsletter:
+  - February 2026: Langchain/Newsletter/FEBRUARY 2026.md
+  - Websites: Langchain/Newsletter/Websites.md
 - Serverless:
   - Architechblog: Serverless/ArchitechBlog.md
   - Installation: Serverless/Installation.md
@@ -50,6 +59,10 @@ nav:
   - Ec2  iam_access: EKS/ec2-iam/EC2--IAM_access.md
 - Nginx:
   - Readme: Nginx/README.md
+- Ai:
+  - Apple foundation model docs: AI/Apple-Foundation-Model-Docs.md
+  - Apple foundation model youtube: AI/Apple-Foundation-Model-Youtube.md
+  - Apple foundation model: AI/Apple-Foundation-Model.md
 - Linux:
   - Linux terminal profile: linux/Linux-terminal-profile.md
   - Mega.cli: linux/Mega.cli.md
@@ -73,6 +86,7 @@ nav:
   - Ssh keygen: linux/ssh-keygen.md
   - Sshd: linux/sshd.md
 - Shell-script:
+  - Bash scripting tips: shell-script/Bash-Scripting-Tips.md
   - Tips: shell-script/Tips.md
   - Loop_webiste: shell-script/loop_webiste.md
   - Roadmap: shell-script/roadmap.md
@@ -119,6 +133,8 @@ nav:
   - Links: Kubernetes/Links.md
   - Lists: Kubernetes/Lists.md
   - Readme: Kubernetes/Readme.md
+  - Tips update: Kubernetes/Tips-Update.md
+  - Tips: Kubernetes/Tips.md
   - Topics: Kubernetes/Topics.md
   - Api: Kubernetes/api.md
   - Basics: Kubernetes/basics.md
@@ -136,10 +152,13 @@ nav:
   - Git: git/git.md
 - Questions:
   - Docker: questions/Docker.md
+  - Experience overview: questions/Experience-Overview.md
   - Interview questions: questions/Interview-questions.md
   - Linux qst: questions/Linux-qst.md
   - Objects: questions/Objects.md
   - Python: questions/Python.md
+  - Senior devops: questions/Senior-DevOps.md
+  - What have you done: questions/What-have-you-done.md
   - Aws: questions/aws.md
   - Int: questions/int.md
   - Kubernetes int: questions/kubernetes-int.md
@@ -150,6 +169,8 @@ nav:
   - Terraform_cheat_sheet: questions/Terraform/Terraform_cheat_sheet.md
 - Questions/python:
   - Log_tail: questions/Python/log_tail.md
+- Questions/interview-cases:
+  - Production incident devrev: questions/Interview-Cases/Production-Incident-Devrev.md
 - Argo-workflow:
   - Readme: argo-workflow/Readme.md
   - Reference_links: argo-workflow/Reference_Links.md

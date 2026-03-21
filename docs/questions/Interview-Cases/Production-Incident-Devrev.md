@@ -1,0 +1,3 @@
+# Tell me about a production incident you were directly involved in…
+
+- Tell me about a production incident you were directly involved in? **Incident Management: I As a Release Engineer handling production Infra Scale-up &amp Application Deloympents Which are Critical for Day to day
