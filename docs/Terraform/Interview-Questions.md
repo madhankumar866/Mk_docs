@@ -82,39 +82,88 @@ Expected:
 ## 25 Rapid-Fire DevOps Interview Questions
 
 ### 🟦 Terraform
-1.  What is Terraform state and why is it important?
-2.  Difference between `terraform plan` and `terraform apply`?
-3.  What is remote backend and why use it?
-4.  How do you prevent accidental resource deletion in Terraform?
-5.  What is the difference between `count` and `for_each`?
-6.  How do you manage multiple environments in Terraform?
-7.  What happens if state file is corrupted?
+**1. What is Terraform state and why is it important?**
+Terraform state (`terraform.tfstate`) is a JSON file that maps real-world infrastructure to your configuration. It acts as a single source of truth, tracks metadata, and improves performance for large infrastructures.
+
+**2. Difference between `terraform plan` and `terraform apply`?**
+`terraform plan` reads the state and shows what changes will be made without modifying actual infrastructure. `terraform apply` executes the plan and provisions or modifies the real-world resources.
+
+**3. What is remote backend and why use it?**
+A remote backend (like S3, GCS, or Terraform Cloud) stores the state file remotely rather than locally. It allows team collaboration, enables state locking (preventing concurrent modifications), and keeps sensitive data secure.
+
+**4. How do you prevent accidental resource deletion in Terraform?**
+Use the `lifecycle { prevent_destroy = true }` meta-argument on critical resources, enable versioning on your remote backend, and restrict IAM permissions.
+
+**5. What is the difference between `count` and `for_each`?**
+`count` creates resources using a numerical index, which can cause massive recreation if an item in the middle is removed. `for_each` uses stable map keys or strings, making it much safer for dynamic infrastructure.
+
+**6. How do you manage multiple environments in Terraform?**
+By using separate directories for each environment (e.g., `dev/`, `prod/`) referencing shared modules, or by using Terraform Workspaces (though directories are preferred for strict production isolation).
+
+**7. What happens if state file is corrupted?**
+Terraform cannot accurately determine the current infrastructure state, potentially leading to duplicate resources or destructive changes. You must recover it from a backup (like S3 versioning) or manually reconstruct it via `terraform import`.
 
 ### 🟦 Kubernetes
-8.  Difference between Deployment and StatefulSet?
-9.  What is HPA and how does it work?
-10. What is the difference between ClusterIP, NodePort, and LoadBalancer?
-11. What causes `CrashLoopBackOff`?
-12. What are liveness and readiness probes?
-13. What happens when a node fails?
-14. How does Kubernetes scheduler decide pod placement?
-15. What is the difference between ConfigMap and Secret?
+**8. Difference between Deployment and StatefulSet?**
+A Deployment is for stateless applications where pods are identical and interchangeable. A StatefulSet is for stateful applications, providing stable, unique network identifiers and persistent storage for each pod.
+
+**9. What is HPA and how does it work?**
+Horizontal Pod Autoscaler (HPA) automatically scales the number of pods in a Deployment or StatefulSet based on observed CPU/memory utilization or custom metrics.
+
+**10. What is the difference between ClusterIP, NodePort, and LoadBalancer?**
+ClusterIP exposes the service internally within the cluster. NodePort exposes it on a static port on each Node's IP. LoadBalancer provisions an external cloud provider load balancer to route traffic to the service.
+
+**11. What causes `CrashLoopBackOff`?**
+A pod repeatedly failing to start and crashing immediately. Common causes: application code errors, missing dependencies/configurations, OOMKilled (Out of Memory), or failing liveness probes.
+
+**12. What are liveness and readiness probes?**
+Liveness probes check if an application is running (restarts the pod if it fails). Readiness probes check if the application is ready to receive traffic (removes the pod from service endpoints if it fails).
+
+**13. What happens when a node fails?**
+Kubernetes detects the node is unreachable, marks it as `NotReady`, and after a timeout (default 5 mins), reschedules its pods to other healthy nodes in the cluster.
+
+**14. How does Kubernetes scheduler decide pod placement?**
+It uses a two-step process: Filtering (finding nodes that meet resource requests, taints/tolerations, node selectors) and Scoring (ranking the filtered nodes based on optimal resource utilization and affinity/anti-affinity rules).
+
+**15. What is the difference between ConfigMap and Secret?**
+Both store configuration data, but ConfigMaps are for non-sensitive data (plain text), while Secrets are for sensitive data (base-64 encoded and can be encrypted at rest in etcd).
 
 ### 🟦 AWS / Cloud (EKS-focused)
-16. What is the difference between Auto Scaling Group and HPA?
-17. What happens if an EC2 instance in an Auto Scaling Group fails?
-18. How do you make an application highly available in AWS?
-19. What is the difference between ALB and NLB?
-20. How do you secure S3 bucket?
+**16. What is the difference between Auto Scaling Group and HPA?**
+Auto Scaling Group (ASG) scales the actual underlying EC2 instances (nodes) in AWS. HPA (Horizontal Pod Autoscaler) scales the Kubernetes Pods running inside those nodes.
+
+**17. What happens if an EC2 instance in an Auto Scaling Group fails?**
+The ASG health checks detect the failure, terminate the unhealthy instance, and automatically launch a replacement instance to maintain the desired capacity.
+
+**18. How do you make an application highly available in AWS?**
+Deploy resources across multiple Availability Zones (AZs), use Auto Scaling Groups, place an Application Load Balancer in front, and use managed multi-AZ databases (like RDS Multi-AZ).
+
+**19. What is the difference between ALB and NLB?**
+ALB (Application Load Balancer) operates at Layer 7 (HTTP/HTTPS), supporting advanced routing and TLS termination. NLB (Network Load Balancer) operates at Layer 4 (TCP/UDP) and is optimized for ultra-high performance and low latency.
+
+**20. How do you secure S3 bucket?**
+Block all public access, enforce IAM policies and bucket policies, enable KMS encryption at rest, enforce SSL in transit (via policy conditions), enable versioning, and turn on MFA delete.
 
 ### 🟦 CI/CD
-21. What is Blue-Green deployment?
-22. What is Canary deployment?
-23. How do you rollback a failed deployment?
-24. How do you secure CI/CD pipeline?
+**21. What is Blue-Green deployment?**
+A strategy where two identical environments exist (Blue is live, Green is new). Traffic is switched entirely from Blue to Green at the load balancer level, allowing instant rollback if issues occur.
+
+**22. What is Canary deployment?**
+Releasing a new version to a small subset of users (e.g., 5% traffic) to test stability before gradually rolling it out to the rest of the user base.
+
+**23. How do you rollback a failed deployment?**
+In Kubernetes, run `kubectl rollout undo deployment/<name>`. In standard CI/CD, re-trigger the pipeline for the previous stable Git commit or swap load balancer targets back to the old environment.
+
+**24. How do you secure CI/CD pipeline?**
+Use isolated/ephemeral runners, implement secret management (e.g., HashiCorp Vault, AWS Secrets Manager), scan code/images for vulnerabilities (SAST/DAST), enforce least privilege IAM roles, and require manual approvals for production deployments.
 
 ### 🟦 Monitoring & Troubleshooting
-25. Production is slow — what is your troubleshooting approach?
+**25. Production is slow — what is your troubleshooting approach?**
+1. Check monitoring dashboards (Prometheus/Grafana) to identify anomalies.
+2. Review logs (ELK/CloudWatch) for errors.
+3. Analyze resource metrics (CPU, Memory, Network bottlenecks, DB connections).
+4. Identify any recent deployments or configuration changes.
+5. If a recent change caused it, rollback to restore stability while investigating.
 
 ---
 
