@@ -8,3 +8,5 @@ bin/
 pip.conf
 mkdocs.check
 mkdocs.old
+docs/.DS_Store
+docs/Notepad++/.DS_Store

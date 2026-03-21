@@ -2,6 +2,8 @@ site_name: MK Docs
 nav:
 - About: about.md
 - Index: index.md
+- Terraform:
+  - Readme: Terraform/Readme.md
 - Tools:
   - Tools: Tools/Tools.md
 - Helm_chart:
@@ -11,10 +13,6 @@ nav:
 - Aws-boto:
   - Assume role lambda: AWS-boto/Assume-role-lambda.md
   - References: AWS-boto/references.md
-- Argo-workflow:
-  - Readme: argo-workflow/Readme.md
-  - Reference_links: argo-workflow/Reference_Links.md
-  - Int-questions: argo-workflow/int-prep.md
 - Python:
   - Basics: Python/basics.md
   - Python: Python/python.md
@@ -40,6 +38,11 @@ nav:
   - Snowflake odbc: Snowflake/snowflake-odbc.md
   - Snowqueries: Snowflake/snowqueries.md
   - Snowsql: Snowflake/snowsql.md
+- Stocks:
+  - Indicator_list: stocks/Indicator_List.md
+  - Rejectlist: stocks/RejectList.md
+- Assessment:
+  - Mk: assessment/mk.md
 - Eks:
   - Service_mesh: EKS/Service_mesh.md
 - Eks/ec2-iam:
@@ -77,12 +80,14 @@ nav:
   - Mysql.cnf: Mysql/mysql.cnf.md
 - Aws:
   - Amazon kinesis: AWS/Amazon-Kinesis.md
+  - Architectures: AWS/Architectures.md
   - Aws athena: AWS/Aws-Athena.md
   - Aws well architech: AWS/Aws-well-architech.md
   - Ci cd: AWS/CI-CD.md
   - Dms: AWS/DMS.md
   - Databases: AWS/Databases.md
   - Dynamodb: AWS/Dynamodb.md
+  - Ebs: AWS/EBS.md
   - Ec2: AWS/EC2.md
   - Iam: AWS/IAM.md
   - Nat_instance: AWS/Nat_instance.md
@@ -93,6 +98,7 @@ nav:
   - Aws_clean_rooms: AWS/aws_clean_rooms.md
   - Bot fake crawler bots: AWS/bot-fake-crawler-bots.md
   - Codepipeline: AWS/codepipeline.md
+  - Exam prep: AWS/exam-prep.md
   - Lambda: AWS/lambda.md
   - Mysqld: AWS/mysqld.md
   - Remote ec2: AWS/remote-ec2.md
@@ -100,9 +106,6 @@ nav:
   - Soci: AWS/soci.md
   - Waf: AWS/waf.md
   - Workshops: AWS/workshops.md
-  - Exam-prep: AWS/exam-prep.md
-  - Refernce_links: AWS/Architectures.md
-  - Ebs: AWS/EBS.md
 - Aws/iam/policies:
   - Code.commit: AWS/iam/policies/code.commit.md
   - Lambda assume role: AWS/iam/policies/lambda-assume-role.md
@@ -113,6 +116,7 @@ nav:
   - Cheatsheet: Kubernetes/CheatSheet.md
   - Cluster.prerequisite: Kubernetes/Cluster.Prerequisite.md
   - Links: Kubernetes/Links.md
+  - Lists: Kubernetes/Lists.md
   - Readme: Kubernetes/Readme.md
   - Topics: Kubernetes/Topics.md
   - Api: Kubernetes/api.md
@@ -124,30 +128,32 @@ nav:
   - Readme: Kubernetes/selenium/Readme.md
 - Kubernetes/cluster_setup:
   - Local_cluster_setup: Kubernetes/Cluster_Setup/Local_Cluster_Setup.md
-- Kubernetes-errors:
-  - Kubernetes: Kubernetes/kube-errors/conf.refuse.md
-
+- Kubernetes/kube-errors:
+  - Conf.refuse: Kubernetes/kube-errors/conf.refuse.md
 - Git:
   - Multiple_commit_to_one: git/Multiple_Commit_To_One.md
   - Git: git/git.md
 - Questions:
   - Docker: questions/Docker.md
+  - Interview questions: questions/Interview-questions.md
   - Linux qst: questions/Linux-qst.md
   - Objects: questions/Objects.md
   - Python: questions/Python.md
+  - Aws: questions/aws.md
   - Int: questions/int.md
   - Kubernetes int: questions/kubernetes-int.md
   - Kubernetes: questions/kubernetes.md
   - Q1: questions/q1.md
   - Terraform: questions/terraform.md
-  - AWS: questions/aws.md
-  - Interview-questions: questions/Interview-questions.md
 - Questions/terraform:
   - Terraform_cheat_sheet: questions/Terraform/Terraform_cheat_sheet.md
 - Questions/python:
   - Log_tail: questions/Python/log_tail.md
-- Terraform:
-  - Readme: Terraform/Readme.md
+- Argo-workflow:
+  - Readme: argo-workflow/Readme.md
+  - Reference_links: argo-workflow/Reference_Links.md
+  - Installation: argo-workflow/installation.md
+  - Int prep: argo-workflow/int-prep.md
 theme:
   name: material
   icon:
