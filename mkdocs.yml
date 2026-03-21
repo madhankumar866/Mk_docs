@@ -3,6 +3,7 @@ nav:
 - About: about.md
 - Index: index.md
 - Terraform:
+  - Interview questions: Terraform/Interview-Questions.md
   - Readme: Terraform/Readme.md
 - Tools:
   - Tools: Tools/Tools.md
