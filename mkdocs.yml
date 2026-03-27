@@ -1,5 +1,5 @@
 site_name: MK Docs
-site_url: "http://localhost:8000"
+site_url: "https://madhankumar866.github.io/Mk_docs/"
 nav:
 - About: about.md
 - Index: index.md
