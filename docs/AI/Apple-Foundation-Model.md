@@ -55,7 +55,7 @@ Apple Foundation model
 ---
 
 ## Related Pages
-- [[Apple-Foundation-Model-Docs]]
-- [[Apple-Foundation-Model-Youtube]]
-- [[Langchain/DeepAgents]]
-- [[Python/basics]]
+- [Apple Foundation Model Docs](Apple-Foundation-Model-Docs.md)
+- [Apple Foundation Model Youtube](Apple-Foundation-Model-Youtube.md)
+- [DeepAgents](../Langchain/DeepAgents.md)
+- [Basics](../Python/basics.md)

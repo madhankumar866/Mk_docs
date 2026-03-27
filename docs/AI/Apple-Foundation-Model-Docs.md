@@ -31,5 +31,5 @@ Goal
 ---
 
 ## Related Pages
-- [[Apple-Foundation-Model]]
-- [[Apple-Foundation-Model-Youtube]]
+- [Apple Foundation Model](Apple-Foundation-Model.md)
+- [Apple Foundation Model Youtube](Apple-Foundation-Model-Youtube.md)

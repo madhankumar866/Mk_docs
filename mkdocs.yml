@@ -200,10 +200,10 @@ theme:
   - content.tabs.link
 
 plugins:
-  # - glightbox
   - search
   - graph-view
-  # - graph
+  - glightbox
+
 markdown_extensions:
 - admonition
 - pymdownx.critic
