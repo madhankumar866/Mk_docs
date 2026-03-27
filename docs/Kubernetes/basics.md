@@ -63,4 +63,4 @@ https://sysdig.com/blog/kubernetes-limits-requests/
 - [[commands]]
 - [[CheatSheet]]
 - [[Tips]]
-- [[AWS/EKS/Service_mesh]]
+- [[AWS/EKS/Service_mesh]]- [[Career/Release-Eng-to-MLOps-Roadmap]]

@@ -52,3 +52,13 @@ Here is a structured 2026 roadmap to bridge that gap.
 | **Monitoring & Logging** | Datadog, Grafana, ELK | Arize, WhyLabs, Evidently, LangSmith |
 | **Compute Management** | CPU / RAM Limits, Auto-scaling | GPU Partitioning (MIG), CUDA optimization |
 | **Testing** | Unit, Integration, E2E | Data Validation, Drift Detection, LLM Evals |
+
+
+---
+
+## Related Pages
+- [[Career/AI-Job-Guide-2026]]
+- [[AWS/CI-CD]]
+- [[Kubernetes/basics]]
+- [[Python/python]]
+- [[Langchain/DeepAgents]]
