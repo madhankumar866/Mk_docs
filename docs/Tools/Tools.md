@@ -24,3 +24,13 @@
 !!! Notes
 
     [k9s](https://github.com/derailed/k9s)
+
+
+
+
+## URL Shorteners & Link Management
+
+!!! Notes
+    [GoLinks](https://github.com/GoLinks/golinks)    
+    * GoLinks is an enterprise link management tool that lets you create memorable short links (e.g., `go/jira`, `go/wiki`) for frequently used internal resources. 
+    * It drastically improves team productivity by replacing long, complex URLs with intuitive, easy-to-share shortcuts.

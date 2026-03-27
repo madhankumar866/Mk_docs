@@ -2,6 +2,12 @@
 
 ## Detailed Terraform Concepts
 
+## Related pages
+
+- [Terraform overview](Readme.md)
+- [Terraform cheat sheet](Terraform_cheat_sheet.md)
+- [Question bank: Terraform](../questions/terraform.md)
+
 ### 1. How does Terraform build the dependency graph internally?
 Terraform creates a **Directed Acyclic Graph (DAG)** based on resource references. It executes resources in parallel where possible. Dependencies are derived from interpolation references and `depends_on`.
 *   **Senior Tip:** Mention parallelism & execution plan graph.

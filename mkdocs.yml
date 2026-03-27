@@ -4,8 +4,9 @@ nav:
 - About: about.md
 - Index: index.md
 - Terraform:
+  - Overview: Terraform/Readme.md
   - Interview questions: Terraform/Interview-Questions.md
-  - Readme: Terraform/Readme.md
+  - Cheat sheet: Terraform/Terraform_cheat_sheet.md
 - Career:
   - 1 on 1 framework: Career/1-on-1-Framework.md
   - Ai job guide 2026: Career/AI-Job-Guide-2026.md
@@ -170,8 +171,6 @@ nav:
   - Kubernetes: questions/kubernetes.md
   - Q1: questions/q1.md
   - Terraform: questions/terraform.md
-- Questions/terraform:
-  - Terraform_cheat_sheet: questions/Terraform/Terraform_cheat_sheet.md
 - Questions/python:
   - Log_tail: questions/Python/log_tail.md
 - Questions/interview-cases:
