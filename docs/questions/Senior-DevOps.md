@@ -2,6 +2,13 @@
 
 These questions are designed to test architecture thinking, failure handling, production maturity, deep Kubernetes + Terraform knowledge, and an SRE mindset. They separate experienced engineers from beginners.
 
+## Related pages
+
+- [Terraform overview](../Terraform/Readme.md)
+- [Terraform cheat sheet](../Terraform/Terraform_cheat_sheet.md)
+- [Terraform interview questions](../Terraform/Interview-Questions.md)
+- [Question bank: Terraform](terraform.md)
+
 ---
 
 ## 🔥 11 Senior-Level Tricky DevOps Interview Questions

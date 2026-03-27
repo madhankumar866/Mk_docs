@@ -1,5 +1,12 @@
 ## scenario question
 
+## Related pages
+
+- [Python overview](../Python/python.md)
+- [Python basics](../Python/basics.md)
+- [Python setup](../Python/setup.md)
+- [Python log tail exercise](../Python/log_tail.md)
+
 1 Scenario
 Looking to cleanup file in s3 with the specific tag — encrypted
 

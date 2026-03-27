@@ -29,6 +29,7 @@ Python Reference [reference_url](https://docs.python.org/2.7/library/subprocess.
 - [[basics]]
 - [[setup]]
 - [[linux/Python]]
+- [Log tail exercise](log_tail.md)
         
 
 

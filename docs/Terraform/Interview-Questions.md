@@ -6,6 +6,7 @@
 
 - [Terraform overview](Readme.md)
 - [Terraform cheat sheet](Terraform_cheat_sheet.md)
+- [Question bank: Senior DevOps](../questions/Senior-DevOps.md)
 - [Question bank: Terraform](../questions/terraform.md)
 
 ### 1. How does Terraform build the dependency graph internally?

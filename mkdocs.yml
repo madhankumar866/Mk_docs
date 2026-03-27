@@ -27,6 +27,7 @@ nav:
   - Basics: Python/basics.md
   - Python: Python/python.md
   - Setup: Python/setup.md
+  - Log tail: Python/log_tail.md
 - Python/learn:
   - Week_1_fundamentals: Python/Learn/Week_1_Fundamentals.md
 - Langchain:
@@ -171,8 +172,6 @@ nav:
   - Kubernetes: questions/kubernetes.md
   - Q1: questions/q1.md
   - Terraform: questions/terraform.md
-- Questions/python:
-  - Log_tail: questions/Python/log_tail.md
 - Questions/interview-cases:
   - Production incident devrev: questions/Interview-Cases/Production-Incident-Devrev.md
 - Argo-workflow:

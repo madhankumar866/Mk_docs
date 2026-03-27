@@ -9,4 +9,5 @@ This section collects quick Terraform notes, interview prep, and command referen
 
 ## Related pages
 
+- [Question bank: Senior DevOps](../questions/Senior-DevOps.md)
 - [Question bank: Terraform](../questions/terraform.md)

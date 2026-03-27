@@ -10,3 +10,4 @@ https://spacelift.io/blog/terraform-files
 - [Terraform overview](../Terraform/Readme.md)
 - [Terraform cheat sheet](../Terraform/Terraform_cheat_sheet.md)
 - [Terraform interview questions](../Terraform/Interview-Questions.md)
+- [Question bank: Senior DevOps](Senior-DevOps.md)

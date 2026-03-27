@@ -15,3 +15,10 @@ You are tasked with creating a Python script to monitor a log file in real time.
 4) The script should keep running indefinitely and monitor the log file for new entries.
 
 ![alt text](image.png)
+
+## Related pages
+
+- [Python overview](python.md)
+- [Python basics](basics.md)
+- [Python setup](setup.md)
+- [Question bank: Python](../questions/Python.md)
