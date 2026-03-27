@@ -17,6 +17,8 @@ nav:
   - Helm_chart: Helm_chart/Helm_chart.md
 - Docker:
   - Commands: docker/commands.md
+- Macos:
+  - Direnv: macOS/direnv.md
 - Aws-boto:
   - Assume role lambda: AWS-boto/Assume-role-lambda.md
   - References: AWS-boto/references.md
