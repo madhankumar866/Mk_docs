@@ -1,5 +1,5 @@
 site_name: MK Docs
-site_url: "https://madhankumar866.github.io/Mk_docs/"
+site_url: https://madhankumar866.github.io/Mk_docs/
 nav:
 - About: about.md
 - Index: index.md
@@ -10,6 +10,7 @@ nav:
   - 1 on 1 framework: Career/1-on-1-Framework.md
   - Ai job guide 2026: Career/AI-Job-Guide-2026.md
   - Job links: Career/Job-Links.md
+  - Release eng to mlops roadmap: Career/Release-Eng-to-MLOps-Roadmap.md
 - Tools:
   - Tools: Tools/Tools.md
 - Helm_chart:
@@ -198,13 +199,10 @@ theme:
   - content.tabs.link
   - content.code.copy
   - content.tabs.link
-
 plugins:
-  - search
-  # - graph-view
-  - graph
-  - glightbox
-
+- search
+- graph
+- glightbox
 markdown_extensions:
 - admonition
 - pymdownx.critic
