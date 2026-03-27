@@ -201,7 +201,8 @@ theme:
 
 plugins:
   - search
-  - graph-view
+  # - graph-view
+  - graph
   - glightbox
 
 markdown_extensions:
