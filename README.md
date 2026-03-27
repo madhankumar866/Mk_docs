@@ -28,5 +28,5 @@
      `https://hub.docker.com/r/squidfunk/mkdocs-material`
 
      docker run -d --rm -it -p 8001:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
-     Python Version 3.10
+     Python Version 3.10.20
           
