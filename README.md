@@ -21,12 +21,17 @@
 
           This will create a new directory, named site. Take a look inside " site " directory:
 
+     Building Static Files   
+     To generate static files for hosting, which creates a `site` directory:                                                   │
 
-     To run Mkdocs in docker use the following command
+     ```bash
+     mkdocs build
+     ```
+    Running in Docker
+    You can also run MkDocs using the official Docker image:
+    ```bash 
+    docker run -d --rm -it -p 8001:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
+    ```
 
-
-     `https://hub.docker.com/r/squidfunk/mkdocs-material`
-
-     docker run -d --rm -it -p 8001:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
-     Python Version 3.10.20
-          
+    ## Changelog 
+    See [CHANGELOG.md](CHANGELOG.md) for a history of updates and fixes.
