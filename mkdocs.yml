@@ -200,7 +200,7 @@ theme:
   - content.tabs.link
 
 plugins:
-  - glightbox
+  # - glightbox
   - search
   - graph-view
   # - graph
