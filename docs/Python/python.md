@@ -22,6 +22,13 @@
             print("match not found")
         ```
 Python Reference [reference_url](https://docs.python.org/2.7/library/subprocess.html)
+
+---
+
+## Related Pages
+- [[basics]]
+- [[setup]]
+- [[linux/Python]]
         
 
 

@@ -27,3 +27,9 @@ Planned Approach
 - Experiment with model prompts and tool integration to reinforce learning.
 
 Goal
+
+---
+
+## Related Pages
+- [[Apple-Foundation-Model]]
+- [[Apple-Foundation-Model-Youtube]]

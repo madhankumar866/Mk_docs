@@ -214,3 +214,12 @@ kubectl rollout restart deployment {podname} -n lifion
 ```bash
 kubectl get pods --sort-by='.status.containerStatuses[0].restartCount'
 ```
+
+---
+
+## Related Pages
+- [[basics]]
+- [[CheatSheet]]
+- [[Tips]]
+- [[AWS/EC2]]
+- [[kube-errors/conf.refuse]]

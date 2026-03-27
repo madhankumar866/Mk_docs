@@ -11,3 +11,10 @@ firewall-cmd --zone=trusted --remove-interface=docker0 --permanent
 firewall-cmd --reload
 
 https://docs.docker.com/network/packet-filtering-firewalls/
+
+---
+
+## Related Pages
+- [[Kubernetes/basics]]
+- [[linux/firewalld]]
+- [[linux/cmds]]

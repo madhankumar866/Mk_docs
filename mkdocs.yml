@@ -1,4 +1,5 @@
 site_name: MK Docs
+site_url: "http://localhost:8000"
 nav:
 - About: about.md
 - Index: index.md
@@ -197,8 +198,12 @@ theme:
   - content.tabs.link
   - content.code.copy
   - content.tabs.link
-  plugins:
+
+plugins:
   - glightbox
+  - search
+  - graph-view
+  # - graph
 markdown_extensions:
 - admonition
 - pymdownx.critic

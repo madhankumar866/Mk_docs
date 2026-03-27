@@ -32,3 +32,11 @@ I spent 10 hours digging into Kubernetes concepts, tools, and best practices thi
 ### Resources & Coverage:
 - DevOps, Cloud, Kubernetes, IaC, GitOps, MLOps
 - Newsletter: [DevOps and Cloud](https://lnkd.in/gg3RQsRK)
+
+---
+
+## Related Pages
+- [[basics]]
+- [[commands]]
+- [[CheatSheet]]
+- [[Helm_chart/Helm_chart]]

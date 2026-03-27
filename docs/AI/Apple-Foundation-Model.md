@@ -51,3 +51,11 @@ Apple Foundation model
 - Explore fine-tuning or prompt engineering for local use cases.
 
 - Consider building a simple UI or CLI for local PDF analysis.
+
+---
+
+## Related Pages
+- [[Apple-Foundation-Model-Docs]]
+- [[Apple-Foundation-Model-Youtube]]
+- [[Langchain/DeepAgents]]
+- [[Python/basics]]

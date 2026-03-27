@@ -20,3 +20,10 @@ kubectl scale deployments/kubernetes-bootcamp --replicas=4
 
 # To get details of scaled pods
 kubectl get pods -o wide
+
+---
+
+## Related Pages
+- [[basics]]
+- [[commands]]
+- [[Tips]]

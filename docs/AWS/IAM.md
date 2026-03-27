@@ -38,6 +38,14 @@ Allow only Specific user to access branch
 
 https://medium.com/@it.melnichenko/invoke-a-lambda-across-multiple-aws-accounts-8c094b2e70be
 
+---
+
+## Related Pages
+- [[EC2]]
+- [[lambda]]
+- [[AWS-boto/Assume-role-lambda]]
+- [[iam/policies/switch-role]]
+
 
 
 === "Limiting restrict user from accessing repo"

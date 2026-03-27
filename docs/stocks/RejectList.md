@@ -7,3 +7,8 @@ AUTOIND
 GAIL
 	BHEL **
 NCC ++  Do fundamental alaysis 
+
+---
+
+## Related Pages
+- [[Indicator_List]]

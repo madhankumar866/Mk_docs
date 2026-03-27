@@ -31,6 +31,8 @@ Case 1:
 
 # helm chart
 the package manager for Kubernetes
+
+See also: [[Helm_chart/Helm_chart]]
 Helm allows you to add variables and use functions inside your template files. This makes it perfect for scalable applications that'll eventually need to have their parameters changed.
 
 
@@ -54,3 +56,11 @@ To install a new package, use the helm install command. At its simplest, it take
 
 # resource limit
 https://sysdig.com/blog/kubernetes-limits-requests/
+
+---
+
+## Related Pages
+- [[commands]]
+- [[CheatSheet]]
+- [[Tips]]
+- [[AWS/EKS/Service_mesh]]
