@@ -38,6 +38,13 @@ This page contains lab questions and solutions for setting up Terraform with AWS
     }
     ```
 
+    **Visual Flow:**
+    ```mermaid
+    graph LR
+        S3[aws_s3_bucket.terraform_state] --> VER[aws_s3_bucket_versioning.versioning]
+        S3 --> PAB[aws_s3_bucket_public_access_block.block_public_access]
+    ```
+
 === "Exercise 2: Configure S3 Backend"
     **Question:**
     Configure terraform to use the `S3 bucket` for state management. Add the required block in a new file called `backend.tf`.
@@ -60,6 +67,13 @@ This page contains lab questions and solutions for setting up Terraform with AWS
     }
     ```
 
+    **Visual Flow:**
+    ```mermaid
+    graph TD
+        TF[Terraform CLI] --> |Stores State| S3[(AWS S3 Bucket)]
+        S3 -.-> |Key: terraform-state-file| OBJ[State Object]
+    ```
+
 === "Exercise 3: AWS Secrets Manager"
     **Question:**
     Store sensitive information securely using **AWS Secrets Manager** by creating a new `secret`.
@@ -74,6 +88,13 @@ This page contains lab questions and solutions for setting up Terraform with AWS
 
     ```bash
     aws secretsmanager create-secret --name my-database-password-johndoe --secret-string "YourSecurePassword"
+    ```
+
+    **Visual Flow:**
+    ```mermaid
+    graph LR
+        CLI[AWS CLI] --> |create-secret| SM[AWS Secrets Manager]
+        SM --> |Stores| SEC[Secret Value]
     ```
 
 === "Exercise 4: RDS with Secrets Manager"
@@ -119,3 +140,33 @@ This page contains lab questions and solutions for setting up Terraform with AWS
     terraform plan
     terraform apply
     ```
+
+    **Visual Flow:**
+    ```mermaid
+    graph TD
+        SM[AWS Secrets Manager] --> DS[data.aws_secretsmanager_secret_version]
+        DS --> |Password Value| RDS[aws_db_instance.my_secret_db]
+    ```
+
+=== "Full Infrastructure Graph"
+    **End-to-End Dependency Flow (DAG):**
+    
+    ```mermaid
+    graph TD
+        subgraph "S3 Backend Infrastructure"
+            S3[aws_s3_bucket.terraform_state] --> VER[aws_s3_bucket_versioning.versioning]
+            S3 --> PAB[aws_s3_bucket_public_access_block.block_public_access]
+        end
+
+        subgraph "Secrets & Database"
+            CLI[AWS CLI: create-secret] -.-> |Created Externally| SM[AWS Secrets Manager]
+            SM --> DS[data.aws_secretsmanager_secret_version.database_password]
+            DS --> RDS[aws_db_instance.my_secret_db]
+        end
+
+        RDS -.-> |Uses State| S3
+    ```
+
+    !!! info "Graph Legend"
+        - **Solid Arrow:** Implicit dependency (Terraform resource reference).
+        - **Dotted Arrow:** Logical dependency (external creation or state usage).
