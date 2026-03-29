@@ -237,4 +237,7 @@ markdown_extensions:
     custom_fences:
     - name: mermaid
       class: mermaid
-      format: null
+      format: !!python/name:pymdownx.superfences.mermaid_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid/dist/mermaid.min.js
