@@ -213,7 +213,6 @@ plugins:
 markdown_extensions:
 - admonition
 - pymdownx.critic
-- pymdownx.superfences
 - footnotes
 - pymdownx.caret
 - pymdownx.keys
@@ -229,7 +228,6 @@ markdown_extensions:
     anchor_linenums: true
 - pymdownx.inlinehilite
 - pymdownx.snippets
-- pymdownx.superfences
 - pymdownx.tasklist:
     custom_checkbox: true
     clickable_checkbox: true
@@ -237,7 +235,7 @@ markdown_extensions:
     custom_fences:
     - name: mermaid
       class: mermaid
-      format: !!python/name:pymdownx.superfences.mermaid_format
+      format: !!python/name:pymdownx.superfences.fence_code_format
 
 extra_javascript:
   - https://unpkg.com/mermaid/dist/mermaid.min.js
