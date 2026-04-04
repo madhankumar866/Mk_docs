@@ -1,0 +1,88 @@
+acl manager proto cache_object
+###To allow specific ip connection, client ip address,.
+acl localhost src 113.193.28.102/32  14.98.54.90/32 202.83.25.120/32
+##Allow all websites
+acl to_localhost dst 127.0.0.0/8 0.0.0.0/32 ::1
+
+acl localnet src 0.0.0.0/8
+
+##########Allow my all server public ip to communication
+acl    ip1  myip       103.205.143.162
+acl    ip2  myip       103.205.143.164
+acl    ip3  myip       103.205.143.165
+acl    ip4  myip       103.205.143.166
+acl    ip5  myip       103.205.143.163
+acl    ip5  myip       103.205.143.169
+
+tcp_outgoing_address   192.119.10.250   ip1
+tcp_outgoing_address   103.205.143.164   ip2
+tcp_outgoing_address   103.205.143.165   ip3
+tcp_outgoing_address   103.205.143.166   ip4
+tcp_outgoing_address   103.205.143.163   ip5
+tcp_outgoing_address   103.205.143.169   ip5
+
+visible_hostname   192.119.10.250 
+visible_hostname   103.205.143.164 
+visible_hostname   103.205.143.165 
+visible_hostname   103.205.143.166 
+visible_hostname   103.205.143.163 
+visible_hostname   103.205.143.169
+##########
+
+
+####Allow these ports to communicate via#####
+acl Safe_ports port 4377         #squid
+acl SSL_ports port 443
+acl Safe_ports port 80          # http
+acl Safe_ports port 21          # ftp
+acl Safe_ports port 443         # https
+acl Safe_ports port 70          # gopher
+acl Safe_ports port 210         # wais
+acl Safe_ports port 1025-65535  # unregistered ports
+acl Safe_ports port 280         # http-mgmt
+acl Safe_ports port 488         # gss-http
+acl Safe_ports port 591         # filemaker
+acl Safe_ports port 777         # multiling http
+acl CONNECT method CONNECT
+
+
+#####setting user and pass for clinet###
+###command htpasswd -c /etc/squid/passwd username
+auth_param basic program /usr/lib64/squid/ncsa_auth /etc/squid/passwd
+auth_param basic children 5
+auth_param basic realm Squid proxy-caching web server
+auth_param basic credentialsttl 2 hours
+auth_param basic casesensitive off
+
+
+acl ncsa_users proxy_auth REQUIRED
+http_access allow ncsa_users
+
+
+http_access allow manager localhost
+http_access deny manager
+
+http_access deny !Safe_ports
+
+http_access deny CONNECT !SSL_ports
+
+
+
+http_access allow localnet
+http_access allow localhost
+
+http_access deny all
+
+http_port 4377
+
+hierarchy_stoplist cgi-bin ?
+
+#cache_dir ufs /var/spool/squid 500 26 556
+
+forwarded_for delete
+
+coredump_dir /var/spool/squid
+refresh_pattern ^ftp:           1440    20%     10080
+refresh_pattern ^gopher:        1440    0%      1440
+refresh_pattern -i (/cgi-bin/|\?) 0     0%      0
+refresh_pattern .               0       20%     4320

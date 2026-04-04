@@ -1,0 +1,102 @@
+#https://kubernetes.github.io/ingress-nginx/user-guide/fcgi-services/
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example-app
+  labels:
+    app: example-app
+spec:
+  containers: 
+    - name: example-app
+      image: madhankumar866/php-fpm
+      ports:
+        - containerPort: 9000
+          name: fastcgi
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name:  example-service
+spec:
+  selector:
+    app: example-app
+  ports:
+  - port: 9000
+    targetPort: 9000
+    name: fastcgi
+
+
+---
+# The ConfigMap MUST be created first for the ingress controller to be able to
+# find it when the Ingress object is created.
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ingress-cm
+data:
+  DOCUMENT_ROOT: "/var/www/html"
+  SCRIPT_FILENAME: "/var/www/html$fastcgi_script_name"
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-app
+  annotations:
+
+    nginx.ingress.kubernetes.io/backend-protocol: "FCGI"
+    nginx.ingress.kubernetes.io/fastcgi-index: "index.php"
+    nginx.ingress.kubernetes.io/fastcgi-params-configmap: "ingress-cm"
+    nginx.ingress.kubernetes.io/server-snippet: |-
+      # if ($request_uri ~ ^/(0|1|2)[0-9]/) {
+      #     rewrite ^/(.*)$ /refile/$1 break;
+      # }
+
+      # if ($request_uri ~* \.(html|htm|css|js|gif|jpg|jpeg|png|bmp|woff|ttf|ico)$) {
+      #     rewrite ^/(.*)$ /reweb/$1 break;
+      # }
+    
+      if ($request_uri ~ ^/([a-zA-Z0-9]+)/([a-zA-Z]+)/([a-zA-Z0-9]+)/([a-zA-Z]+)/([a-zA-Z0-9]+)(\-+)(kqz)$) {
+          rewrite ^/([a-zA-Z0-9]+)/([a-zA-Z]+)/([a-zA-Z0-9]+)/([a-zA-Z]+)/([a-zA-Z0-9]+)(\-+)(kqz)$ /TNNY5yrOcgn0W.php?$2/$3/$4/$5/$1 break;
+      }
+    nginx.ingress.kubernetes.io/use-regex: "true"    
+
+
+    # nginx.ingress.kubernetes.io/location-snippet: |
+    #   expires off;
+    #   fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    #   root /var/www/html;
+    #   fastcgi_pass 127.0.0.1:9000;
+    #   fastcgi_index index.php;
+    #   fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    #   include fastcgi_params;
+    #   #fastcgi_param REMOTE_ADDR $http_x_real_ip;
+    #   fastcgi_pass_header "X-Accel-Redirect";
+    #   fastcgi_pass_header "X-Accel-Buffering";
+    #   fastcgi_pass_header "X-Accel-Charset";
+    #   fastcgi_pass_header "X-Accel-Expires";
+    #   fastcgi_pass_header "X-Accel-Limit-Rate";
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: hello-world.info
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: example-service
+            port:
+              name: fastcgi
+      - path: /TNNY5yrOcgn0W.php/?(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: example-service
+            port:
+              name: fastcgi

@@ -1,0 +1,45 @@
+kubectl get pods -l app=proxy-service-externalname-ingress
+
+
+kubectl exec --stdin --tty pod/example-app -- /bin/bash
+
+
+
+kubectl exec --stdin --tty pod/ingress-nginx-controller-7bb66858cf-wmnqj -- /bin/bash
+
+
+service/ingress-nginx-controller
+
+deployment.apps/ingress-nginx-controller
+replicaset.apps/ingress-nginx-controller-6cc5ccb977
+
+
+kubectl config current-context
+kubectl config set-context --current --namespace=ingress-nginx
+kubectl config set-context --current --namespace=default
+
+
+kubectl config view --minify | grep namespace:
+
+
+
+kubectl create configmap nginx-config --namespace=ingress-nginx --from-file=/home/mk/mkdocs/docs/docker/php-fpm/kubectl/nginx.conf
+
+
+kubectl edit deployment.apps/ingress-nginx-controller --namespace=ingress-nginx
+question "Create a nginx ingress in eks cluster and add my existing nginx.conf centos7 file "
+kubectl create configmap nginx-config --namespace=ingress-nginx --from-file=/home/mk/mkdocs/docs/docker/php-fpm/kubectl/nginx.conf
+
+
+volumes:
+- name: nginx-config-volume
+  configMap:
+    name: nginx-config
+
+volumeMounts:
+- name: nginx-config-volume
+  mountPath: /etc/nginx/nginx.conf
+  subPath: nginx.conf
+
+
+backup deployment file location in mk /home/kubectl-edit-3589494886.yaml

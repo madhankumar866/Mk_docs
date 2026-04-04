@@ -1,0 +1,15 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: nginx-config
+  namespace: ingress-nginx
+data:
+  proxy-connect-timeout: "10s"
+  proxy-read-timeout: "10s"
+  client-max-body-size: "2m"
+  nginx.conf: |
+    location /example {
+      rewrite ^/example(.*) /newpath$1 break;
+      proxy_pass http://google.com;
+    }
+

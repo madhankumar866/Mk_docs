@@ -1,0 +1,15 @@
+<?php
+
+#echo "hello world!";
+
+#echo file_get_contents("http://1and1-1.maildynamix.com/ping");
+#header("Location: https://www.google.com/");
+$link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']
+                === 'on' ? "https" : "http") . "://" .
+          $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+
+// Display the complete URL
+#echo $link;
+list($dummy1,$dummy2,$dummy3,$dummy4,$api,$redirect,$emid,$track_id,$stat_id)=explode("/",$link);
+echo header("Location: http://54.39.73.87/$api/$redirect/$emid/$track_id/$stat_id");
+timearunkumar@cloudshell:~/php-docs-samples/appengine/php72/helloworld (php5-259411)$

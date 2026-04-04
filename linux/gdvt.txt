@@ -1,0 +1,1780 @@
+
+
+Include "/etc/apache2/conf.modules.d/*.conf"
+
+# Administrator locations for safely altering httpd.conf
+Include "/etc/apache2/conf.d/includes/pre_main_global.conf"
+
+# These are hard-coded values that are required by cPanel & WHM
+PidFile /run/apache2/httpd.pid
+User nobody
+Group nobody
+ExtendedStatus On
+LogLevel warn
+# You can change this by using WHM, and navigating to the 'Basic WebHost Manager® Setup' -> 'Contact Information' interface.
+ServerAdmin notify@0000000000
+
+# You can change this by using WHM, and navigating to the 'Networking Setup' => 'Change Hostname' interface.
+ServerName fs.vsjxfsukws01.local
+
+# You can change this by using WHM, and navigating to the 'Apache Configuration' -> 'Global Configuration' interface.
+TraceEnable Off
+ServerSignature Off
+ServerTokens ProductOnly
+FileETag None
+
+<Directory "/">
+    
+      AllowOverride All
+    
+    Options ExecCGI FollowSymLinks IncludesNOEXEC Indexes
+</Directory>
+
+StartServers 5
+<IfModule prefork.c>
+    MinSpareServers 5
+    MaxSpareServers 10
+</IfModule>
+
+ServerLimit 256
+MaxRequestWorkers 150
+MaxConnectionsPerChild 10000
+KeepAlive On
+KeepAliveTimeout 5
+MaxKeepAliveRequests 100
+Timeout 300
+
+
+<IfModule rewrite_module>
+# Global DCV Exclude - Rewrites
+RewriteEngine on
+RewriteCond %{REQUEST_URI} ^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Sectigo\ DCV)?$ [OR]
+RewriteCond %{REQUEST_URI} ^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$ [OR]
+RewriteCond %{REQUEST_URI} ^/\.well-known/pki-validation/(?:\ Ballot169)? 
+
+# Exclude proxy subdomains as we need rewrites to capture the DCV requests
+RewriteCond %{HTTP_HOST} !^(?:autoconfig|autodiscover|cpanel|cpcalendars|cpcontacts|webdisk|webmail|whm)\.
+RewriteRule ^ - [END]
+</IfModule>
+
+<LocationMatch "(^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?: Sectigo DCV)?$|^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$|^/\.well-known/pki-validation/(?: Ballot169)?)">
+# Global DCV Exclude - Location
+Satisfy Any
+Order Allow,Deny
+Allow from all
+</LocationMatch>
+
+
+
+# You can change this by using WHM, and navigating to the 'Apache Configuration' -> 'DirectoryIndex Priority' interface.
+<IfModule dir_module>
+    DirectoryIndex index.php index.php5 index.php4 index.php3 index.perl index.pl index.plx index.ppl index.cgi index.jsp index.jp index.phtml index.shtml index.xhtml index.html index.htm index.wml Default.html Default.htm default.html default.htm home.html home.htm index.js
+</IfModule>
+
+# You can change this by using WHM, and navigating to the 'Apache Configuration' -> 'Memory Usage Restrictions' interface.
+
+# This setting is required by cPanel & WHM in order to provide access to a default webpage when none exists
+<Directory "/var/www/html">
+    Options All
+    AllowOverride None
+    Require all granted
+</Directory>
+
+# Required cPanel security policy: Disallow remote access to .htaccess, .htpasswd, .user.ini, and php.ini files
+<FilesMatch "^(\.ht(access|passwds?)|\.user\.ini|php\.ini)$">
+    Require all denied
+</FilesMatch>
+
+# PHP error_log protection
+<Files ~ "^error_log$">
+   <RequireAll>
+       Require all denied
+   </RequireAll>
+</Files>
+
+<IfModule alias_module>
+    ScriptAliasMatch ^/?controlpanel/?$ /usr/local/cpanel/cgi-sys/redirect.cgi
+    ScriptAliasMatch ^/?cpanel/?$ /usr/local/cpanel/cgi-sys/redirect.cgi
+    ScriptAliasMatch ^/?kpanel/?$ /usr/local/cpanel/cgi-sys/redirect.cgi
+    ScriptAliasMatch ^/?securecontrolpanel/?$ /usr/local/cpanel/cgi-sys/sredirect.cgi
+    ScriptAliasMatch ^/?securecpanel/?$ /usr/local/cpanel/cgi-sys/sredirect.cgi
+    ScriptAliasMatch ^/?securewhm/?$ /usr/local/cpanel/cgi-sys/swhmredirect.cgi
+    ScriptAliasMatch ^/?webmail$ /usr/local/cpanel/cgi-sys/wredirect.cgi
+    ScriptAliasMatch ^/?webmail/ /usr/local/cpanel/cgi-sys/wredirect.cgi
+    ScriptAliasMatch ^/?whm/?$ /usr/local/cpanel/cgi-sys/whmredirect.cgi
+
+    Alias /bandwidth /usr/local/bandmin/htdocs/
+    Alias /img-sys /usr/local/cpanel/img-sys/
+    Alias /java-sys /usr/local/cpanel/java-sys/
+    Alias /mailman/archives /usr/local/cpanel/3rdparty/mailman/archives/public/
+    Alias /pipermail /usr/local/cpanel/3rdparty/mailman/archives/public/
+    Alias /sys_cpanel /usr/local/cpanel/sys_cpanel/
+
+    ScriptAlias /cgi-sys /usr/local/cpanel/cgi-sys/
+    ScriptAlias /mailman /usr/local/cpanel/3rdparty/mailman/cgi-bin/
+    
+</IfModule>
+
+# This can be configured in the cPanel 'Leech Protection' interface.
+<IfModule rewrite_module>
+    RewriteEngine on
+    RewriteMap LeechProtect prg:/usr/local/cpanel/bin/leechprotect
+    Mutex file:/run/apache2 rewrite-map
+</IfModule>
+
+<IfModule mime_module>
+    TypesConfig conf/mime.types
+
+    AddType application/x-compress .Z
+    AddType application/x-gzip .gz .tgz
+    AddType text/html .shtml
+    AddType application/x-tar .tgz
+    AddType text/vnd.wap.wml .wml
+    AddType image/vnd.wap.wbmp .wbmp
+    AddType text/vnd.wap.wmlscript .wmls
+    AddType application/vnd.wap.wmlc .wmlc
+    AddType application/vnd.wap.wmlscriptc .wmlsc
+
+    # These extensions are used to redirect incoming requests to WHM
+    AddHandler cgi-script .cgi .pl .plx .ppl .perl
+
+    # This is used for custom error documents
+    AddHandler server-parsed .shtml
+</IfModule>
+
+# You can change this by using WHM, and updating the 'Tweak Settings' -> 'System' -> 'Allow server-info' option.
+<IfModule status_module>
+    # This is used by the WHM 'Apache Status' application
+    <Location /whm-server-status>
+        SetHandler server-status
+        Order deny,allow
+        Deny from all
+        Allow from 127.0.0.1 ::1
+        <IfModule security2_module>
+            SecRuleEngine Off
+        </IfModule>
+    </Location>
+
+</IfModule>
+
+# Required cPanel security policy: disable userdir when mod_ruid2 or mpm_itk or mod_passenger are loaded
+<IfModule userdir_module>
+    UserDir public_html
+
+    <IfModule ruid2_module>
+        UserDir disabled
+    </IfModule>
+    <IfModule mpm_itk.c>
+        UserDir disabled
+    </IfModule>
+    <IfModule mod_passenger.c>
+        UserDir disabled
+    </IfModule>
+</IfModule>
+
+<IfModule mod_log_config.c>
+    LogFormat "%v:%p %h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combinedvhost
+    <IfModule logio_module>
+        LogFormat "%v %{%s}t %I .\n%v %{%s}t %O ." bytesvhost
+    </IfModule>
+    LogFormat "%v:%p %h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+    LogFormat "%v:%p %h %l %u %t \"%r\" %>s %b" common
+    LogFormat "%{Referer}i -> %U" referer
+    LogFormat "%{User-agent}i" agent
+    <IfModule logio_module>
+        CustomLog "|/usr/local/cpanel/bin/splitlogs --dir=/etc/apache2/logs/domlogs --main=fs.vsjxfsukws01.local --suffix=-bytes_log" bytesvhost
+    </IfModule>
+    CustomLog "|/usr/local/cpanel/bin/splitlogs --dir=/etc/apache2/logs/domlogs --main=fs.vsjxfsukws01.local --mainout=/etc/apache2/logs/access_log" combinedvhost
+</IfModule>
+
+
+# The Listen port can be updated using 'Tweak Settings' -> 'System',
+# However, if you have any Apache Reserved IPs, then this Tweak setting will
+# be ignored. Instead, each IP on your system (excluding Apache Reserved IPs)
+# will be listed here.
+Listen 0.0.0.0:80
+Listen [::]:80
+
+<IfModule ssl_module>
+    # cipher and protocol directives can be set in WHM under 'Apache Configuration' -> 'Global Configuration'
+    SSLCipherSuite ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256
+    SSLProtocol TLSv1.2
+    SSLPassPhraseDialog  builtin
+
+    <IfModule socache_shmcb_module>
+        SSLUseStapling on
+        SSLStaplingCache shmcb:/run/apache2/stapling_cache_shmcb(256000)
+
+        # Prevent browsers from failing if an OCSP server is temporarily broken.
+        SSLStaplingReturnResponderErrors off
+        SSLStaplingErrorCacheTimeout 60
+        SSLStaplingFakeTryLater off
+        SSLStaplingResponderTimeout 3
+        SSLSessionCache shmcb:/run/apache2/ssl_gcache_data_shmcb(1024000)
+    </IfModule>
+    <IfModule !socache_shmcb_module>
+        SSLSessionCache dbm:/run/apache2/ssl_gcache_data_dbm
+    </IfModule>
+
+    SSLSessionCacheTimeout  300
+    Mutex                   file:/run/apache2 ssl-cache
+    SSLRandomSeed startup builtin
+    SSLRandomSeed connect builtin
+
+    # The Listen port can be updated using 'Tweak Settings' -> 'System',
+    # However, if you have any Apache Reserved IPs, then this Tweak setting will
+    # be ignored. Instead, each IP on your system (excluding Apache Reserved IPs)
+    # will be listed here.
+    Listen 0.0.0.0:443
+    Listen [::]:443
+
+    AddType application/x-x509-ca-cert .crt
+    AddType application/x-pkcs7-crl .crl
+</IfModule>
+
+Include "/etc/apache2/conf.d/*.conf"
+
+Include "/etc/apache2/conf.d/includes/account_suspensions.conf"
+Include "/etc/apache2/conf.d/includes/errordocument.conf"
+
+# Administrator locations for safely globally altering all virtualhost configurations
+Include "/etc/apache2/conf.d/includes/pre_virtualhost_global.conf"
+
+ProxyPass /___proxy_subdomain_ws_cpanel  ws://127.0.0.1:2082 max=1 retry=0
+ProxyPass /___proxy_subdomain_ws_whm     ws://127.0.0.1:2086 max=1 retry=0
+ProxyPass /___proxy_subdomain_ws_webmail ws://127.0.0.1:2095 max=1 retry=0
+
+
+##################################################
+##################################################
+#
+# Define default vhosts for shared IPs
+#
+##################################################
+##################################################
+
+<VirtualHost 127.0.0.1:80>
+    ServerName fs.vsjxfsukws01.local
+    DocumentRoot /var/www/html
+    ServerAdmin notify@0000000000
+    # Global DCV Rewrite Exclude
+    <IfModule rewrite_module>
+    RewriteOptions Inherit
+    </IfModule>
+
+
+    <Directory "/">
+      AllowOverride All
+    </Directory>
+
+
+    <IfModule suphp_module>
+        suPHP_UserGroup nobody nobody
+    </IfModule>
+
+</VirtualHost>
+
+<VirtualHost 10.60.52.206:80>
+    ServerName fs.vsjxfsukws01.local
+    DocumentRoot /var/www/html
+    ServerAdmin notify@0000000000
+    # Global DCV Rewrite Exclude
+    <IfModule rewrite_module>
+    RewriteOptions Inherit
+    </IfModule>
+
+
+    <Directory "/">
+      AllowOverride All
+    </Directory>
+
+
+    <IfModule suphp_module>
+        suPHP_UserGroup nobody nobody
+    </IfModule>
+
+</VirtualHost>
+
+
+##################################################
+##################################################
+#
+# Define default vhosts for unbound IPs
+#
+##################################################
+##################################################
+
+<VirtualHost *>
+    ServerName fs.vsjxfsukws01.local
+    DocumentRoot /var/www/html
+    ServerAdmin notify@0000000000
+    # Global DCV Rewrite Exclude
+    <IfModule rewrite_module>
+    RewriteOptions Inherit
+    </IfModule>
+
+
+    <Directory "/">
+      AllowOverride All
+    </Directory>
+
+
+    <IfModule suphp_module>
+        suPHP_UserGroup nobody nobody
+    </IfModule>
+
+</VirtualHost>
+
+##################################################
+##################################################
+#
+# Define the virtual host configurtion for user domains
+#
+##################################################
+##################################################
+
+# BEGIN: HTTP vhosts list
+
+<VirtualHost 10.60.52.206:80>
+  ServerName assessmentx.co.uk
+    ServerAlias mail.assessmentx.co.uk www.assessmentx.co.uk
+  DocumentRoot /home/assessmentx/public_html
+  ServerAdmin webmaster@assessmentx.co.uk
+  UseCanonicalName Off
+
+  ## User assessmentx # Needed for Cpanel::ApacheConf
+  <IfModule userdir_module>
+    <IfModule !mpm_itk.c>
+      <IfModule !ruid2_module>
+        <IfModule !mod_passenger.c>
+          UserDir disabled
+          UserDir enabled assessmentx 
+        </IfModule>
+      </IfModule>
+    </IfModule>
+  </IfModule>
+
+  # Enable backwards compatible Server Side Include expression parser for Apache versions >= 2.4.
+  # To selectively use the newer Apache 2.4 expression parser, disable SSILegacyExprParser in
+  # the user's .htaccess file.  For more information, please read:
+  #    http://httpd.apache.org/docs/2.4/mod/mod_include.html#ssilegacyexprparser
+  <IfModule include_module>
+    <Directory "/home/assessmentx/public_html">
+      SSILegacyExprParser On
+    </Directory>
+  </IfModule>
+
+  
+
+  <IfModule suphp_module>
+    suPHP_UserGroup assessmentx assessmentx
+  </IfModule>
+  <IfModule suexec_module>
+    <IfModule !mod_ruid2.c>
+      SuexecUserGroup assessmentx assessmentx
+    </IfModule>
+  </IfModule>
+  <IfModule ruid2_module>
+    RMode config
+    RUidGid assessmentx assessmentx
+  </IfModule>
+  <IfModule mpm_itk.c>
+    # For more information on MPM ITK, please read:
+    #   http://mpm-itk.sesse.net/
+    AssignUserID assessmentx assessmentx
+  </IfModule>
+  <IfModule mod_passenger.c>
+    PassengerUser assessmentx
+    PassengerGroup assessmentx
+  </IfModule>
+
+  <IfModule alias_module>
+    ScriptAlias /cgi-bin/ /home/assessmentx/public_html/cgi-bin/
+  </IfModule>
+
+
+    # Global DCV Rewrite Exclude
+    <IfModule rewrite_module>
+        RewriteOptions Inherit
+    </IfModule>
+
+        
+        
+            
+                
+                
+    <IfModule proxy_fcgi_module>
+        <FilesMatch \.(phtml|php[0-9]*)$>
+            SetHandler proxy:unix:/opt/cpanel/ea-php72/root/usr/var/run/php-fpm/8e671b913e146b4c729d3798bd0bf7ff9e50de52.sock|fcgi://assessmentx.co.uk
+        </FilesMatch>
+    </IfModule>
+
+
+  # To customize this VirtualHost use an include file at the following location
+  # Include "/etc/apache2/conf.d/userdata/std/2_4/assessmentx/assessmentx.co.uk/*.conf"
+</VirtualHost>
+
+<VirtualHost 10.60.52.206:80>
+  ServerName codehackathon.co.uk
+    ServerAlias mail.codehackathon.co.uk www.codehackathon.co.uk
+  DocumentRoot /home/codehackathon/public_html
+  ServerAdmin webmaster@codehackathon.co.uk
+  UseCanonicalName Off
+
+  ## User codehackathon # Needed for Cpanel::ApacheConf
+  <IfModule userdir_module>
+    <IfModule !mpm_itk.c>
+      <IfModule !ruid2_module>
+        <IfModule !mod_passenger.c>
+          UserDir disabled
+          UserDir enabled codehackathon 
+        </IfModule>
+      </IfModule>
+    </IfModule>
+  </IfModule>
+
+  # Enable backwards compatible Server Side Include expression parser for Apache versions >= 2.4.
+  # To selectively use the newer Apache 2.4 expression parser, disable SSILegacyExprParser in
+  # the user's .htaccess file.  For more information, please read:
+  #    http://httpd.apache.org/docs/2.4/mod/mod_include.html#ssilegacyexprparser
+  <IfModule include_module>
+    <Directory "/home/codehackathon/public_html">
+      SSILegacyExprParser On
+    </Directory>
+  </IfModule>
+
+  
+
+  <IfModule suphp_module>
+    suPHP_UserGroup codehackathon codehackathon
+  </IfModule>
+  <IfModule suexec_module>
+    <IfModule !mod_ruid2.c>
+      SuexecUserGroup codehackathon codehackathon
+    </IfModule>
+  </IfModule>
+  <IfModule ruid2_module>
+    RMode config
+    RUidGid codehackathon codehackathon
+  </IfModule>
+  <IfModule mpm_itk.c>
+    # For more information on MPM ITK, please read:
+    #   http://mpm-itk.sesse.net/
+    AssignUserID codehackathon codehackathon
+  </IfModule>
+  <IfModule mod_passenger.c>
+    PassengerUser codehackathon
+    PassengerGroup codehackathon
+  </IfModule>
+
+  <IfModule alias_module>
+    ScriptAlias /cgi-bin/ /home/codehackathon/public_html/cgi-bin/
+  </IfModule>
+
+
+    # Global DCV Rewrite Exclude
+    <IfModule rewrite_module>
+        RewriteOptions Inherit
+    </IfModule>
+
+        
+        
+            
+                
+                
+    <IfModule proxy_fcgi_module>
+        <FilesMatch \.(phtml|php[0-9]*)$>
+            SetHandler proxy:unix:/opt/cpanel/ea-php72/root/usr/var/run/php-fpm/3931bc8c1c4e1bf868fc63d483b53b5c8d4e480e.sock|fcgi://codehackathon.co.uk
+        </FilesMatch>
+    </IfModule>
+
+
+  # To customize this VirtualHost use an include file at the following location
+  # Include "/etc/apache2/conf.d/userdata/std/2_4/codehackathon/codehackathon.co.uk/*.conf"
+</VirtualHost>
+
+
+<VirtualHost 10.60.52.206:80>
+  ServerName recruit247.co.uk
+    ServerAlias mail.recruit247.co.uk www.recruit247.co.uk
+  DocumentRoot /home/recruit247/public_html
+  ServerAdmin webmaster@recruit247.co.uk
+  UseCanonicalName Off
+
+  ## User recruit247 # Needed for Cpanel::ApacheConf
+  <IfModule userdir_module>
+    <IfModule !mpm_itk.c>
+      <IfModule !ruid2_module>
+        <IfModule !mod_passenger.c>
+          UserDir disabled
+          UserDir enabled recruit247 
+        </IfModule>
+      </IfModule>
+    </IfModule>
+  </IfModule>
+
+  # Enable backwards compatible Server Side Include expression parser for Apache versions >= 2.4.
+  # To selectively use the newer Apache 2.4 expression parser, disable SSILegacyExprParser in
+  # the user's .htaccess file.  For more information, please read:
+  #    http://httpd.apache.org/docs/2.4/mod/mod_include.html#ssilegacyexprparser
+  <IfModule include_module>
+    <Directory "/home/recruit247/public_html">
+      SSILegacyExprParser On
+    </Directory>
+  </IfModule>
+
+  
+
+  <IfModule suphp_module>
+    suPHP_UserGroup recruit247 recruit247
+  </IfModule>
+  <IfModule suexec_module>
+    <IfModule !mod_ruid2.c>
+      SuexecUserGroup recruit247 recruit247
+    </IfModule>
+  </IfModule>
+  <IfModule ruid2_module>
+    RMode config
+    RUidGid recruit247 recruit247
+  </IfModule>
+  <IfModule mpm_itk.c>
+    # For more information on MPM ITK, please read:
+    #   http://mpm-itk.sesse.net/
+    AssignUserID recruit247 recruit247
+  </IfModule>
+  <IfModule mod_passenger.c>
+    PassengerUser recruit247
+    PassengerGroup recruit247
+  </IfModule>
+
+  <IfModule alias_module>
+    ScriptAlias /cgi-bin/ /home/recruit247/public_html/cgi-bin/
+  </IfModule>
+
+
+    # Global DCV Rewrite Exclude
+    <IfModule rewrite_module>
+        RewriteOptions Inherit
+    </IfModule>
+
+        
+        
+            
+                
+                
+  Include "/etc/apache2/conf.d/userdata/std/2_4/recruit247/recruit247.co.uk/*.conf"
+    <IfModule proxy_fcgi_module>
+        <FilesMatch \.(phtml|php[0-9]*)$>
+            SetHandler proxy:unix:/opt/cpanel/ea-php72/root/usr/var/run/php-fpm/f6f2ce964c45989ef9f8a8936eda093cfaea604c.sock|fcgi://recruit247.co.uk
+        </FilesMatch>
+    </IfModule>
+
+
+  # To customize this VirtualHost use an include file at the following location
+  # Include "/etc/apache2/conf.d/userdata/std/2_4/recruit247/recruit247.co.uk/*.conf"
+</VirtualHost>
+
+<VirtualHost 10.60.52.206:80>
+  ServerName vipercloud.in
+    ServerAlias mail.vipercloud.in www.vipercloud.in
+  DocumentRoot /home/vcsindia/public_html
+  ServerAdmin webmaster@vipercloud.in
+  UseCanonicalName Off
+
+  ## User vcsindia # Needed for Cpanel::ApacheConf
+  <IfModule userdir_module>
+    <IfModule !mpm_itk.c>
+      <IfModule !ruid2_module>
+        <IfModule !mod_passenger.c>
+          UserDir disabled
+          UserDir enabled vcsindia 
+        </IfModule>
+      </IfModule>
+    </IfModule>
+  </IfModule>
+
+  # Enable backwards compatible Server Side Include expression parser for Apache versions >= 2.4.
+  # To selectively use the newer Apache 2.4 expression parser, disable SSILegacyExprParser in
+  # the user's .htaccess file.  For more information, please read:
+  #    http://httpd.apache.org/docs/2.4/mod/mod_include.html#ssilegacyexprparser
+  <IfModule include_module>
+    <Directory "/home/vcsindia/public_html">
+      SSILegacyExprParser On
+    </Directory>
+  </IfModule>
+
+  
+
+  <IfModule suphp_module>
+    suPHP_UserGroup vcsindia vcsindia
+  </IfModule>
+  <IfModule suexec_module>
+    <IfModule !mod_ruid2.c>
+      SuexecUserGroup vcsindia vcsindia
+    </IfModule>
+  </IfModule>
+  <IfModule ruid2_module>
+    RMode config
+    RUidGid vcsindia vcsindia
+  </IfModule>
+  <IfModule mpm_itk.c>
+    # For more information on MPM ITK, please read:
+    #   http://mpm-itk.sesse.net/
+    AssignUserID vcsindia vcsindia
+  </IfModule>
+  <IfModule mod_passenger.c>
+    PassengerUser vcsindia
+    PassengerGroup vcsindia
+  </IfModule>
+
+  <IfModule alias_module>
+    ScriptAlias /cgi-bin/ /home/vcsindia/public_html/cgi-bin/
+  </IfModule>
+
+
+    # Global DCV Rewrite Exclude
+    <IfModule rewrite_module>
+        RewriteOptions Inherit
+    </IfModule>
+
+        
+        
+            
+                
+                
+
+
+  # To customize this VirtualHost use an include file at the following location
+  # Include "/etc/apache2/conf.d/userdata/std/2_4/vcsindia/vipercloud.in/*.conf"
+</VirtualHost>
+
+<VirtualHost 10.60.52.206:80>
+  ServerName uat.vipercloud.in
+    ServerAlias www.uat.vipercloud.in
+  DocumentRoot /home/vcsindia/public_html/uat
+  ServerAdmin webmaster@uat.vipercloud.in
+  UseCanonicalName Off
+
+  ## User vcsindia # Needed for Cpanel::ApacheConf
+  <IfModule userdir_module>
+    <IfModule !mpm_itk.c>
+      <IfModule !ruid2_module>
+        <IfModule !mod_passenger.c>
+          UserDir disabled
+          UserDir enabled vcsindia 
+        </IfModule>
+      </IfModule>
+    </IfModule>
+  </IfModule>
+
+  # Enable backwards compatible Server Side Include expression parser for Apache versions >= 2.4.
+  # To selectively use the newer Apache 2.4 expression parser, disable SSILegacyExprParser in
+  # the user's .htaccess file.  For more information, please read:
+  #    http://httpd.apache.org/docs/2.4/mod/mod_include.html#ssilegacyexprparser
+  <IfModule include_module>
+    <Directory "/home/vcsindia/public_html/uat">
+      SSILegacyExprParser On
+    </Directory>
+  </IfModule>
+
+  
+
+  <IfModule suphp_module>
+    suPHP_UserGroup vcsindia vcsindia
+  </IfModule>
+  <IfModule suexec_module>
+    <IfModule !mod_ruid2.c>
+      SuexecUserGroup vcsindia vcsindia
+    </IfModule>
+  </IfModule>
+  <IfModule ruid2_module>
+    RMode config
+    RUidGid vcsindia vcsindia
+  </IfModule>
+  <IfModule mpm_itk.c>
+    # For more information on MPM ITK, please read:
+    #   http://mpm-itk.sesse.net/
+    AssignUserID vcsindia vcsindia
+  </IfModule>
+  <IfModule mod_passenger.c>
+    PassengerUser vcsindia
+    PassengerGroup vcsindia
+  </IfModule>
+
+  <IfModule alias_module>
+    ScriptAlias /cgi-bin/ /home/vcsindia/public_html/uat/cgi-bin/
+  </IfModule>
+
+
+    # Global DCV Rewrite Exclude
+    <IfModule rewrite_module>
+        RewriteOptions Inherit
+    </IfModule>
+
+        
+        
+            
+                
+                
+
+
+  # To customize this VirtualHost use an include file at the following location
+  # Include "/etc/apache2/conf.d/userdata/std/2_4/vcsindia/uat.vipercloud.in/*.conf"
+</VirtualHost>
+# END: HTTP vhosts list
+
+# BEGIN: HTTPS vhosts list
+
+<VirtualHost 10.60.52.206:443>
+  ServerName assessmentx.co.uk
+  ServerAlias mail.assessmentx.co.uk www.assessmentx.co.uk webdisk.assessmentx.co.uk webmail.assessmentx.co.uk cpanel.assessmentx.co.uk
+  DocumentRoot /home/assessmentx/public_html
+  ServerAdmin webmaster@assessmentx.co.uk
+  UseCanonicalName Off
+
+  ## User assessmentx # Needed for Cpanel::ApacheConf
+  <IfModule userdir_module>
+    <IfModule !mpm_itk.c>
+      <IfModule !ruid2_module>
+        <IfModule !mod_passenger.c>
+          UserDir disabled
+          UserDir enabled assessmentx 
+        </IfModule>
+      </IfModule>
+    </IfModule>
+  </IfModule>
+
+  # Enable backwards compatible Server Side Include expression parser for Apache versions >= 2.4.
+  # To selectively use the newer Apache 2.4 expression parser, disable SSILegacyExprParser in
+  # the user's .htaccess file.  For more information, please read:
+  #    http://httpd.apache.org/docs/2.4/mod/mod_include.html#ssilegacyexprparser
+  <IfModule mod_include.c>
+    <Directory "/home/assessmentx/public_html">
+      SSILegacyExprParser On
+    </Directory>
+  </IfModule>
+
+  
+  <Proxymatch ^https?://127\.0\.0\.1:(2082|2083|2077|2078|2079|2080|2086|2087|2095|2096)/>
+       <IfModule security2_module>
+          SecRuleEngine Off
+       </IfModule>
+  </Proxymatch>
+
+  <IfModule mod_suphp.c>
+    suPHP_UserGroup assessmentx assessmentx
+  </IfModule>
+  <IfModule suexec_module>
+    <IfModule !mod_ruid2.c>
+      SuexecUserGroup assessmentx assessmentx
+    </IfModule>
+  </IfModule>
+  <IfModule ruid2_module>
+    RMode config
+    RUidGid assessmentx assessmentx
+  </IfModule>
+  <IfModule mpm_itk.c>
+    # For more information on MPM ITK, please read:
+    #   http://mpm-itk.sesse.net/
+    AssignUserID assessmentx assessmentx
+  </IfModule>
+  <IfModule mod_passenger.c>
+    PassengerUser assessmentx
+    PassengerGroup assessmentx
+  </IfModule>
+
+  <IfModule alias_module>
+    ScriptAlias /cgi-bin/ /home/assessmentx/public_html/cgi-bin/
+  </IfModule>
+  <IfModule ssl_module>
+    SSLEngine on
+    
+    SSLCertificateFile /var/cpanel/ssl/apache_tls/assessmentx.co.uk/combined
+
+    SetEnvIf User-Agent ".*MSIE.*" nokeepalive ssl-unclean-shutdown
+    <Directory "/home/assessmentx/public_html/cgi-bin">
+      SSLOptions +StdEnvVars
+    </Directory>
+  </IfModule>
+        
+        
+            
+                
+                
+    <IfModule proxy_fcgi_module>
+        <FilesMatch \.(phtml|php[0-9]*)$>
+            SetHandler proxy:unix:/opt/cpanel/ea-php72/root/usr/var/run/php-fpm/8e671b913e146b4c729d3798bd0bf7ff9e50de52.sock|fcgi://assessmentx.co.uk
+        </FilesMatch>
+    </IfModule>
+
+
+
+
+  # To customize this VirtualHost use an include file at the following location
+  # Include "/etc/apache2/conf.d/userdata/ssl/2_4/assessmentx/assessmentx.co.uk/*.conf"
+
+    <IfModule headers_module>
+    RequestHeader set X-HTTPS 1
+    </IfModule>
+
+    RewriteEngine On
+            RewriteCond %{HTTP_HOST} =cpanel.assessmentx.co.uk [OR]
+            RewriteCond %{HTTP_HOST} =cpanel.assessmentx.co.uk:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_cpanel/$1 [PT]
+		ProxyPass "/___proxy_subdomain_cpanel" "http://127.0.0.1:2082" max=1 retry=0
+            RewriteCond %{HTTP_HOST} =webdisk.assessmentx.co.uk [OR]
+            RewriteCond %{HTTP_HOST} =webdisk.assessmentx.co.uk:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_webdisk/$1 [PT]
+		ProxyPass "/___proxy_subdomain_webdisk" "http://127.0.0.1:2077" max=1 retry=0
+            RewriteCond %{HTTP_HOST} =webmail.assessmentx.co.uk [OR]
+            RewriteCond %{HTTP_HOST} =webmail.assessmentx.co.uk:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_webmail/$1 [PT]
+		ProxyPass "/___proxy_subdomain_webmail" "http://127.0.0.1:2095" max=1 retry=0
+
+            RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+                RewriteCond %{HTTP_HOST} =cpanel.assessmentx.co.uk [OR]
+                RewriteCond %{HTTP_HOST} =cpanel.assessmentx.co.uk:443
+
+            RewriteRule ^/(.*) /___proxy_subdomain_ws_cpanel/$1 [PT]
+            RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+                RewriteCond %{HTTP_HOST} =webmail.assessmentx.co.uk [OR]
+                RewriteCond %{HTTP_HOST} =webmail.assessmentx.co.uk:443
+
+            RewriteRule ^/(.*) /___proxy_subdomain_ws_webmail/$1 [PT]
+</VirtualHost>
+
+<VirtualHost 10.60.52.206:443>
+  ServerName codehackathon.co.uk
+  ServerAlias mail.codehackathon.co.uk www.codehackathon.co.uk webmail.codehackathon.co.uk cpanel.codehackathon.co.uk webdisk.codehackathon.co.uk
+  DocumentRoot /home/codehackathon/public_html
+  ServerAdmin webmaster@codehackathon.co.uk
+  UseCanonicalName Off
+
+  ## User codehackathon # Needed for Cpanel::ApacheConf
+  <IfModule userdir_module>
+    <IfModule !mpm_itk.c>
+      <IfModule !ruid2_module>
+        <IfModule !mod_passenger.c>
+          UserDir disabled
+          UserDir enabled codehackathon 
+        </IfModule>
+      </IfModule>
+    </IfModule>
+  </IfModule>
+
+  # Enable backwards compatible Server Side Include expression parser for Apache versions >= 2.4.
+  # To selectively use the newer Apache 2.4 expression parser, disable SSILegacyExprParser in
+  # the user's .htaccess file.  For more information, please read:
+  #    http://httpd.apache.org/docs/2.4/mod/mod_include.html#ssilegacyexprparser
+  <IfModule mod_include.c>
+    <Directory "/home/codehackathon/public_html">
+      SSILegacyExprParser On
+    </Directory>
+  </IfModule>
+
+  
+  <Proxymatch ^https?://127\.0\.0\.1:(2082|2083|2077|2078|2079|2080|2086|2087|2095|2096)/>
+       <IfModule security2_module>
+          SecRuleEngine Off
+       </IfModule>
+  </Proxymatch>
+
+  <IfModule mod_suphp.c>
+    suPHP_UserGroup codehackathon codehackathon
+  </IfModule>
+  <IfModule suexec_module>
+    <IfModule !mod_ruid2.c>
+      SuexecUserGroup codehackathon codehackathon
+    </IfModule>
+  </IfModule>
+  <IfModule ruid2_module>
+    RMode config
+    RUidGid codehackathon codehackathon
+  </IfModule>
+  <IfModule mpm_itk.c>
+    # For more information on MPM ITK, please read:
+    #   http://mpm-itk.sesse.net/
+    AssignUserID codehackathon codehackathon
+  </IfModule>
+  <IfModule mod_passenger.c>
+    PassengerUser codehackathon
+    PassengerGroup codehackathon
+  </IfModule>
+
+  <IfModule alias_module>
+    ScriptAlias /cgi-bin/ /home/codehackathon/public_html/cgi-bin/
+  </IfModule>
+  <IfModule ssl_module>
+    SSLEngine on
+    
+    SSLCertificateFile /var/cpanel/ssl/apache_tls/codehackathon.co.uk/combined
+
+    SetEnvIf User-Agent ".*MSIE.*" nokeepalive ssl-unclean-shutdown
+    <Directory "/home/codehackathon/public_html/cgi-bin">
+      SSLOptions +StdEnvVars
+    </Directory>
+  </IfModule>
+        
+        
+            
+                
+                
+    <IfModule proxy_fcgi_module>
+        <FilesMatch \.(phtml|php[0-9]*)$>
+            SetHandler proxy:unix:/opt/cpanel/ea-php72/root/usr/var/run/php-fpm/3931bc8c1c4e1bf868fc63d483b53b5c8d4e480e.sock|fcgi://codehackathon.co.uk
+        </FilesMatch>
+    </IfModule>
+
+
+
+
+  # To customize this VirtualHost use an include file at the following location
+  # Include "/etc/apache2/conf.d/userdata/ssl/2_4/codehackathon/codehackathon.co.uk/*.conf"
+
+    <IfModule headers_module>
+    RequestHeader set X-HTTPS 1
+    </IfModule>
+
+    RewriteEngine On
+            RewriteCond %{HTTP_HOST} =cpanel.codehackathon.co.uk [OR]
+            RewriteCond %{HTTP_HOST} =cpanel.codehackathon.co.uk:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_cpanel/$1 [PT]
+		ProxyPass "/___proxy_subdomain_cpanel" "http://127.0.0.1:2082" max=1 retry=0
+            RewriteCond %{HTTP_HOST} =webdisk.codehackathon.co.uk [OR]
+            RewriteCond %{HTTP_HOST} =webdisk.codehackathon.co.uk:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_webdisk/$1 [PT]
+		ProxyPass "/___proxy_subdomain_webdisk" "http://127.0.0.1:2077" max=1 retry=0
+            RewriteCond %{HTTP_HOST} =webmail.codehackathon.co.uk [OR]
+            RewriteCond %{HTTP_HOST} =webmail.codehackathon.co.uk:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_webmail/$1 [PT]
+		ProxyPass "/___proxy_subdomain_webmail" "http://127.0.0.1:2095" max=1 retry=0
+
+            RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+                RewriteCond %{HTTP_HOST} =cpanel.codehackathon.co.uk [OR]
+                RewriteCond %{HTTP_HOST} =cpanel.codehackathon.co.uk:443
+
+            RewriteRule ^/(.*) /___proxy_subdomain_ws_cpanel/$1 [PT]
+            RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+                RewriteCond %{HTTP_HOST} =webmail.codehackathon.co.uk [OR]
+                RewriteCond %{HTTP_HOST} =webmail.codehackathon.co.uk:443
+
+            RewriteRule ^/(.*) /___proxy_subdomain_ws_webmail/$1 [PT]
+</VirtualHost>
+
+
+<VirtualHost 10.60.52.206:443>
+  ServerName recruit247.co.uk
+  ServerAlias mail.recruit247.co.uk www.recruit247.co.uk webmail.recruit247.co.uk cpanel.recruit247.co.uk webdisk.recruit247.co.uk
+  DocumentRoot /home/recruit247/public_html
+  ServerAdmin webmaster@recruit247.co.uk
+  UseCanonicalName Off
+
+  ## User recruit247 # Needed for Cpanel::ApacheConf
+  <IfModule userdir_module>
+    <IfModule !mpm_itk.c>
+      <IfModule !ruid2_module>
+        <IfModule !mod_passenger.c>
+          UserDir disabled
+          UserDir enabled recruit247 
+        </IfModule>
+      </IfModule>
+    </IfModule>
+  </IfModule>
+
+  # Enable backwards compatible Server Side Include expression parser for Apache versions >= 2.4.
+  # To selectively use the newer Apache 2.4 expression parser, disable SSILegacyExprParser in
+  # the user's .htaccess file.  For more information, please read:
+  #    http://httpd.apache.org/docs/2.4/mod/mod_include.html#ssilegacyexprparser
+  <IfModule mod_include.c>
+    <Directory "/home/recruit247/public_html">
+      SSILegacyExprParser On
+    </Directory>
+  </IfModule>
+
+  
+  <Proxymatch ^https?://127\.0\.0\.1:(2082|2083|2077|2078|2079|2080|2086|2087|2095|2096)/>
+       <IfModule security2_module>
+          SecRuleEngine Off
+       </IfModule>
+  </Proxymatch>
+
+  <IfModule mod_suphp.c>
+    suPHP_UserGroup recruit247 recruit247
+  </IfModule>
+  <IfModule suexec_module>
+    <IfModule !mod_ruid2.c>
+      SuexecUserGroup recruit247 recruit247
+    </IfModule>
+  </IfModule>
+  <IfModule ruid2_module>
+    RMode config
+    RUidGid recruit247 recruit247
+  </IfModule>
+  <IfModule mpm_itk.c>
+    # For more information on MPM ITK, please read:
+    #   http://mpm-itk.sesse.net/
+    AssignUserID recruit247 recruit247
+  </IfModule>
+  <IfModule mod_passenger.c>
+    PassengerUser recruit247
+    PassengerGroup recruit247
+  </IfModule>
+
+  <IfModule alias_module>
+    ScriptAlias /cgi-bin/ /home/recruit247/public_html/cgi-bin/
+  </IfModule>
+  <IfModule ssl_module>
+    SSLEngine on
+    
+    SSLCertificateFile /var/cpanel/ssl/apache_tls/recruit247.co.uk/combined
+
+    SetEnvIf User-Agent ".*MSIE.*" nokeepalive ssl-unclean-shutdown
+    <Directory "/home/recruit247/public_html/cgi-bin">
+      SSLOptions +StdEnvVars
+    </Directory>
+  </IfModule>
+        
+        
+            
+                
+                
+    <IfModule proxy_fcgi_module>
+        <FilesMatch \.(phtml|php[0-9]*)$>
+            SetHandler proxy:unix:/opt/cpanel/ea-php72/root/usr/var/run/php-fpm/f6f2ce964c45989ef9f8a8936eda093cfaea604c.sock|fcgi://recruit247.co.uk
+        </FilesMatch>
+    </IfModule>
+
+
+
+
+  # To customize this VirtualHost use an include file at the following location
+  # Include "/etc/apache2/conf.d/userdata/ssl/2_4/recruit247/recruit247.co.uk/*.conf"
+
+    <IfModule headers_module>
+    RequestHeader set X-HTTPS 1
+    </IfModule>
+
+    RewriteEngine On
+            RewriteCond %{HTTP_HOST} =cpanel.recruit247.co.uk [OR]
+            RewriteCond %{HTTP_HOST} =cpanel.recruit247.co.uk:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_cpanel/$1 [PT]
+		ProxyPass "/___proxy_subdomain_cpanel" "http://127.0.0.1:2082" max=1 retry=0
+            RewriteCond %{HTTP_HOST} =webdisk.recruit247.co.uk [OR]
+            RewriteCond %{HTTP_HOST} =webdisk.recruit247.co.uk:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_webdisk/$1 [PT]
+		ProxyPass "/___proxy_subdomain_webdisk" "http://127.0.0.1:2077" max=1 retry=0
+            RewriteCond %{HTTP_HOST} =webmail.recruit247.co.uk [OR]
+            RewriteCond %{HTTP_HOST} =webmail.recruit247.co.uk:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_webmail/$1 [PT]
+		ProxyPass "/___proxy_subdomain_webmail" "http://127.0.0.1:2095" max=1 retry=0
+
+            RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+                RewriteCond %{HTTP_HOST} =cpanel.recruit247.co.uk [OR]
+                RewriteCond %{HTTP_HOST} =cpanel.recruit247.co.uk:443
+
+            RewriteRule ^/(.*) /___proxy_subdomain_ws_cpanel/$1 [PT]
+            RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+                RewriteCond %{HTTP_HOST} =webmail.recruit247.co.uk [OR]
+                RewriteCond %{HTTP_HOST} =webmail.recruit247.co.uk:443
+
+            RewriteRule ^/(.*) /___proxy_subdomain_ws_webmail/$1 [PT]
+</VirtualHost>
+
+<VirtualHost 10.60.52.206:443>
+  ServerName vipercloud.in
+  ServerAlias mail.vipercloud.in www.vipercloud.in webdisk.vipercloud.in cpanel.vipercloud.in webmail.vipercloud.in
+  DocumentRoot /home/vcsindia/public_html
+  ServerAdmin webmaster@vipercloud.in
+  UseCanonicalName Off
+
+  ## User vcsindia # Needed for Cpanel::ApacheConf
+  <IfModule userdir_module>
+    <IfModule !mpm_itk.c>
+      <IfModule !ruid2_module>
+        <IfModule !mod_passenger.c>
+          UserDir disabled
+          UserDir enabled vcsindia 
+        </IfModule>
+      </IfModule>
+    </IfModule>
+  </IfModule>
+
+  # Enable backwards compatible Server Side Include expression parser for Apache versions >= 2.4.
+  # To selectively use the newer Apache 2.4 expression parser, disable SSILegacyExprParser in
+  # the user's .htaccess file.  For more information, please read:
+  #    http://httpd.apache.org/docs/2.4/mod/mod_include.html#ssilegacyexprparser
+  <IfModule mod_include.c>
+    <Directory "/home/vcsindia/public_html">
+      SSILegacyExprParser On
+    </Directory>
+  </IfModule>
+
+  
+  <Proxymatch ^https?://127\.0\.0\.1:(2082|2083|2077|2078|2079|2080|2086|2087|2095|2096)/>
+       <IfModule security2_module>
+          SecRuleEngine Off
+       </IfModule>
+  </Proxymatch>
+
+  <IfModule mod_suphp.c>
+    suPHP_UserGroup vcsindia vcsindia
+  </IfModule>
+  <IfModule suexec_module>
+    <IfModule !mod_ruid2.c>
+      SuexecUserGroup vcsindia vcsindia
+    </IfModule>
+  </IfModule>
+  <IfModule ruid2_module>
+    RMode config
+    RUidGid vcsindia vcsindia
+  </IfModule>
+  <IfModule mpm_itk.c>
+    # For more information on MPM ITK, please read:
+    #   http://mpm-itk.sesse.net/
+    AssignUserID vcsindia vcsindia
+  </IfModule>
+  <IfModule mod_passenger.c>
+    PassengerUser vcsindia
+    PassengerGroup vcsindia
+  </IfModule>
+
+  <IfModule alias_module>
+    ScriptAlias /cgi-bin/ /home/vcsindia/public_html/cgi-bin/
+  </IfModule>
+  <IfModule ssl_module>
+    SSLEngine on
+    
+    SSLCertificateFile /var/cpanel/ssl/apache_tls/vipercloud.in/combined
+
+    SetEnvIf User-Agent ".*MSIE.*" nokeepalive ssl-unclean-shutdown
+    <Directory "/home/vcsindia/public_html/cgi-bin">
+      SSLOptions +StdEnvVars
+    </Directory>
+  </IfModule>
+        
+        
+            
+                
+                
+
+
+
+
+  # To customize this VirtualHost use an include file at the following location
+  # Include "/etc/apache2/conf.d/userdata/ssl/2_4/vcsindia/vipercloud.in/*.conf"
+
+    <IfModule headers_module>
+    RequestHeader set X-HTTPS 1
+    </IfModule>
+
+    RewriteEngine On
+            RewriteCond %{HTTP_HOST} =cpanel.vipercloud.in [OR]
+            RewriteCond %{HTTP_HOST} =cpanel.vipercloud.in:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_cpanel/$1 [PT]
+		ProxyPass "/___proxy_subdomain_cpanel" "http://127.0.0.1:2082" max=1 retry=0
+            RewriteCond %{HTTP_HOST} =webdisk.vipercloud.in [OR]
+            RewriteCond %{HTTP_HOST} =webdisk.vipercloud.in:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_webdisk/$1 [PT]
+		ProxyPass "/___proxy_subdomain_webdisk" "http://127.0.0.1:2077" max=1 retry=0
+            RewriteCond %{HTTP_HOST} =webmail.vipercloud.in [OR]
+            RewriteCond %{HTTP_HOST} =webmail.vipercloud.in:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_webmail/$1 [PT]
+		ProxyPass "/___proxy_subdomain_webmail" "http://127.0.0.1:2095" max=1 retry=0
+
+            RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+                RewriteCond %{HTTP_HOST} =cpanel.vipercloud.in [OR]
+                RewriteCond %{HTTP_HOST} =cpanel.vipercloud.in:443
+
+            RewriteRule ^/(.*) /___proxy_subdomain_ws_cpanel/$1 [PT]
+            RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+                RewriteCond %{HTTP_HOST} =webmail.vipercloud.in [OR]
+                RewriteCond %{HTTP_HOST} =webmail.vipercloud.in:443
+
+            RewriteRule ^/(.*) /___proxy_subdomain_ws_webmail/$1 [PT]
+</VirtualHost>
+
+<VirtualHost 10.60.52.206:443>
+  ServerName uat.vipercloud.in
+  ServerAlias www.uat.vipercloud.in
+  DocumentRoot /home/vcsindia/public_html/uat
+  ServerAdmin webmaster@uat.vipercloud.in
+  UseCanonicalName Off
+
+  ## User vcsindia # Needed for Cpanel::ApacheConf
+  <IfModule userdir_module>
+    <IfModule !mpm_itk.c>
+      <IfModule !ruid2_module>
+        <IfModule !mod_passenger.c>
+          UserDir disabled
+          UserDir enabled vcsindia 
+        </IfModule>
+      </IfModule>
+    </IfModule>
+  </IfModule>
+
+  # Enable backwards compatible Server Side Include expression parser for Apache versions >= 2.4.
+  # To selectively use the newer Apache 2.4 expression parser, disable SSILegacyExprParser in
+  # the user's .htaccess file.  For more information, please read:
+  #    http://httpd.apache.org/docs/2.4/mod/mod_include.html#ssilegacyexprparser
+  <IfModule mod_include.c>
+    <Directory "/home/vcsindia/public_html/uat">
+      SSILegacyExprParser On
+    </Directory>
+  </IfModule>
+
+  
+  <Proxymatch ^https?://127\.0\.0\.1:(2082|2083|2077|2078|2079|2080|2086|2087|2095|2096)/>
+       <IfModule security2_module>
+          SecRuleEngine Off
+       </IfModule>
+  </Proxymatch>
+
+  <IfModule mod_suphp.c>
+    suPHP_UserGroup vcsindia vcsindia
+  </IfModule>
+  <IfModule suexec_module>
+    <IfModule !mod_ruid2.c>
+      SuexecUserGroup vcsindia vcsindia
+    </IfModule>
+  </IfModule>
+  <IfModule ruid2_module>
+    RMode config
+    RUidGid vcsindia vcsindia
+  </IfModule>
+  <IfModule mpm_itk.c>
+    # For more information on MPM ITK, please read:
+    #   http://mpm-itk.sesse.net/
+    AssignUserID vcsindia vcsindia
+  </IfModule>
+  <IfModule mod_passenger.c>
+    PassengerUser vcsindia
+    PassengerGroup vcsindia
+  </IfModule>
+
+  <IfModule alias_module>
+    ScriptAlias /cgi-bin/ /home/vcsindia/public_html/uat/cgi-bin/
+  </IfModule>
+  <IfModule ssl_module>
+    SSLEngine on
+    
+    SSLCertificateFile /var/cpanel/ssl/apache_tls/uat.vipercloud.in/combined
+
+    SSLUseStapling off
+    SetEnvIf User-Agent ".*MSIE.*" nokeepalive ssl-unclean-shutdown
+    <Directory "/home/vcsindia/public_html/uat/cgi-bin">
+      SSLOptions +StdEnvVars
+    </Directory>
+  </IfModule>
+        
+        
+            
+                
+                
+
+
+
+
+  # To customize this VirtualHost use an include file at the following location
+  # Include "/etc/apache2/conf.d/userdata/ssl/2_4/vcsindia/uat.vipercloud.in/*.conf"
+
+</VirtualHost>
+# END: HTTPS vhosts list
+
+##################################################
+##################################################
+#
+# Define the main cPanel & WHM proxy subdomains
+#
+##################################################
+##################################################
+
+<VirtualHost 10.60.52.206:80>
+  ServerName payscan.co.uk
+    ServerAlias mail.payscan.co.uk www.payscan.co.uk
+  DocumentRoot /home/payscan/public_html
+  ServerAdmin webmaster@payscan.co.uk
+  UseCanonicalName Off
+
+  ## User payscan # Needed for Cpanel::ApacheConf
+  <IfModule userdir_module>
+    <IfModule !mpm_itk.c>
+      <IfModule !ruid2_module>
+        <IfModule !mod_passenger.c>
+          UserDir disabled
+          UserDir enabled payscan 
+        </IfModule>
+      </IfModule>
+    </IfModule>
+  </IfModule>
+
+  # Enable backwards compatible Server Side Include expression parser for Apache versions >= 2.4.
+  # To selectively use the newer Apache 2.4 expression parser, disable SSILegacyExprParser in
+  # the user's .htaccess file.  For more information, please read:
+  #    http://httpd.apache.org/docs/2.4/mod/mod_include.html#ssilegacyexprparser
+  <IfModule include_module>
+    <Directory "/home/payscan/public_html">
+      SSILegacyExprParser On
+    </Directory>
+  </IfModule>
+
+  
+
+  <IfModule suphp_module>
+    suPHP_UserGroup payscan payscan
+  </IfModule>
+  <IfModule suexec_module>
+    <IfModule !mod_ruid2.c>
+      SuexecUserGroup payscan payscan
+    </IfModule>
+  </IfModule>
+  <IfModule ruid2_module>
+    RMode config
+    RUidGid payscan payscan
+  </IfModule>
+  <IfModule mpm_itk.c>
+    # For more information on MPM ITK, please read:
+    #   http://mpm-itk.sesse.net/
+    AssignUserID payscan payscan
+  </IfModule>
+  <IfModule mod_passenger.c>
+    PassengerUser payscan
+    PassengerGroup payscan
+  </IfModule>
+
+  <IfModule alias_module>
+    ScriptAlias /cgi-bin/ /home/payscan/public_html/cgi-bin/
+  </IfModule>
+
+
+    # Global DCV Rewrite Exclude
+    <IfModule rewrite_module>
+        RewriteOptions Inherit
+    </IfModule>
+
+        
+        
+            
+                
+                
+    <IfModule proxy_fcgi_module>
+        <FilesMatch \.(phtml|php[0-9]*)$>
+            SetHandler proxy:unix:/opt/cpanel/ea-php56/root/usr/var/run/php-fpm/4f2fde39bc180eeb1e134eb7203938c1c4025501.sock|fcgi://payscan.co.uk
+        </FilesMatch>
+    </IfModule>
+
+
+  # To customize this VirtualHost use an include file at the following location
+  # Include "/etc/apache2/conf.d/userdata/std/2_4/payscan/payscan.co.uk/*.conf"
+</VirtualHost>
+<VirtualHost 10.60.52.206:443>
+  ServerName payscan.co.uk
+  ServerAlias mail.payscan.co.uk www.payscan.co.uk webmail.payscan.co.uk cpanel.payscan.co.uk webdisk.payscan.co.uk
+  DocumentRoot /home/payscan/public_html
+  ServerAdmin webmaster@payscan.co.uk
+  UseCanonicalName Off
+
+  ## User payscan # Needed for Cpanel::ApacheConf
+  <IfModule userdir_module>
+    <IfModule !mpm_itk.c>
+      <IfModule !ruid2_module>
+        <IfModule !mod_passenger.c>
+          UserDir disabled
+          UserDir enabled payscan 
+        </IfModule>
+      </IfModule>
+    </IfModule>
+  </IfModule>
+
+  # Enable backwards compatible Server Side Include expression parser for Apache versions >= 2.4.
+  # To selectively use the newer Apache 2.4 expression parser, disable SSILegacyExprParser in
+  # the user's .htaccess file.  For more information, please read:
+  #    http://httpd.apache.org/docs/2.4/mod/mod_include.html#ssilegacyexprparser
+  <IfModule mod_include.c>
+    <Directory "/home/payscan/public_html">
+      SSILegacyExprParser On
+    </Directory>
+  </IfModule>
+
+  
+  <Proxymatch ^https?://127\.0\.0\.1:(2082|2083|2077|2078|2079|2080|2086|2087|2095|2096)/>
+       <IfModule security2_module>
+          SecRuleEngine Off
+       </IfModule>
+  </Proxymatch>
+
+  <IfModule mod_suphp.c>
+    suPHP_UserGroup payscan payscan
+  </IfModule>
+  <IfModule suexec_module>
+    <IfModule !mod_ruid2.c>
+      SuexecUserGroup payscan payscan
+    </IfModule>
+  </IfModule>
+  <IfModule ruid2_module>
+    RMode config
+    RUidGid payscan payscan
+  </IfModule>
+  <IfModule mpm_itk.c>
+    # For more information on MPM ITK, please read:
+    #   http://mpm-itk.sesse.net/
+    AssignUserID payscan payscan
+  </IfModule>
+  <IfModule mod_passenger.c>
+    PassengerUser payscan
+    PassengerGroup payscan
+  </IfModule>
+
+  <IfModule alias_module>
+    ScriptAlias /cgi-bin/ /home/payscan/public_html/cgi-bin/
+  </IfModule>
+  <IfModule ssl_module>
+    SSLEngine on
+    
+    SSLCertificateFile /var/cpanel/ssl/apache_tls/payscan.co.uk/combined
+
+    SetEnvIf User-Agent ".*MSIE.*" nokeepalive ssl-unclean-shutdown
+    <Directory "/home/payscan/public_html/cgi-bin">
+      SSLOptions +StdEnvVars
+    </Directory>
+  </IfModule>
+        
+        
+            
+                
+                
+    <IfModule proxy_fcgi_module>
+        <FilesMatch \.(phtml|php[0-9]*)$>
+            SetHandler proxy:unix:/opt/cpanel/ea-php56/root/usr/var/run/php-fpm/4f2fde39bc180eeb1e134eb7203938c1c4025501.sock|fcgi://payscan.co.uk
+        </FilesMatch>
+    </IfModule>
+
+
+
+
+  # To customize this VirtualHost use an include file at the following location
+  # Include "/etc/apache2/conf.d/userdata/ssl/2_4/payscan/payscan.co.uk/*.conf"
+
+    <IfModule headers_module>
+    RequestHeader set X-HTTPS 1
+    </IfModule>
+
+    RewriteEngine On
+            RewriteCond %{HTTP_HOST} =cpanel.payscan.co.uk [OR]
+            RewriteCond %{HTTP_HOST} =cpanel.payscan.co.uk:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_cpanel/$1 [PT]
+		ProxyPass "/___proxy_subdomain_cpanel" "http://127.0.0.1:2082" max=1 retry=0
+            RewriteCond %{HTTP_HOST} =webdisk.payscan.co.uk [OR]
+            RewriteCond %{HTTP_HOST} =webdisk.payscan.co.uk:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_webdisk/$1 [PT]
+		ProxyPass "/___proxy_subdomain_webdisk" "http://127.0.0.1:2077" max=1 retry=0
+            RewriteCond %{HTTP_HOST} =webmail.payscan.co.uk [OR]
+            RewriteCond %{HTTP_HOST} =webmail.payscan.co.uk:443
+        RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+        RewriteRule ^/(.*) /___proxy_subdomain_webmail/$1 [PT]
+		ProxyPass "/___proxy_subdomain_webmail" "http://127.0.0.1:2095" max=1 retry=0
+
+            RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+                RewriteCond %{HTTP_HOST} =cpanel.payscan.co.uk [OR]
+                RewriteCond %{HTTP_HOST} =cpanel.payscan.co.uk:443
+
+            RewriteRule ^/(.*) /___proxy_subdomain_ws_cpanel/$1 [PT]
+            RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+                RewriteCond %{HTTP_HOST} =webmail.payscan.co.uk [OR]
+                RewriteCond %{HTTP_HOST} =webmail.payscan.co.uk:443
+
+            RewriteRule ^/(.*) /___proxy_subdomain_ws_webmail/$1 [PT]
+</VirtualHost>
+# CPANEL/WHM/WEBMAIL/WEBDISK PROXY SUBDOMAINS
+<VirtualHost 10.60.52.206:80 127.0.0.1:80>
+    ServerName proxy-subdomains-vhost.localhost
+    ServerAlias cpanel.* whm.* webmail.* webdisk.* cpcalendars.* cpcontacts.*
+
+    DocumentRoot /var/www/html
+    ServerAdmin notify@0000000000
+
+    <IfModule suphp_module>
+        suPHP_UserGroup nobody nobody
+    </IfModule>
+    <Proxy "*">
+        <IfModule security2_module>
+            SecRuleEngine Off
+        </IfModule>
+    </Proxy>
+
+    <Directory "/">
+      AllowOverride All
+    </Directory>
+
+
+
+
+    ScriptAlias /.cpanel/dcv /usr/local/cpanel/cgi-priv/get_local.cgi
+
+    RewriteEngine On
+
+                    RewriteCond %{REQUEST_URI} ^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Sectigo\ DCV)?$ [OR]
+                    RewriteCond %{REQUEST_URI} ^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$ [OR]
+                    RewriteCond %{REQUEST_URI} ^/\.well-known/pki-validation/(?:\ Ballot169)? 
+                RewriteRule ^ /.cpanel/dcv [passthrough]
+
+    RewriteCond %{HTTP_HOST} !^fs.vsjxfsukws01.local$
+    RewriteCond %{HTTP_HOST} ^cpanel\.
+    RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+    RewriteRule ^/(.*) /___proxy_subdomain_cpanel/$1 [PT]
+    ProxyPass "/___proxy_subdomain_cpanel" "http://127.0.0.1:2082" max=1 retry=0
+
+
+    RewriteCond %{HTTP_HOST} !^fs.vsjxfsukws01.local$
+    RewriteCond %{HTTP_HOST} ^webmail\.
+    RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+    RewriteRule ^/(.*) /___proxy_subdomain_webmail/$1 [PT]
+    ProxyPass "/___proxy_subdomain_webmail" "http://127.0.0.1:2095" max=1 retry=0
+
+
+    RewriteCond %{HTTP_HOST} !^fs.vsjxfsukws01.local$
+    RewriteCond %{HTTP_HOST} ^whm\.
+    RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+    RewriteRule ^/(.*) /___proxy_subdomain_whm/$1 [PT]
+    ProxyPass "/___proxy_subdomain_whm" "http://127.0.0.1:2086" max=1 retry=0
+
+
+    RewriteCond %{HTTP_HOST} !^fs.vsjxfsukws01.local$
+    RewriteCond %{HTTP_HOST} ^webdisk\.
+
+    RewriteRule ^/(.*) /___proxy_subdomain_webdisk/$1 [PT]
+    ProxyPass "/___proxy_subdomain_webdisk" "http://127.0.0.1:2077" max=1 retry=0
+
+
+    RewriteCond %{HTTP_HOST} !^fs.vsjxfsukws01.local$
+    RewriteCond %{HTTP_HOST} ^cpcalendars\.
+
+    RewriteRule ^/(.*) /___proxy_subdomain_cpcalendars/$1 [PT]
+    ProxyPass "/___proxy_subdomain_cpcalendars" "http://127.0.0.1:2079" max=1 retry=0
+
+
+    RewriteCond %{HTTP_HOST} !^fs.vsjxfsukws01.local$
+    RewriteCond %{HTTP_HOST} ^cpcontacts\.
+
+    RewriteRule ^/(.*) /___proxy_subdomain_cpcontacts/$1 [PT]
+    ProxyPass "/___proxy_subdomain_cpcontacts" "http://127.0.0.1:2079" max=1 retry=0
+
+
+
+
+                    RewriteCond %{HTTP_HOST} ^cpanel\.
+    RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+    RewriteRule ^/(.*) /___proxy_subdomain_ws_cpanel/$1 [PT]
+
+        RewriteCond %{HTTP_HOST} ^webmail\.
+    RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+    RewriteRule ^/(.*) /___proxy_subdomain_ws_webmail/$1 [PT]
+
+        RewriteCond %{HTTP_HOST} ^whm\.
+    RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+    RewriteRule ^/(.*) /___proxy_subdomain_ws_whm/$1 [PT]
+    
+
+    UseCanonicalName Off
+
+    <IfModule security2_module>
+        SecRuleEngine On
+    </IfModule>
+</VirtualHost>
+
+
+# CPANEL/WHM/WEBMAIL/WEBDISK PROXY SUBDOMAINS
+<VirtualHost 10.60.52.206:443 127.0.0.1:443>
+    ServerName fs.vsjxfsukws01.local
+
+    ServerAlias cpanel.* whm.* webmail.* webdisk.* cpcalendars.* cpcontacts.*
+
+    DocumentRoot /var/www/html
+    ServerAdmin notify@0000000000
+
+    <IfModule suphp_module>
+        suPHP_UserGroup nobody nobody
+    </IfModule>
+    <Proxy "*">
+        <IfModule security2_module>
+            SecRuleEngine Off
+        </IfModule>
+    </Proxy>
+
+    <Directory "/">
+      AllowOverride All
+    </Directory>
+
+
+
+
+    RewriteEngine On
+
+    <IfModule ssl_module>
+        SSLEngine on
+
+
+        SSLCertificateFile /var/cpanel/ssl/cpanel/cpanel.pem
+        SSLCertificateKeyFile /var/cpanel/ssl/cpanel/cpanel.pem
+        SSLCertificateChainFile /var/cpanel/ssl/cpanel/cpanel.pem
+        SSLUseStapling Off
+
+    </IfModule>
+
+    
+    
+
+    <IfModule headers_module>
+    RequestHeader set X-HTTPS 1
+    </IfModule>
+
+    RewriteCond %{HTTP_HOST} !^fs.vsjxfsukws01.local$
+    RewriteCond %{HTTP_HOST} ^cpanel\.
+    RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+    RewriteRule ^/(.*) /___proxy_subdomain_cpanel/$1 [PT]
+    ProxyPass "/___proxy_subdomain_cpanel" "http://127.0.0.1:2082" max=1 retry=0
+
+
+    RewriteCond %{HTTP_HOST} !^fs.vsjxfsukws01.local$
+    RewriteCond %{HTTP_HOST} ^webmail\.
+    RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+    RewriteRule ^/(.*) /___proxy_subdomain_webmail/$1 [PT]
+    ProxyPass "/___proxy_subdomain_webmail" "http://127.0.0.1:2095" max=1 retry=0
+
+
+    RewriteCond %{HTTP_HOST} !^fs.vsjxfsukws01.local$
+    RewriteCond %{HTTP_HOST} ^whm\.
+    RewriteCond %{HTTP:Upgrade} !websocket   [nocase]
+
+    RewriteRule ^/(.*) /___proxy_subdomain_whm/$1 [PT]
+    ProxyPass "/___proxy_subdomain_whm" "http://127.0.0.1:2086" max=1 retry=0
+
+
+    RewriteCond %{HTTP_HOST} !^fs.vsjxfsukws01.local$
+    RewriteCond %{HTTP_HOST} ^webdisk\.
+
+    RewriteRule ^/(.*) /___proxy_subdomain_webdisk/$1 [PT]
+    ProxyPass "/___proxy_subdomain_webdisk" "http://127.0.0.1:2077" max=1 retry=0
+
+
+    RewriteCond %{HTTP_HOST} !^fs.vsjxfsukws01.local$
+    RewriteCond %{HTTP_HOST} ^cpcontacts\.
+
+    RewriteRule ^/(.*) /___proxy_subdomain_cpcontacts/$1 [PT]
+    ProxyPass "/___proxy_subdomain_cpcontacts" "http://127.0.0.1:2079" max=1 retry=0
+
+
+    RewriteCond %{HTTP_HOST} !^fs.vsjxfsukws01.local$
+    RewriteCond %{HTTP_HOST} ^cpcalendars\.
+
+    RewriteRule ^/(.*) /___proxy_subdomain_cpcalendars/$1 [PT]
+    ProxyPass "/___proxy_subdomain_cpcalendars" "http://127.0.0.1:2079" max=1 retry=0
+
+
+
+
+                    RewriteCond %{HTTP_HOST} ^cpanel\.
+    RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+    RewriteRule ^/(.*) /___proxy_subdomain_ws_cpanel/$1 [PT]
+
+        RewriteCond %{HTTP_HOST} ^webmail\.
+    RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+    RewriteRule ^/(.*) /___proxy_subdomain_ws_webmail/$1 [PT]
+
+        RewriteCond %{HTTP_HOST} ^whm\.
+    RewriteCond %{HTTP:Upgrade} websocket   [nocase]
+    RewriteRule ^/(.*) /___proxy_subdomain_ws_whm/$1 [PT]
+    
+
+    UseCanonicalName Off
+
+    <IfModule security2_module>
+        SecRuleEngine On
+    </IfModule>
+</VirtualHost>
+
+# Administrator locations for safely altering virtualhost configuration
+Include "/etc/apache2/conf.d/includes/post_virtualhost_global.conf"
+
+##################################################
+##################################################
+#
+# Define the Domain Forwarding virtual hosts
+#
+##################################################
+##################################################
+
+# Domain forwarding is currently disabled.
+# You can set this by logging into WHM, and navigating to the 'DNS Functions' => 'Setup/Edit Domain Forwarding' interface.
+
+
+##################################################
+##################################################
+#
+# Default SSL Hostname Virtual Host
+#
+##################################################
+##################################################
+<VirtualHost 127.0.0.1:443 10.60.52.206:443 *:443>
+    ServerName fs.vsjxfsukws01.local
+    DocumentRoot /var/www/html
+
+    ServerAdmin notify@0000000000
+    <IfModule suphp_module>
+        suPHP_UserGroup nobody nobody
+    </IfModule>
+    <Directory "/">
+        AllowOverride All
+    </Directory>
+    
+    <IfModule ssl_module>
+        SSLEngine on
+        
+        SSLCertificateFile /var/cpanel/ssl/cpanel/cpanel.pem
+        SSLCertificateKeyFile /var/cpanel/ssl/cpanel/cpanel.pem
+        SSLCertificateChainFile /var/cpanel/ssl/cpanel/cpanel.pem
+        SSLUseStapling Off
+
+    </IfModule>
+
+    UseCanonicalName Off
+
+    <IfModule security2_module>
+        SecRuleEngine On
+    </IfModule>
+</VirtualHost>
+
+

@@ -1,0 +1,1 @@
+ip a | grep "scope global" | grep -Po '(?<=inet )[\d.]+'| awk '{print $1"|"}'

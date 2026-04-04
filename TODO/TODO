@@ -1,0 +1,70 @@
+
+Pass all in user data after userdata creation
+
+
+Asymmetric routing can occur when network packets take different paths from source to destination and back, which can cause communication issues in some scenarios. In CentOS 7, you can use routing rules to work around asymmetric routing and ensure that packets are correctly routed between hosts.
+
+Here's an example of how to configure routing rules to work around asymmetric routing in CentOS 7:
+
+Identify the network interfaces on your CentOS 7 machine by running the command ip addr show.
+
+Use the ip route command to add a new routing table that will be used for the specific network interface. For example, if the network interface is eth0, you can create a new routing table with the command:
+
+**
+ip route add default dev eth0 table 100
+**
+Edit the /etc/iproute2/rt_tables file and add an entry for the new routing table, such as:
+
+**
+100     eth0_table
+Configure routing rules to use the new routing table when traffic is received on the specific network interface. For example, you can use the following command to configure the routing rule:
+
+**
+ip rule add from <eth0_IP_address> table eth0_table
+Replace <eth0_IP_address> with the IP address of the eth0 interface.
+
+Repeat steps 2-4 for any other network interfaces on your CentOS 7 machine.
+
+These steps will ensure that packets are correctly routed based on the specific network interface that they are received on, which should help to work around any asymmetric routing issues that you may be experiencing.
+
+
+
+To restrict a user to access only a specific folder via VSCode SSH on CentOS 7, you can use permission settings.
+
+Create a new group for the restricted access:
+Copy code
+groupadd restricted_group
+Change the ownership of the specific folder to the new group:
+bash
+Copy code
+chown -R root:restricted_group /path/to/restricted_folder
+Set the permissions for the group to read and execute only:
+bash
+Copy code
+chmod -R 750 /path/to/restricted_folder
+Add the user to the new group:
+Copy code
+usermod -aG restricted_group restricted_user
+Open the SSH configuration file and edit the configuration settings:
+bash
+Copy code
+sudo nano /etc/ssh/sshd_config
+Add the following lines at the end of the file:
+perl
+Copy code
+Match Group restricted_group
+ChrootDirectory /path/to/restricted_folder
+X11Forwarding no
+AllowTcpForwarding no
+ForceCommand internal-sftp
+Save and close the file.
+
+Restart the SSH service to apply the changes:
+
+Copy code
+sudo systemctl restart sshd
+Now the restricted_user can only access the files and directories within the /path/to/restricted_folder and its subdirectories via VSCode SSH. Note that the user will not have access to the full system shell, but only to the restricted folder via SFTP.
+
+
+
+

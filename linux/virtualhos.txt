@@ -1,0 +1,59 @@
+<VirtualHost 162.252.83.37:80>
+ServerName www.gxbible.com
+ServerAlias gxbible.com
+ServerAdmin thilip@genxlead.com
+
+Redirect permanent / https://www.gxbible.com/
+DocumentRoot /home/sites/gxbible.com
+ErrorLog /var/log/httpd/gxbible.ErrorLog
+CustomLog /var/log/httpd/gxbible.accesslog common
+</VirtualHost>
+
+
+<VirtualHost 162.252.83.37:443>
+SSLEngine on
+SSLProtocol all -SSLv2 -SSLv3
+SSLCertificateFile  /etc/letsencrypt/live/www.gxbible.com/fullchain.pem
+SSLCertificateKeyFile  /etc/letsencrypt/live/www.gxbible.com/privkey.pem
+SSLCertificateChainFile   /etc/letsencrypt/live/www.gxbible.com/fullchain.pem
+DocumentRoot /home/sites/gxbible.com
+ServerName www.gxbible.com
+ServerAlias gxbible.com
+ErrorLog /var/log/httpd/gxbible_ssl.ErrorLog
+CustomLog /var/log/httpd/gxbible_ssl.accesslog common
+<Directory /home/sites/gxbible.com>
+allow from all
+<FilesMatch "^(test.php|wp-login.php)">
+Satisfy Any
+order deny,allow
+deny from all
+Allow from 14.98.54.90
+Allow from 202.83.25.120
+Allow from 113.193.28.102
+AuthUserFile /srv/.htpasswd
+AuthName "Restricted"
+AuthType Basic
+Require valid-user
+</FilesMatch>
+DirectoryIndex index.php
+Options -Indexes
+AcceptPathInfo On
+AllowOverride All
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^gxbible.com$ [NC]
+RewriteRule ^(.*)$ http://www.gxbible.com/ [R=301,L]
+</Directory>
+<DirectoryMatch "^/wp-admin">
+Order deny,allow
+Deny from all
+Allow from 113.193.28.102
+Allow from 14.98.54.90
+Allow from 202.83.25.120
+Satisfy Any
+AuthUserFile /srv/.htpasswd
+AuthName "Restricted"
+AuthType Basic
+Require valid-user
+</DirectoryMatch>
+</VirtualHost>

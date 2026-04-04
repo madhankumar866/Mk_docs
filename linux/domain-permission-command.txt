@@ -1,0 +1,8 @@
+cd /var/named/chroot/var/named/
+ll
+cat stemeraldstritone.com 
+su - dedaol
+sudo su - dedaol
+sudo chmod -R 0775 /var/named/
+setfacl -R -m u:dedaol:rwx /var/named/chroot/etc/named.conf
+setfacl -R  -m u:dedaol:rwx /etc/named.conf 

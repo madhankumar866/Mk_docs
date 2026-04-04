@@ -1,0 +1,41 @@
+kubectl create deployment php-fpm --image=madhankumar866/php-fpm
+kubectl expose deployment php-fpm --type=NodePort --port=9000
+kubectl create -f ingress.yaml
+
+
+kubectl get service php-fpm
+minikube service php-fpm --url
+
+kubectl get ingress
+
+curl --resolve "hello-world.info:80:$( minikube ip )" -i http://hello-world.info/php-v.php
+
+curl --resolve "hello-world.info:80:$( minikube ip )" -i http://hello-world.info/clf_host_ping.txt
+
+wget --header="Host: hello-world.info" -O output.png http://$(minikube ip)/vhnhylzuuwpxkaxt-52/cfqngymz,ubs~aqhm/rn_hme_1.jpg/TFKZLVYO\!UMEPRNXENOCTAAEW/njsbmqyrqiem-0Q1/354_rrcbk
+
+kubectl describe ingress example-app
+kubectl describe ingress proxy-pass-example
+
+
+kubectl delete deployment php-fpm
+kubectl delete service php-fpm
+
+kubectl delete -f ingress.yaml
+
+watch -d kubectl get all
+
+kubectl create -f kubectl/deployment.yaml
+kubectl delete -f kubectl/deployment.yaml
+
+curl --resolve "hello-world.info:80:$( minikube ip )" -i http://hello-world.info/lstyv/lzmzmlmragrgrllszamsa/79998jjl99eizxrhsbmouisvypzfodnlcrw7/acz/85676776181879769378944693999zuc20ppj3flv-kqz
+
+
+curl --resolve "hello-world.info:80:$( minikube ip )" -i 'http://hello-world.info/vbqegdodbshuuqzm-93/wyalzhjn,wmu~pkyt/rn_hme_1.jpg/PUKBIAXI!ANUPDGSFPDWFNDOQ/ddsbwkxkybme-DDN/702_xjybv'
+
+
+curl --resolve "hello-world.info:80:$( minikube ip )" -i 'http://hello-world.info/vbqegdodbshuuqzm-93/yahcu.asp?campagain=iwqyz:t9-60,58,a,35;20230624054609;000afrkkb1sxvvb;4242;00187931-5ffo1-79998jjl99eizxrhsbmoumviqtcapdwenlk8'
+
+
+curl --resolve "hello-world.info:80:$( minikube ip )" -i 'www.mk.com'
+

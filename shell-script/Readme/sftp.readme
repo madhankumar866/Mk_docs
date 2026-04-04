@@ -1,0 +1,7 @@
+Readme
+
+loop through an array 
+loop through array indices
+
+${array[@]}  array
+${!array[@]} array indices
