@@ -4,16 +4,21 @@ nav:
 - About: about.md
 - Index: index.md
 - Terraform:
-  - Overview: Terraform/Readme.md
   - Interview questions: Terraform/Interview-Questions.md
-  - Cheat sheet: Terraform/Terraform_cheat_sheet.md
-  - KodeKloud Lab Setup: Terraform/kodekloud lab setting up with terraform labs.md
-  - KodeKloud Tracker: Terraform/KodeKloud-Learning-Tracker.md
+  - Kodekloud learning tracker: Terraform/KodeKloud-Learning-Tracker.md
+  - Readme: Terraform/Readme.md
+  - Terraform_cheat_sheet: Terraform/Terraform_cheat_sheet.md
+  - Kodekloud lab setting up with terraform labs: Terraform/kodekloud lab setting
+      up with terraform labs.md
 - Career:
   - 1 on 1 framework: Career/1-on-1-Framework.md
   - Ai job guide 2026: Career/AI-Job-Guide-2026.md
   - Job links: Career/Job-Links.md
   - Release eng to mlops roadmap: Career/Release-Eng-to-MLOps-Roadmap.md
+- Career/job-tracker:
+  - Barclays_sre_chennai: Career/job-tracker/Barclays_SRE_Chennai.md
+  - Linkedin_job_template: Career/job-tracker/LinkedIn_Job_Template.md
+  - Linkedin_jobs: Career/job-tracker/LinkedIn_Jobs.md
 - Tools:
   - Tools: Tools/Tools.md
 - Helm_chart:
@@ -27,9 +32,9 @@ nav:
   - References: AWS-boto/references.md
 - Python:
   - Basics: Python/basics.md
+  - Log_tail: Python/log_tail.md
   - Python: Python/python.md
   - Setup: Python/setup.md
-  - Log tail: Python/log_tail.md
 - Python/learn:
   - Week_1_fundamentals: Python/Learn/Week_1_Fundamentals.md
 - Langchain:
@@ -235,7 +240,6 @@ markdown_extensions:
     custom_fences:
     - name: mermaid
       class: mermaid
-      format: !!python/name:pymdownx.superfences.fence_code_format
-
+      format: null
 extra_javascript:
-  - https://unpkg.com/mermaid/dist/mermaid.min.js
+- https://unpkg.com/mermaid/dist/mermaid.min.js
